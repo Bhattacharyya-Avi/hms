@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\CustomController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[CustomController::class,'index']);
+Route::get('/dashboard',[CustomController::class,'dashboard']);
+
+
+
