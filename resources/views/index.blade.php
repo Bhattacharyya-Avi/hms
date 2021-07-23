@@ -27,22 +27,22 @@
 
 <header>
 
-<div class="container">
+    <div class="container">
 
-    <a href="#" class="logo"><span>L</span>ife<span>S</span>upport</a>
+        <a href="#" class="logo"><span>L</span>ife<span>S</span>upport</a>
 
-    <nav class="nav">
-        <ul>
-            <li><a href="#home">home</a></li>
-            <li><a href="#about">about</a></li>
-            <li><a href="#facility">facility</a></li>
-            <li><a href="#contact">appointment</a></li>
-        </ul>
-    </nav>
+        <nav class="nav">
+            <ul>
+                <li><a href="#home">home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#facility">facility</a></li>
+                <li><a href="{{url('/login')}}">user login</a></li>
+            </ul>
+        </nav>
 
-    <div class="fas fa-bars"></div>
+        <div class="fas fa-bars"></div>
 
-</div>
+    </div>
 
 </header>
 
@@ -52,24 +52,24 @@
 
 <section class="home" id="home">
 
-<div class="container">
+    <div class="container">
 
-    <div class="row min-vh-100 align-items-center text-center text-md-left">
+        <div class="row min-vh-100 align-items-center text-center text-md-left">
 
-        <div class="col-md-6 pr-md-5" data-aos="zoom-in">
-            <img src="images/home-img.svg" width="100%" alt="">
-        </div>
+            <div class="col-md-6 pr-md-5" data-aos="zoom-in">
+                <img src="images/home-img.svg" width="100%" alt="">
+            </div>
 
-        <div class="col-md-6 pl-md-5 content" data-aos="fade-left">
-            <h1>Wellcome to <span>LifeSupport.</span> </h1>
-            <h2><span>stay</span> safe, <span>stay</span> healthy.</h2>
-          <!--  <h3>caring for you.</h3>
-             <a href="#"><button class="button">learn more</button></a> -->
+            <div class="col-md-6 pl-md-5 content" data-aos="fade-left">
+                <h1>Wellcome to <span>LifeSupport</span> Hospital.</h1>
+                <h2><span>stay</span> safe, <span>stay</span> healthy.</h2>
+            <!--  <h3>caring for you.</h3>
+                <a href="#"><button class="button">learn more</button></a> -->
+            </div>
+
         </div>
 
     </div>
-
-</div>
 
 </section>
 
@@ -80,37 +80,37 @@
 
 <section class="about" id="about">
 
-<div class="container">
-    <h1 class="heading"><span>'</span> About our services <span>'</span></h1>
+    <div class="container">
+        <h1 class="heading"><span>'</span> About our services <span>'</span></h1>
 
-    <div class="row min-vh-100 align-items-center">
+        <div class="row min-vh-100 align-items-center">
 
-        <div class="col-md-6 content" data-aos="fade-right">
+            <div class="col-md-6 content" data-aos="fade-right">
 
-            <div class="box">
-                <h3> <i class="	fas fa-user-clock"></i> 24 Hour Doctor </h3>
-                <p>You can find 24x7 hours special doctors in the hospital</p>
+                <div class="box">
+                    <h3> <i class="	fas fa-user-clock"></i> 24 Hour Doctor </h3>
+                    <p>You can find 24x7 hours special doctors in the hospital</p>
+                </div>
+
+                <div class="box">
+                    <h3> <i class="fas fa-procedures"></i> emergency rooms </h3>
+                    <p>we have enough rooms.depending on type of patient room are given.</p>
+                </div>
+
+                <div class="box">
+                    <h3> <i class="fas fa-stethoscope"></i> indoor facilities </h3>
+                    <p>patient will be given sevarel facilities with any time doctor services.</p>
+                </div>
+
             </div>
 
-            <div class="box">
-                <h3> <i class="fas fa-procedures"></i> emergency rooms </h3>
-                <p>we have enough rooms.depending on type of patient room are given.</p>
+            <div class="col-md-6 d-none d-md-block" data-aos="fade-left">
+                <img src="images/about-img2.png" width="100%" alt="">
             </div>
 
-            <div class="box">
-                <h3> <i class="fas fa-stethoscope"></i> indoor facilities </h3>
-                <p>patient will be given sevarel facilities with any time doctor services.</p>
-            </div>
-
-        </div>
-
-        <div class="col-md-6 d-none d-md-block" data-aos="fade-left">
-            <img src="images/about-img.png" width="100%" alt="">
         </div>
 
     </div>
-
-</div>
 
 </section>
 
@@ -120,158 +120,79 @@
 
 <section class="facility" id="facility">
 
-<div class="container">
+    <div class="container">
 
-<h1 class="heading"><span>'</span> our facilities <span>'</span></h1>
+    <h1 class="heading"><span>'</span> our facilities <span>'</span></h1>
 
-<div class="box-container">
+        <div class="box-container">
 
-    <div class="box" data-aos="zoom-in">
-        <a href="images/img1.jpg" title="our team">
-            <img src="images/img1.jpg" alt="">
-        </a>
+            <div class="box" data-aos="zoom-in">
+                <a href="images/img1.jpg" title="our team">
+                    <img src="images/img1.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="box" data-aos="zoom-in">
+                <a href="images/img2.jpg" title="our lab">
+                    <img src="images/img2.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="box" data-aos="zoom-in">
+                <a href="images/img3.jpg" title="emergency rooms">
+                    <img src="images/img3.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="box" data-aos="zoom-in">
+                <a href="images/img4.jpg" title="expert doctors">
+                    <img src="images/img4.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="box" data-aos="zoom-in">
+                <a href="images/img5.png" title="expert nurse">
+                    <img src="images/img5.png" alt="">
+                </a>
+            </div>
+
+            <div class="box" data-aos="zoom-in">
+                <a href="images/img6.jpg" title=" rooms">
+                    <img src="images/img6.jpg" alt="">
+                </a>
+            </div>
+
+            <!--    
+            <div class="box" data-aos="zoom-in">
+                <a href="images/img7.jpg" title="expert doctors">
+                    <img src="images/img7.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="box" data-aos="zoom-in">
+                <a href="images/img8.jpg" title="emergency rooms">
+                    <img src="images/img8.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="box" data-aos="zoom-in">
+                <a href="images/img9.jpg" title="enough beds">
+                    <img src="images/img9.jpg" alt="">
+                </a>
+            </div>
+            -->
+
+        </div>
+
     </div>
-
-    <div class="box" data-aos="zoom-in">
-        <a href="images/img2.jpg" title="our lab">
-            <img src="images/img2.jpg" alt="">
-        </a>
-    </div>
-
-    <div class="box" data-aos="zoom-in">
-        <a href="images/img3.jpg" title="emergency rooms">
-            <img src="images/img3.jpg" alt="">
-        </a>
-    </div>
-
-    <div class="box" data-aos="zoom-in">
-        <a href="images/img4.jpg" title="expert doctors">
-            <img src="images/img4.jpg" alt="">
-        </a>
-    </div>
-
-    <div class="box" data-aos="zoom-in">
-        <a href="images/img5.png" title="expert nurse">
-            <img src="images/img5.png" alt="">
-        </a>
-    </div>
-
-    <div class="box" data-aos="zoom-in">
-        <a href="images/img6.jpg" title=" rooms">
-            <img src="images/img6.jpg" alt="">
-        </a>
-    </div>
-
-    <!--    
-    <div class="box" data-aos="zoom-in">
-        <a href="images/img7.jpg" title="expert doctors">
-            <img src="images/img7.jpg" alt="">
-        </a>
-    </div>
-
-    <div class="box" data-aos="zoom-in">
-        <a href="images/img8.jpg" title="emergency rooms">
-            <img src="images/img8.jpg" alt="">
-        </a>
-    </div>
-
-    <div class="box" data-aos="zoom-in">
-        <a href="images/img9.jpg" title="enough beds">
-            <img src="images/img9.jpg" alt="">
-        </a>
-    </div>
--->
-
-</div>
-
-</div>
 
 </section>
 
 <!-- facility section ends -->
 
-<!-- review section starts  
+<!-- appointment section starts  -->
 
-<section class="review" id="review">
-
-    <div class="container">
-
-        <h1 class="heading"><span>'</span> people's review <span>'</span></h1>
-
-        <div class="box-container">
-
-            <div class="box" data-aos="fade-right">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur accusantium error numquam dolore atque. Atque totam ad sint ducimus! Maxime!</p>
-                <h3>someone's name</h3>
-                <span>jan 5, 2021</span>
-                <img src="images/pic1.png" alt="">
-            </div>
-
-            <div class="box" data-aos="fade-up">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur accusantium error numquam dolore atque. Atque totam ad sint ducimus! Maxime!</p>
-                <h3>someone's name</h3>
-                <span>jan 7, 2021</span>
-                <img src="images/pic2.png" alt="">
-            </div>
-
-            <div class="box" data-aos="fade-left">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur accusantium error numquam dolore atque. Atque totam ad sint ducimus! Maxime!</p>
-                <h3>someone's name</h3>
-                <span>jan 10, 2021</span>
-                <img src="images/pic3.png" alt="">
-            </div>
-
-        </div>
-
-    </div>
-
-</section> -->
-
-<!-- review section ends  -->
-
-<!-- counter section starts  
-
-<section class="counter">
-
-    <div class="container">
-
-        <div class="box-container">
-
-            <div class="box" data-aos="fade-up">
-                <i class="fas fa-hospital"></i>
-                <span>120+</span>
-                <h3>Hospitals</h3>
-            </div>
-
-            <div class="box" data-aos="fade-up">
-                <i class="fas fa-users"></i>
-                <span>100+</span>
-                <h3>staff</h3>
-            </div>
-
-            <div class="box" data-aos="fade-up">
-                <i class="fas fa-smile"></i>
-                <span>1200+</span>
-                <h3>happy patients</h3>
-            </div>
-
-            <div class="box" data-aos="fade-up">
-                <i class="fas fa-procedures"></i>
-                <span>130+</span>
-                <h3>bed facility</h3>
-            </div>
-
-        </div>
-
-    </div>
-
-</section> -->
-
-<!-- counter section ends -->
-
-<!-- contact section starts  -->
-
-<section class="contact" id="contact">
+<!-- <section class="contact" id="contact">
 
     <div class="container min-vh-100">
 
@@ -311,57 +232,10 @@
 
     </div>
 
-</section>
-
-<!-- contact section ends -->
-
-<!-- post section starts  
-
-<section class="post" id="post">
-
-    <div class="container min-vh-100">
-
-        <h1 class="heading"><span>'</span> out posts <span>'</span></h1>
-
-        <div class="box-container">
-
-            <div class="box" data-aos="fade-right">
-                <img src="images/img2.jpg" alt="">
-                <div class="content">
-                    <span>jan 5, 2021</span>
-                    <a href="#"><h3>post title goes here</h3></a>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ex porro libero at veniam molestias facere quo necessitatibus ipsum ad?</p>
-                    <a href="#"><button class="button">learn more</button></a>
-                </div>
-            </div>
-
-            <div class="box" data-aos="fade-up">
-                <img src="images/img4.jpg" alt="">
-                <div class="content">
-                    <span>jan 5, 2021</span>
-                    <a href="#"><h3>post title goes here</h3></a>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ex porro libero at veniam molestias facere quo necessitatibus ipsum ad?</p>
-                    <a href="#"><button class="button">learn more</button></a>
-                </div>
-            </div>
-
-            <div class="box" data-aos="fade-left">
-                <img src="images/img5.jpg" alt="">
-                <div class="content">
-                    <span>jan 5, 2021</span>
-                    <a href="#"><h3>post title goes here</h3></a>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ex porro libero at veniam molestias facere quo necessitatibus ipsum ad?</p>
-                    <a href="#"><button class="button">learn more</button></a>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
 </section> -->
 
-<!-- post section ends -->
+<!-- appointment section ends -->
+
 
 <!-- footer section starts  -->
 
@@ -377,9 +251,9 @@
             </div>
 
             <div class="col-md-4 text-center" data-aos="fade-up">
-                <h3>links</h3>
-                <a href="#">home</a>
-                <a href="#">about</a>
+                <h3>Stuff's login</h3>
+                <a href="{{url('/login')}}">Admin</a>
+                <a href="#">Doctor</a>
                 <a href="#">facility</a>
                 <a href="#">appointment</a>
             </div>
@@ -396,8 +270,7 @@
 
     </div>
 
-    <!-- <h1 class="credit text-center mx-auto"><span>LifeSupport</span> | all rights reserved.</h1>
--->
+    <!-- <h1 class="credit text-center mx-auto"><span>LifeSupport</span> | all rights reserved.</h1>-->
 
 </section>
 
@@ -414,7 +287,6 @@
 
 <!-- custom js link  -->
 <script src="js/index-main.js"></script>
-
 
 <script>
 

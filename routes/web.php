@@ -14,7 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[CustomController::class,'index']);
+Route::get('/login',[CustomController::class,'login']);
+Route::get('/signup',[CustomController::class,'signup']);
 Route::get('/dashboard',[CustomController::class,'dashboard']);
-
+Route::get('/appointment',[CustomController::class,'bookAppointment']);
+Route::get('/history',[CustomController::class,'appointmenthistory']);
+Route::get('/profile',[CustomController::class,'profile']);
+Route::get('/payment',[CustomController::class,'payment']);
 
 
