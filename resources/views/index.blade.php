@@ -36,7 +36,7 @@
                 <li><a href="#home">home</a></li>
                 <li><a href="#about">about</a></li>
                 <li><a href="#facility">facility</a></li>
-                <li><a href="{{url('/login')}}">user login</a></li>
+                <li><a href="{{route('user.login')}}">user login</a></li>
             </ul>
         </nav>
 
@@ -61,7 +61,7 @@
             </div>
 
             <div class="col-md-6 pl-md-5 content" data-aos="fade-left">
-                <h1>Wellcome to <span>LifeSupport</span> Hospital.</h1>
+                <h1>Welcome to <span>LifeSupport</span> Hospital.</h1>
                 <h2><span>stay</span> safe, <span>stay</span> healthy.</h2>
             <!--  <h3>caring for you.</h3>
                 <a href="#"><button class="button">learn more</button></a> -->
@@ -247,22 +247,27 @@
 
             <div class="col-md-4" data-aos="fade-right">
                 <a href="#" class="logo"><span>L</span>ife<span>S</span>upport.</a>
-                <p>Dhaka, Bangladesh. phone: 01423567891</p>
+                <h4 style="color:white; text-transform: none">
+                   Dhaka, Bangladesh. phone: 01423567891 
+                   <br>       
+                   E-mail us on lifesupport@gmail.com
+                </h4>
             </div>
 
             <div class="col-md-4 text-center" data-aos="fade-up">
-                <h3>Stuff's login</h3>
+               <!--  <h3>Stuff's login</h3>
                 <a href="{{url('/login')}}">Admin</a>
-                <a href="#">Doctor</a>
+                <a href="{{url('/employee-login')}}">Doctor</a>
                 <a href="#">facility</a>
-                <a href="#">appointment</a>
-            </div>
+                <a href="#">appointment</a>-->
+            </div> 
 
             <div class="col-md-4 text-center" data-aos="fade-left">
-                <h3>Follow us on </h3>
-                <a href="#">facebook</a>
-                <a href="#">twitter</a>
-                <a href="#">instagram</a>
+            <h3>Stuff's login</h3>
+                <a href="{{route('employee_login')}}">Admin</a>
+                <a href="{{route('employee_login')}}">Doctor</a>
+                <a href="#">facility</a>
+                <a href="#">appointment</a>
                 
             </div>
 

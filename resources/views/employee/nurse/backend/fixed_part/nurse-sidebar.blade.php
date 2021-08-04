@@ -17,21 +17,21 @@
 				<div class="flex-shrink-0">
 					<!-- <img src="https://demo.adminkit.io/img/avatars/avatar-5.jpg" class="avatar img-fluid rounded me-1" alt="User's image" />
 				 -->
-				 <img src="{{url('/images/Users.jpg')}}" class="avatar img-fluid rounded me-1" alt="User's image" />
+				 <img src="{{url('/images/nurse-profile.jpg')}}" class="avatar img-fluid rounded me-1" alt="User's image" />
 				</div>
 				<div class="flex-grow-1 ps-2">
 					<a class="sidebar-user-title dropdown-toggle" href="#" data-bs-toggle="dropdown">
-						User's Name
+						Nurse's Name
 					</a>
 					<div class="dropdown-menu dropdown-menu-start">
-						<a class="dropdown-item" href="{{url('/profile')}}"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
+						<a class="dropdown-item" href="{{route('nurse.profile')}}"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
 						<!-- <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a> 
 						<div class="dropdown-divider"></div>-->
 						<!-- <a class="dropdown-item" href="pages-settings.html"><i class="align-middle me-1" data-feather="settings"></i> Settings &
 							Privacy</a>
 						<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a> -->
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="{{url('/')}}">Log out</a>
+						<a class="dropdown-item" href="{{route('index')}}">Log out</a>
 					</div>
 				</div>
 			</div>
@@ -43,42 +43,41 @@
 			</li>
 			
 			<li class="sidebar-item">
-				<a class="sidebar-link" href="{{route('user.dashboard')}}">
+				<a class="sidebar-link" href="{{route('nurse.dashboard')}}">
 					<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
 				</a>
 			</li>
 
 			<li class="sidebar-item">
-				<a href="#auth" data-bs-toggle="collapse" class="sidebar-link collapsed">
-					<i class="align-middle" data-feather="layout"></i> <span class="align-middle">Appointment</span>
-				</a>
-				<ul id="auth" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
-					<li class="sidebar-item"><a class="sidebar-link" href="{{route('user.appointment_book')}}">Book Appointment</a></li>
-					<li class="sidebar-item"><a class="sidebar-link" href="{{route('user.appointment_history')}}">Appointment History</a></li>
-					<!-- <li class="sidebar-item"><a class="sidebar-link" href="pages-reset-password.html">Reset Password </a></li>
-					<li class="sidebar-item"><a class="sidebar-link" href="pages-404.html">404 Page </a></li>
-					<li class="sidebar-item"><a class="sidebar-link" href="pages-500.html">500 Page </a></li> -->
-				</ul>
-			</li>
-
-			<li class="sidebar-item">
-				<a class="sidebar-link" href="{{route('user.profile')}}">
+				<a class="sidebar-link" href="{{route('nurse.profile')}}">
 					<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
 				</a>
 			</li>
 
 			<li class="sidebar-item">
-				<a class="sidebar-link" href="{{route('user.payment')}}">
-					<i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Payment status</span>
-				</a>
-			</li>
-			<!-- 			
-			<li class="sidebar-item">
-				<a class="sidebar-link" href="pages-tasks.html">
-					<i class="align-middle" data-feather="list"></i> <span class="align-middle">Tasks</span>
+				<a class="sidebar-link" href="{{route('nurse.otlist')}}">
+					<i class="align-middle" data-feather="list"></i><span class="align-middle">OT list</span>
 				</a>
 			</li>
 
+			<li class="sidebar-item">
+				<a class="sidebar-link" href="{{route('nurse.bedinfo')}}">
+					<i class="align-middle" data-feather="list"></i><span class="align-middle">Bed information</span>
+				</a>
+			</li>
+
+			<li class="sidebar-item">
+				<a href="#ot" data-bs-toggle="collapse" class="sidebar-link collapsed">
+					<i class="align-middle" data-feather="users"></i> <span class="align-middle">Admit</span>
+				</a>
+				<ul id="ot" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+					<li class="sidebar-item"><a class="sidebar-link" href="{{route('nurse.admit')}}">Admit a patient</a></li>
+					<li class="sidebar-item"><a class="sidebar-link" href="{{route('nurse.admited_patient_list')}}">Admited patients</a></li>
+					
+				</ul>
+			</li>
+
+			<!-- 
 			<li class="sidebar-item">
 				<a class="sidebar-link" href="calendar.html">
 					<i class="align-middle" data-feather="calendar"></i> <span class="align-middle">Calendar</span>

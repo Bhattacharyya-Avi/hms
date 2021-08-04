@@ -17,14 +17,14 @@
 				<div class="flex-shrink-0">
 					<!-- <img src="https://demo.adminkit.io/img/avatars/avatar-5.jpg" class="avatar img-fluid rounded me-1" alt="User's image" />
 				 -->
-				 <img src="{{url('/images/Users.jpg')}}" class="avatar img-fluid rounded me-1" alt="User's image" />
+				 <img src="{{url('/images/doctor_profile.png')}}" class="avatar img-fluid rounded me-1" alt="User's image" />
 				</div>
 				<div class="flex-grow-1 ps-2">
 					<a class="sidebar-user-title dropdown-toggle" href="#" data-bs-toggle="dropdown">
-						User's Name
+						Doctor's Name
 					</a>
 					<div class="dropdown-menu dropdown-menu-start">
-						<a class="dropdown-item" href="{{url('/profile')}}"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
+						<a class="dropdown-item" href="{{url('/doctor-profile')}}"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
 						<!-- <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a> 
 						<div class="dropdown-divider"></div>-->
 						<!-- <a class="dropdown-item" href="pages-settings.html"><i class="align-middle me-1" data-feather="settings"></i> Settings &
@@ -43,42 +43,35 @@
 			</li>
 			
 			<li class="sidebar-item">
-				<a class="sidebar-link" href="{{route('user.dashboard')}}">
+				<a class="sidebar-link" href="{{route('doctor.dashboard')}}">
 					<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
 				</a>
 			</li>
 
 			<li class="sidebar-item">
-				<a href="#auth" data-bs-toggle="collapse" class="sidebar-link collapsed">
-					<i class="align-middle" data-feather="layout"></i> <span class="align-middle">Appointment</span>
-				</a>
-				<ul id="auth" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
-					<li class="sidebar-item"><a class="sidebar-link" href="{{route('user.appointment_book')}}">Book Appointment</a></li>
-					<li class="sidebar-item"><a class="sidebar-link" href="{{route('user.appointment_history')}}">Appointment History</a></li>
-					<!-- <li class="sidebar-item"><a class="sidebar-link" href="pages-reset-password.html">Reset Password </a></li>
-					<li class="sidebar-item"><a class="sidebar-link" href="pages-404.html">404 Page </a></li>
-					<li class="sidebar-item"><a class="sidebar-link" href="pages-500.html">500 Page </a></li> -->
-				</ul>
-			</li>
-
-			<li class="sidebar-item">
-				<a class="sidebar-link" href="{{route('user.profile')}}">
+				<a class="sidebar-link" href="{{route('doctor.profile')}}">
 					<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
 				</a>
 			</li>
 
 			<li class="sidebar-item">
-				<a class="sidebar-link" href="{{route('user.payment')}}">
-					<i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Payment status</span>
-				</a>
-			</li>
-			<!-- 			
-			<li class="sidebar-item">
-				<a class="sidebar-link" href="pages-tasks.html">
-					<i class="align-middle" data-feather="list"></i> <span class="align-middle">Tasks</span>
+				<a class="sidebar-link" href="{{route('doctor.appointmentlist')}}">
+					<i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Appointment list</span>
 				</a>
 			</li>
 
+			<li class="sidebar-item">
+				<a href="#ot" data-bs-toggle="collapse" class="sidebar-link collapsed">
+					<i class="align-middle" data-feather="users"></i> <span class="align-middle">Oparation list</span>
+				</a>
+				<ul id="ot" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+					<li class="sidebar-item"><a class="sidebar-link" href="{{route('doctor.otlist')}}">Full OT list</a></li>
+					<li class="sidebar-item"><a class="sidebar-link" href="{{route('doctor.add_ot_list')}}">Add OT schedule</a></li>
+					
+				</ul>
+			</li>
+
+			<!-- 
 			<li class="sidebar-item">
 				<a class="sidebar-link" href="calendar.html">
 					<i class="align-middle" data-feather="calendar"></i> <span class="align-middle">Calendar</span>

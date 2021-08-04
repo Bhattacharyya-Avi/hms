@@ -1,11 +1,11 @@
-@extends('backend.master')
+@extends('employee.nurse.backend.nurse-master')
 
 @section('content')
     <div class="container-fluid p-0">
 
         <div class="row mb-2 mb-xl-3">
             <div class="col-auto d-none d-sm-block">
-                <h3><strong>User/</strong> Dashboard</h3>
+                <h3><strong>Nurse/</strong> Dashboard</h3>
             </div>
 
             <!-- <div class="col-auto ms-auto text-end mt-n1">
@@ -31,9 +31,9 @@
                                             </div>
                                         </div> 
                                     </div> 
-                                    <h3 class="mt-1 mb-3">Appointment booking </h3>
+                                    <h3 class="mt-1 mb-3">My Information </h3>
                                     <div class="mb-0">
-                                        <a href="{{route('user.appointment_book')}}" class="btn btn-primary">Register</a> 
+                                        <a href="{{route('nurse.profile')}}" class="btn btn-primary">View</a> 
                                     </div>
                                 </div>
                             </div>
@@ -46,16 +46,16 @@
 
                                         <div class="col mt-0">
                                             <div class="stat text-primary">
-                                                <i class="align-middle" data-feather="users"></i>
+                                                <i class="material-icons">format_list_bulleted</i>
                                             </div>
                                         </div>
                                     </div> 
-                                    <h3 class="mt-1 mb-3">My profile</h3>
+                                    <h3 class="mt-1 mb-3">OT list</h3>
                                     <div class="mb-0">
-                                    <a href="{{route('user.profile')}}" class="btn btn-primary">View</a>
+                                    <a href="{{route('nurse.otlist')}}" class="btn btn-primary">View</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
                         <div class="col-sm-6">
                             <div class="card">
@@ -68,13 +68,13 @@
 
                                         <div class="col-auto">
                                             <div class="stat text-primary">
-                                                <i class="material-icons">history</i>
+                                                <i class="material-icons">local_hotel</i>
                                             </div>
                                         </div>
                                     </div>
-                                    <h3 class="mt-1 mb-3">Appointment History</h3>
+                                    <h3 class="mt-1 mb-3">Admit patients </h3>
                                     <div class="mb-0">
-                                        <a href="{{route('user.appointment_history')}}" class="btn btn-primary">View</a>
+                                        <a href="{{route('nurse.admit')}}" class="btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </div>
@@ -87,16 +87,16 @@
 
                                         <div class="col-auto">
                                             <div class="stat text-primary">
-                                                <i class="material-icons">payment</i>
+                                                <i class="material-icons">info_outline</i>
                                             </div>
                                         </div>
                                     </div>
-                                    <h3 class="mt-1 mb-3">Payment Status</h3>
+                                    <h3 class="mt-1 mb-3">Bed information</h3>
                                     <div class="mb-0">
-                                    <a href="{{route('user.payment')}}" class="btn btn-primary">View</a>
+                                    <a href="{{route('nurse.bedinfo')}}" class="btn btn-primary">View</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -129,8 +129,7 @@
                     </div>
                 </div>
             </div>
-        </div> 
-
+        </div>
         <!-- <div class="row">
         
         

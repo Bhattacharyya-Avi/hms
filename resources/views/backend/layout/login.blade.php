@@ -53,7 +53,7 @@
 			<img src="{{url('/images/Hello.svg')}}">
 		</div>
 		<div class="login-content">
-			<form action="{{url('/dashboard')}}">
+			<form action="{{route('user.dashboard')}}">
 				<img src="{{url('/images/avatar.svg')}}">
 				<h2 class="title">Welcome</h2>
            		<div class="input-div one">
@@ -98,7 +98,7 @@
 
             	<a href="#">Forgot Password?</a>
             	<input type="submit" class="btn" value="Login" >
-				<a href="{{url('/signup')}}">New here? Create an account.</a>
+				<a href="{{route('user.signup')}}">New here? Create an account.</a>
             </form>
         </div>
     </div>
