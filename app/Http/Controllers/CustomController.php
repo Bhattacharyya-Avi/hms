@@ -51,6 +51,7 @@ class CustomController extends Controller
             'phone_no'=>$appointmentbook->phone_no,
             'email'=>$appointmentbook->email,
             'doctorname'=>$appointmentbook->doctorname,
+            'appointmentfee'=>$appointmentbook->appointmentfee,
             'date'=>$appointmentbook->date,
             'time'=>$appointmentbook->time
         ]);

@@ -9,10 +9,10 @@
 <div class="row">
   <div class="col-12 col-xl-12">
     <div class="card">
-      <div class="card-header">
+      <!-- <div class="card-header">
         <h5 class="card-title">Update Information</h5>
         <h6 class="card-subtitle text-muted">Provide your information</h6>
-      </div>
+      </div> -->
       <div class="card-body">
         <form>
           <div class="mb-3">
@@ -51,17 +51,12 @@
             </div>
           </div>
 
-          <div class="mb-3">
+          <!-- <div class="mb-3">
             <label class="form-label">Email address</label>
             <input type="email" class="form-control" placeholder="Email">
-          </div>
+          </div> -->
 
-          <div class="mb-3">
-            <label class="form-check m-0">
-              <input type="checkbox" class="form-check-input">
-              <span class="form-check-label">I Provider correct information</span>
-            </label>
-          </div>
+          
           <button type="submit" class="btn btn-primary">Update</button>
         </form>
       </div>

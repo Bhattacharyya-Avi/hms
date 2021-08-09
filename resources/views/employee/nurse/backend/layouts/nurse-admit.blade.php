@@ -18,83 +18,97 @@
         <div class="card">
         
         <div class="card-body">
-            <form>
-            <div class="mb-3">
-                <label class="form-label">patient's name</label>
-                <input type="text" placeholder="Enter Full name" class="form-control">
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">Doctor's name</label>
-                <div class="input-group mb-3">
-                <select class="form-select flex-grow-1">
-                    <option>click to select</option>
-                    <option>One</option>
-                    <option>Two</option>
-                    <option>Three</option>
-                </select>
+            <form action="{{route('nurse.admit_patient')}}" method="post">
+                @csrf
+                <div class="mb-3">
+                    <label class="form-label">patient's name</label>
+                    <input type="text" placeholder="Enter Full name" class="form-control" name="patient_name">
                 </div>
-            </div>
 
-            <div class="mb-3">
-                <label class="form-label">Patient's phone no</label>
-                <input type="email" class="form-control" placeholder="Email">
-            </div>
+                <div class="mb-3">
+                    <label class="form-label">Doctor's name</label>
+                    <div class="input-group mb-3">
+                    <select class="form-select flex-grow-1" name="doctor_name">
+                        <option>click to select</option>
+                        <option>One</option>
+                        <option>Two</option>
+                        <option>Three</option>
+                    </select>
+                    </div>
+                </div>
 
-            <div class="mb-3">
-                <label class="form-label">Patient's address</label>
-                <textarea class="form-control" placeholder="Address" rows="1"></textarea>
-            </div>
+                <div class="mb-3">
+                    <label class="form-label">Patient's Email</label>
+                    <input type="email" class="form-control" placeholder="Email" name="patient_email">
+                </div>
 
-            <div class="mb-3">
-                <label class="form-label">Additional notes</label>
-                <textarea class="form-control" placeholder="Address" rows="2"></textarea>
-            </div>
+                <div class="mb-3">
+                    <label class="form-label">patient's Phone number</label>
+                    <input type="number" placeholder="Enter Full name" class="form-control" name="patient_phone">
+                </div>
 
-            <div class="mb-3">
-                <div class="">
-                <form action="" >
+                <div class="mb-3">
+                    <label class="form-label">Patient's address</label>
+                    <textarea class="form-control" placeholder="Address" rows="1" name="patient_address"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Bed type</label>
+                    <div class="input-group mb-3">
+                    <select class="form-select flex-grow-1" name="bed_type">
+                        <option>click to select</option>
+                        <option>General</option>
+                        <option>ICU</option>
+                        <option>Caben</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Bed Number</label>
+                    <div class="input-group mb-3">
+                    <select class="form-select flex-grow-1" name="bed_number">
+                        <option>click to select</option>
+                        <option>101</option>
+                        <option>102</option>
+                        <option>103</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Additional notes</label>
+                    <textarea class="form-control" placeholder="Address" rows="2" name="add_note"></textarea>
+                </div>
+
+                <div class="mb-3">
                     <div class="form-group ">
-                    <label class="form-label">Admission date</label>
-                    <div class="mb-3">
-                        <div class="input-group">
-                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+                        <label class="form-label">Admission date</label>
+                        <div class="mb-3">
+                            <div class="input-group">
+                            <input class="form-control" id="date" name="admission_date" placeholder="MM/DD/YYYY" type="text"/>
+                            </div>
                         </div>
                     </div>
-                    </div>
-                </form>
                 </div>
-            </div>
 
-            <div class="mb-3">
-                <div class="">
-                <form action="" >
+                <div class="mb-3">
                     <div class="form-group ">
-                    <label class="form-label">Release date</label>
-                    <div class="mb-3">
-                        <div class="input-group">
-                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+                        <label class="form-label">Release date</label>
+                        <div class="mb-3">
+                            <div class="input-group">
+                            <input class="form-control" id="date" name="release_date" placeholder="MM/DD/YYYY" type="text"/>
+                            </div>
                         </div>
                     </div>
-                    </div>
-                </form>
                 </div>
-            </div>
 
-            <div class="mb-3">
-                <label class="form-label">Admission time</label>
-                <input type="time" class="form-control">
-            </div>
-
-            
-
-            <!-- <div class="mb-3">
-                <label class="form-check m-0">
-                <input type="checkbox" class="form-check-input">
-                <span class="form-check-label">I want to book</span>
-                </label>
-            </div> -->
-            <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="mb-3">
+                    <label class="form-label">Admission time</label>
+                    <input type="time" class="form-control" name="admission_time">
+                </div>
+                <input type="submit" class="btn btn-primary" value="Submit" >
+            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
             </form>
         </div>
         </div>
@@ -111,9 +125,24 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
+    <!-- script for admission_date -->
     <script>
         $(document).ready(function(){
-            var date_input=$('input[name="date"]'); //our date input has the name "date"
+            var date_input=$('input[name="admission_date"]'); //our date input has the name "date"
+            var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+            date_input.datepicker({
+                format: 'mm/dd/yyyy',
+                container: container,
+                todayHighlight: true,
+                autoclose: true,
+            })
+        })
+    </script>
+
+        <!-- script for release_date -->
+    <script>
+        $(document).ready(function(){
+            var date_input=$('input[name="release_date"]'); //our date input has the name "date"
             var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
             date_input.datepicker({
                 format: 'mm/dd/yyyy',

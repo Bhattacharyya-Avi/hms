@@ -49,13 +49,23 @@ Route::get('/nurse-dashboard',[NurseController::class,'dashboard'])->name('nurse
 Route::get('/nurse-profile',[NurseController::class,'profile'])->name('nurse.profile');
 Route::get('/nurse-otlist',[NurseController::class,'otlist'])->name('nurse.otlist');
 Route::get('/nurse-admit_patient',[NurseController::class,'admitpatient'])->name('nurse.admit');
+Route::post('/nurse/admit_patient',[NurseController::class,'admit_patient'])->name('nurse.admit_patient');
 Route::get('/nurse-bedinfo',[NurseController::class,'bedinformation'])->name('nurse.bedinfo');
 Route::get('/nurse-admited_patient',[NurseController::class,'admitedpatient'])->name('nurse.admited_patient_list');
 
 // accountent
-Route::get('/accountant',[AccountantController::class,'test'])->name('nurse.dashboard');
-Route::get('/paymentlistin',[AccountantController::class,'accept_indor_payment'])->name('nurse.dashboard');
-Route::get('/paymentlistout',[AccountantController::class,'accept_outdor_payment'])->name('nurse.dashboard');
+Route::get('/accountant/dashboard',[AccountantController::class,'dashboard'])->name('accountant.dashboard');
+Route::get('/accountant/profile',[AccountantController::class,'profile'])->name('accountant.profile');
+Route::get('/paymentlistin',[AccountantController::class,'accept_indor_payment'])->name('accountant.indoorpay');
+Route::get('/paymentlistout',[AccountantController::class,'accept_outdor_payment'])->name('accountant.outdoorpay');
 
 //Admin
-Route::get('/admin',[AdminController::class,'testadmin'])->name('admin.dashboard');
+Route::get('/admin/dashboard',[AdminController::class,'dashboard'])->name('admin.dashboard');
+Route::get('/admin/employee-list',[AdminController::class,'stafflist'])->name('admin.stafflist');
+Route::post('/admin/add-staff',[AdminController::class,'add_staff'])->name('admin.add_staff');
+Route::get('/admin/appointmentlist',[AdminController::class,'appointmentlist'])->name('admin.appointmentlist');
+Route::get('/admin/OTlist',[AdminController::class,'OTlist'])->name('admin.OTlist');
+Route::get('/admin/payment/indoor',[AdminController::class,'indoorpay'])->name('admin.indoor');
+Route::get('/admin/payment/outdoor',[AdminController::class,'outdoorpay'])->name('admin.outdoor');
+Route::get('/admin/information/bed',[AdminController::class,'bedinfo'])->name('admin.bedinfo');
+Route::post('/admin/add_bed',[AdminController::class,'addbed'])->name('admin.addbed');

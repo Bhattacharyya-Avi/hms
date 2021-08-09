@@ -19,6 +19,7 @@ class CreateAppointmentsTable extends Migration
             $table->integer('phone_no');
             $table->string('email');
             $table->string('doctorname');
+            $table->integer('appointmentfee');
             $table->string('date');
             $table->string('time');
             $table->timestamps();

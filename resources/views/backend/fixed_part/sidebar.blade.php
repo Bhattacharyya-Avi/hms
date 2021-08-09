@@ -21,7 +21,7 @@
 				</div>
 				<div class="flex-grow-1 ps-2">
 					<a class="sidebar-user-title dropdown-toggle" href="#" data-bs-toggle="dropdown">
-						User's Name
+						User
 					</a>
 					<div class="dropdown-menu dropdown-menu-start">
 						<a class="dropdown-item" href="{{url('/profile')}}"><i class="align-middle me-1" data-feather="user"></i> Profile</a>

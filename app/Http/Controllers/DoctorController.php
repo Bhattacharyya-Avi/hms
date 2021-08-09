@@ -30,6 +30,8 @@ class DoctorController extends Controller
     public function addotlistform(Request $addotform){
         // dd($addotform->all());
         Addot::create([
+            'doctor_name'=>$addotform->doctor_name,
+            'doctor_email'=>$addotform->doctor_email,
             'Patient_name'=>$addotform->Patient_name,
             'time'=>$addotform->time,
             'date'=>$addotform->date

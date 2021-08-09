@@ -224,7 +224,7 @@
 							<a class="nav-icon pe-md-0 dropdown-toggle" href="#" data-bs-toggle="dropdown">
 								<!-- <img src="https://demo.adminkit.io/img/avatars/avatar-5.jpg" class="avatar img-fluid rounded" alt="User's image" />
 							 -->
-							 <img src="{{url('/images/nurse-profile.jpg')}}" class="avatar img-fluid rounded" alt="User's image" />
+							 <img src="{{url('/images/nurse-profile.png')}}" class="avatar img-fluid rounded" alt="User's image" />
 							</a>
 							<div class="dropdown-menu dropdown-menu-end">
 								<a class="dropdown-item" href="{{route('nurse.profile')}}"><i class="align-middle me-1" data-feather="user"></i> Profile</a>

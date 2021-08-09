@@ -36,60 +36,6 @@
                         <td class="d-none d-md-table-cell">June 21, 2020</td>
                         <td>Active</td>
                     </tr>
-                    <tr>
-                        <td>Varun Thakur</td>
-                        <td>3:00pm</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td>Active</td>
-                    </tr>
-                    <tr>
-                        <td>Varun Thakur</td>
-                        <td>3:00pm</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td>Active</td>
-                    </tr>
-                    <tr>
-                        <td>Varun Thakur</td>
-                        <td>3:00pm</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td>Active</td>
-                    </tr>
-                    <tr>
-                        <td>Varun Thakur</td>
-                        <td>3:00pm</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td>Active</td>
-                    </tr>
-                    <tr>
-                        <td>Varun Thakur</td>
-                        <td>3:00pm</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td>Active</td>
-                    </tr>
-                    <tr>
-                        <td>Varun Thakur</td>
-                        <td>3:00pm</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td>Active</td>
-                    </tr>
-                    <tr>
-                        <td>Varun Thakur</td>
-                        <td>3:00pm</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td>Active</td>
-                    </tr>
-                    <tr>
-                        <td>Varun Thakur</td>
-                        <td>3:00pm</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td>Active</td>
-                    </tr>
-                    <tr>
-                        <td>Varun Thakur</td>
-                        <td>3:00pm</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td>Active</td>
-                    </tr>
                 </tbody>
             </table>
         </div>

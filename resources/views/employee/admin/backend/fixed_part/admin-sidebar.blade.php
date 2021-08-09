@@ -21,7 +21,7 @@
 				</div>
 				<div class="flex-grow-1 ps-2">
 					<a class="sidebar-user-title dropdown-toggle" href="#" data-bs-toggle="dropdown">
-						Doctor's Name
+						Admin's Name
 					</a>
 					<div class="dropdown-menu dropdown-menu-start">
 						<a class="dropdown-item" href="{{url('/doctor-profile')}}"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
@@ -43,7 +43,7 @@
 			</li>
 			
 			<li class="sidebar-item">
-				<a class="sidebar-link" href="{{route('doctor.dashboard')}}">
+				<a class="sidebar-link" href="{{route('admin.dashboard')}}">
 					<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
 				</a>
 			</li>
@@ -55,18 +55,36 @@
 			</li>
 
 			<li class="sidebar-item">
-				<a class="sidebar-link" href="{{route('doctor.appointmentlist')}}">
-					<i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Appointment list</span>
+				<a class="sidebar-link" href="{{route('admin.appointmentlist')}}">
+					<i class="material-icons" style="font-size:18px">format_list_bulleted</i> <span class="align-middle">Appointment list</span>
+				</a>
+			</li>
+
+			<li class="sidebar-item">
+				<a class="sidebar-link" href="{{route('admin.OTlist')}}">
+					<i class="material-icons" style="font-size:18px">format_list_bulleted</i> <span class="align-middle">OT list</span>
+				</a>
+			</li>
+
+			<li class="sidebar-item">
+				<a class="sidebar-link" href="{{route('admin.stafflist')}}">
+					<i class="material-icons" style="font-size:18px">format_list_bulleted</i> <span class="align-middle">Employees</span>
+				</a>
+			</li>
+
+			<li class="sidebar-item">
+				<a class="sidebar-link" href="{{route('admin.bedinfo')}}">
+					<i class="material-icons" style="font-size:18px">format_list_bulleted</i> <span class="align-middle">Patient's bed</span>
 				</a>
 			</li>
 
 			<li class="sidebar-item">
 				<a href="#ot" data-bs-toggle="collapse" class="sidebar-link collapsed">
-					<i class="align-middle" data-feather="users"></i> <span class="align-middle">Oparation list</span>
+					<i class="material-icons" style="font-size:18px">attach_money</i> <span class="align-middle">Payment list</span>
 				</a>
 				<ul id="ot" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
-					<li class="sidebar-item"><a class="sidebar-link" href="{{route('doctor.otlist')}}">Full OT list</a></li>
-					<li class="sidebar-item"><a class="sidebar-link" href="{{route('doctor.add_ot_list')}}">Add OT schedule</a></li>
+					<li class="sidebar-item"><a class="sidebar-link" href="{{route('admin.indoor')}}">Indoor payments</a></li>
+					<li class="sidebar-item"><a class="sidebar-link" href="{{route('admin.outdoor')}}">Outdoor payments</a></li>
 					
 				</ul>
 			</li>

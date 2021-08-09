@@ -34,7 +34,6 @@
         <nav class="nav">
             <ul>
                 <li><a href="#home">home</a></li>
-                <li><a href="#about">about</a></li>
                 <li><a href="#facility">facility</a></li>
                 <li><a href="{{route('user.login')}}">user login</a></li>
             </ul>
@@ -78,7 +77,7 @@
 
 <!-- about section start  -->
 
-<section class="about" id="about">
+<!-- <section class="about" id="about">
 
     <div class="container">
         <h1 class="heading"><span>'</span> About our services <span>'</span></h1>
@@ -112,7 +111,7 @@
 
     </div>
 
-</section>
+</section> -->
 
 <!-- about section ends -->
 
@@ -266,8 +265,8 @@
             <h3>Stuff's login</h3>
                 <a href="{{route('employee_login')}}">Admin</a>
                 <a href="{{route('employee_login')}}">Doctor</a>
-                <a href="#">facility</a>
-                <a href="#">appointment</a>
+                <a href="#">Nurse</a>
+                <a href="#">Accountent</a>
                 
             </div>
 

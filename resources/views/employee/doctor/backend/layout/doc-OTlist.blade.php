@@ -9,13 +9,16 @@
         </div>
 
          <div class="col-auto ms-auto text-end mt-n1">
-            <a href="{{route('doctor.add_ot_list')}}" class="btn btn-light bg-white me-2">Add</a>
+            <a href="{{route('doctor.add_ot_list')}}" class="btn btn-light bg-white me-2">Add a schedule</a>
             
         </div> 
     </div>
     <div class="col-12 col-xl-12">
         <div class="card">
-            
+            <div class="card-header">
+                <input type="text" class="form-control form-control-sm bg-light rounded-2 border-0" style="width: 100px;"
+                    placeholder="Search..">
+            </div>
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -27,86 +30,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Varun Thakur</td>
-                        <td>3:00pm</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td>Active</td>
-                        <td class="table-action">
-                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                            <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Varun Thakur</td>
-                        <td>3:00pm</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td>Active</td>
-                        <td class="table-action">
-                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                            <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Varun Thakur</td>
-                        <td>3:00pm</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td>Active</td>
-                        <td class="table-action">
-                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                            <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Varun Thakur</td>
-                        <td>3:00pm</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td>Active</td>
-                        <td class="table-action">
-                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                            <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Varun Thakur</td>
-                        <td>3:00pm</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td>Active</td>
-                        <td class="table-action">
-                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                            <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Varun Thakur</td>
-                        <td>3:00pm</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td>Active</td>
-                        <td class="table-action">
-                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                            <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Varun Thakur</td>
-                        <td>3:00pm</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td>Active</td>
-                        <td class="table-action">
-                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                            <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Varun Thakur</td>
-                        <td>3:00pm</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td>Active</td>
-                        <td class="table-action">
-                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                            <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                        </td>
-                    </tr>
                     <tr>
                         <td>Varun Thakur</td>
                         <td>3:00pm</td>

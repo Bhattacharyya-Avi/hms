@@ -17,6 +17,16 @@
                     <form action="{{route('doctor.add.ot.form')}}" method="post">
                         @csrf
                         <div class="mb-3">
+                            <label class="form-label">Doctor email</label>
+                            <input type="text" placeholder="Enter Doctor name" class="form-control" name='doctor_name'>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Doctor name</label>
+                            <input type="email" placeholder="Enter email" class="form-control" name='doctor_email'>
+                        </div>
+
+                        <div class="mb-3">
                             <label class="form-label">Patient name</label>
                             <input type="text" placeholder="Enter Full name" class="form-control" name='Patient_name'>
                         </div>
@@ -27,8 +37,6 @@
                         </div>
 
                         <div class="mb-3">
-                            <!-- <div class="">
-                            <form action="" > -->
                                 <div class="form-group ">
                                 <label class="form-label">Date</label>
                                 <div class="mb-3">
@@ -36,8 +44,6 @@
                                     <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
                                     </div>
                                 </div>
-                                <!-- </div>
-                            </form> -->
                             </div>
                         </div>
                             <input type="submit" class="btn btn-primary" value="Submit" >

@@ -3,7 +3,7 @@
 @section('content')
     <div class="row mb-2 mb-xl-3">
         <div class="col-auto d-none d-sm-block">
-            <h3><strong>Nurse/</strong> OT list</h3>
+            <h3><strong>Nurse/</strong> Admited Patients</h3>
         </div>
 
         <!-- <div class="col-auto ms-auto text-end mt-n1">
@@ -18,10 +18,10 @@
                 <thead>
                     <tr>
                         <th style="width:25%;">Patient's name</th>
-                        <th style="width:25%">Bed id</th>
+                        <th style="width:15%">Bed id</th>
                         <th style="width:25%">Admition date</th>
                         <th class="d-none d-md-table-cell" style="width:25%">Release date</th>
-                        
+                        <th class="table-action" style="width:10%">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,38 +30,21 @@
                         <td>101</td>
                         <td class="d-none d-md-table-cell">June 21, 2020</td>
                         <td class="d-none d-md-table-cell">July 21, 2020</td>
+                        <td class="table-action">
+                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
+                            <i class="align-middle" data-feather="trash"></i></a>
+                        </td>
                     </tr>
                     <tr>
                         <td>Varun Thakur</td>
                         <td>101</td>
                         <td class="d-none d-md-table-cell">June 21, 2020</td>
                         <td class="d-none d-md-table-cell">July 21, 2020</td>
+                        <td class="table-action">
+                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
+                            <i class="align-middle" data-feather="trash"></i></a>
+                        </td>
                     </tr>
-                    <tr>
-                        <td>Varun Thakur</td>
-                        <td>101</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td class="d-none d-md-table-cell">July 21, 2020</td>
-                    </tr>
-                    <tr>
-                        <td>Varun Thakur</td>
-                        <td>101</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td class="d-none d-md-table-cell">July 21, 2020</td>
-                    </tr>
-                    <tr>
-                        <td>Varun Thakur</td>
-                        <td>101</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td class="d-none d-md-table-cell">July 21, 2020</td>
-                    </tr>
-                    <tr>
-                        <td>Varun Thakur</td>
-                        <td>101</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td class="d-none d-md-table-cell">July 21, 2020</td>
-                    </tr>
-                    
                 </tbody>
             </table>
         </div>

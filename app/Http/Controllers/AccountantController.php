@@ -6,8 +6,11 @@ use Illuminate\Http\Request;
 
 class AccountantController extends Controller
 {
-    public function test(){
-        return view('employee.accountant.accountant-master');
+    public function dashboard(){
+        return view('employee.accountant.backend.layouts.accountant-dashboard');
+    }
+    public function profile(){
+        return view('employee.accountant.backend.layouts.accountant-profile');
     }
 
     public function accept_indor_payment(){

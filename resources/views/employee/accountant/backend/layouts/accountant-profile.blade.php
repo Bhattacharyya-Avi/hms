@@ -1,21 +1,13 @@
-@extends('employee.doctor.backend.doctor-master')
+@extends('employee.accountant.accountant-master')
 
 @section('content')
-
-  <div class="row mb-2 mb-xl-3">
-            <div class="col-auto d-none d-sm-block">
-                <h3><strong>Doctor/</strong> Profile</h3>
-            </div>
-
-            <!-- <div class="col-auto ms-auto text-end mt-n1">
-                <a href="#" class="btn btn-light bg-white me-2">Invite a Friend</a>
-                <a href="#" class="btn btn-primary">New Project</a>
-            </div> -->
-        </div>
 <div class="row">
   <div class="col-12 col-xl-12">
     <div class="card">
-      
+      <div class="card-header">
+        <h5 class="card-title">Update Information</h5>
+        <h6 class="card-subtitle text-muted">Provide your information</h6>
+      </div>
       <div class="card-body">
         <form>
           <div class="mb-3">
@@ -59,12 +51,12 @@
             <input type="email" class="form-control" placeholder="Email">
           </div>
 
-          <!-- <div class="mb-3">
+          <div class="mb-3">
             <label class="form-check m-0">
               <input type="checkbox" class="form-check-input">
               <span class="form-check-label">I Provider correct information</span>
             </label>
-          </div> -->
+          </div>
           <button type="submit" class="btn btn-primary">Update</button>
         </form>
       </div>

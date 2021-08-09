@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAddotsTable extends Migration
+class CreateStaffsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateAddotsTable extends Migration
      */
     public function up()
     {
-        Schema::create('addots', function (Blueprint $table) {
+        Schema::create('staffs', function (Blueprint $table) {
             $table->id();
-            $table->string('doctor_name',80);
-            $table->string('doctor_email');
-            $table->string('Patient_name', 80);
-            $table->string('time');
-            $table->string('date');
+            $table->string('employee_name',80);
+            $table->string('employee_address');
+            $table->integer('phone_no')->nullable();
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->string('employeetype');
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ class CreateAddotsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('addots');
+        Schema::dropIfExists('staffs');
     }
 }

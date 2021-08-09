@@ -24,7 +24,7 @@
 						Accountant's Name
 					</a>
 					<div class="dropdown-menu dropdown-menu-start">
-						<a class="dropdown-item" href="{{route('nurse.profile')}}"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
+						<a class="dropdown-item" href="{{route('accountant.profile')}}"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
 						<!-- <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a> 
 						<div class="dropdown-divider"></div>-->
 						<!-- <a class="dropdown-item" href="pages-settings.html"><i class="align-middle me-1" data-feather="settings"></i> Settings &
@@ -43,22 +43,22 @@
 			</li>
 			
 			<li class="sidebar-item">
-				<a class="sidebar-link" href="{{route('nurse.dashboard')}}">
+				<a class="sidebar-link" href="{{route('accountant.dashboard')}}">
 					<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
 				</a>
 			</li>
 
 			<li class="sidebar-item">
-				<a class="sidebar-link" href="{{route('nurse.profile')}}">
+				<a class="sidebar-link" href="{{route('accountant.profile')}}">
 					<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
 				</a>
 			</li>
 
-			<li class="sidebar-item">
+			<!-- <li class="sidebar-item">
 				<a class="sidebar-link" href="{{route('nurse.otlist')}}">
 					<i class="align-middle" data-feather="list"></i><span class="align-middle">Payment list</span>
 				</a>
-			</li>
+			</li> -->
 
 			<!-- <li class="sidebar-item">
 				<a class="sidebar-link" href="{{route('nurse.bedinfo')}}">
@@ -71,8 +71,8 @@
 				<i class="material-icons" style="font-size:16px">attach_money</i> <span class="align-middle">Payment</span>
 				</a>
 				<ul id="ot" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
-					<li class="sidebar-item"><a class="sidebar-link" href="{{route('nurse.admit')}}">Indor Payment</a></li>
-					<li class="sidebar-item"><a class="sidebar-link" href="{{route('nurse.admited_patient_list')}}">Outdoor payment</a></li>
+					<li class="sidebar-item"><a class="sidebar-link" href="{{route('accountant.indoorpay')}}">Indor Payment</a></li>
+					<li class="sidebar-item"><a class="sidebar-link" href="{{route('accountant.outdoorpay')}}">Outdoor payment</a></li>
 					
 				</ul>
 			</li>

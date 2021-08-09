@@ -1,14 +1,19 @@
 @extends('backend.master')
 @section('content')
+  <div class="row mb-2 mb-xl-3">
+    <div class="col-auto d-none d-sm-block">
+      <h3><strong>User/</strong> Book An Appointment</h3>
+    </div>
 
+    <!-- <div class="col-auto ms-auto text-end mt-n1">
+        <a href="#" class="btn btn-light bg-white me-2">Invite a Friend</a>
+        <a href="#" class="btn btn-primary">New Project</a>
+    </div> -->
+  </div>
 
   <div class="row">
     <div class="col-12 col-xl-12">
       <div class="card">
-        <div class="card-header">
-          <h5 class="card-title">Book an Appointment</h5>
-          <h6 class="card-subtitle text-muted">Fill-up the form bellow.</h6>
-        </div>
         <div class="card-body">
           <form action="{{route('user.appointment.submit')}}" method="post">
             @csrf
@@ -38,18 +43,22 @@
             </div>
 
             <div class="mb-3">
-              <!-- <div class="">
-                <form action="" > -->
-                  <div class="form-group ">
-                    <label class="form-label">Date</label>
-                    <div class="mb-3">
-                      <div class="input-group">
-                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
-                      </div>
-                    </div>
+              <label class="form-label">Appointment fee</label>
+              <select class="form-select flex-grow-1" name="appointmentfee">
+                <option>click to select</option>
+                <option>300</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <div class="form-group ">
+                <label class="form-label">Date</label>
+                <div class="mb-3">
+                  <div class="input-group">
+                    <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
                   </div>
-                <!-- </form>
-              </div> -->
+                </div>
+              </div>
             </div>
 
             <div class="mb-3">

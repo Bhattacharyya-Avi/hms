@@ -1,11 +1,11 @@
-@extends('employee.doctor.backend.doctor-master')
+@extends('employee.accountant.accountant-master')
 
 @section('content')
     <div class="container-fluid p-0">
 
         <div class="row mb-2 mb-xl-3">
             <div class="col-auto d-none d-sm-block">
-                <h3><strong>Doctor/</strong> Dashboard</h3>
+                <h3><strong>Accountant/</strong> Dashboard</h3>
             </div>
 
             <!-- <div class="col-auto ms-auto text-end mt-n1">
@@ -33,11 +33,11 @@
                                     </div> 
                                     <h3 class="mt-1 mb-3">My Information </h3>
                                     <div class="mb-0">
-                                        <a href="{{route('doctor.profile')}}" class="btn btn-primary">View</a> 
+                                        <a href="{{route('accountant.profile')}}" class="btn btn-primary">View</a> 
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="card">
+                            <div class="card">
                                 <div class="card-body">
                                      <div class="row">
                                        <div class="col-auto">
@@ -50,12 +50,12 @@
                                             </div>
                                         </div>
                                     </div> 
-                                    <h3 class="mt-1 mb-3">My profile</h3>
+                                    <h3 class="mt-1 mb-3">Outdoor payment</h3>
                                     <div class="mb-0">
-                                    <a href="/profile" class="btn btn-primary">View</a>
+                                    <a href="{{route('accountant.outdoorpay')}}" class="btn btn-primary">View</a>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="card">
@@ -72,9 +72,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <h3 class="mt-1 mb-3">Appointments </h3>
+                                    <h3 class="mt-1 mb-3">Indoor Payment </h3>
                                     <div class="mb-0">
-                                        <a href="{{route('doctor.appointmentlist')}}" class="btn btn-primary">View</a>
+                                        <a href="{{route('accountant.indoorpay')}}" class="btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </div>
@@ -98,77 +98,6 @@
                                 </div>
                             </div> -->
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-xxl-3 d-flex order-2 order-xxl-1">
-                <div class="card flex-fill ">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="float-end">
-                                <form class="row g-2">
-                                    <div class="col-auto">
-                                        <!-- <input type="text" class="form-control form-control-sm bg-light rounded-2 border-0" style="width: 100px;"
-                                            placeholder="Search.."> -->
-                                    </div>
-                                </form>
-                            </div>
-                            <h5 class="card-title mb-0">Oparation list</h5>
-                        </div>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th style="width:40%;">Patients's Name</th>
-                                    <th style="width:20%">OT time</th>
-                                    <th class="d-none d-md-table-cell" style="width:20%">OT Date</th>
-                                    <!-- <th>Status</th> -->
-                                    <th class="table-action" style="width:10%">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Vanessa Tucker</td>
-                                    <td>10:00 am</td>
-                                    <td class="d-none d-md-table-cell">June 21, 2020</td>
-                                    <!-- <td>Active</td> -->
-                                    <td class="table-action">
-                                        <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                                        <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>William Harris</td>
-                                    <td>9:14 am</td>
-                                    <td class="d-none d-md-table-cell">May 15, 2020</td>
-                                    <!-- <td>Active</td> -->
-                                    <td class="table-action">
-                                        <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                                        <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sharon Lessman</td>
-                                    <td>7:04 pm</td>
-                                    <td class="d-none d-md-table-cell">September 14, 2020</td>
-                                    <!-- <td>Active</td> -->
-                                    <td class="table-action">
-                                        <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                                        <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Christina Mason</td>
-                                    <td>7:50 am</td>
-                                    <td class="d-none d-md-table-cell">April 2, 2020</td>
-                                    <!-- <td>Active</td> -->
-                                    <td class="table-action">
-                                        <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                                        <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             </div> 
