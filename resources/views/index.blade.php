@@ -34,7 +34,7 @@
         <nav class="nav">
             <ul>
                 <li><a href="#home">home</a></li>
-                <li><a href="#facility">facility</a></li>
+                <!-- <li><a href="#facility">facility</a></li> -->
                 <li><a href="{{route('user.login')}}">user login</a></li>
             </ul>
         </nav>
@@ -117,7 +117,7 @@
 
 <!-- facility section starts  -->
 
-<section class="facility" id="facility">
+<!-- <section class="facility" id="facility">
 
     <div class="container">
 
@@ -160,32 +160,11 @@
                     <img src="images/img6.jpg" alt="">
                 </a>
             </div>
-
-            <!--    
-            <div class="box" data-aos="zoom-in">
-                <a href="images/img7.jpg" title="expert doctors">
-                    <img src="images/img7.jpg" alt="">
-                </a>
-            </div>
-
-            <div class="box" data-aos="zoom-in">
-                <a href="images/img8.jpg" title="emergency rooms">
-                    <img src="images/img8.jpg" alt="">
-                </a>
-            </div>
-
-            <div class="box" data-aos="zoom-in">
-                <a href="images/img9.jpg" title="enough beds">
-                    <img src="images/img9.jpg" alt="">
-                </a>
-            </div>
-            -->
-
         </div>
 
     </div>
 
-</section>
+</section> -->
 
 <!-- facility section ends -->
 

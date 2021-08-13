@@ -35,10 +35,9 @@
             <div class="mb-3">
               <label class="form-label">Select doctor</label>
               <select class="form-select flex-grow-1" name="doctorname">
-                <option>click to select</option>
-                <option>One</option>
-                <option>Two</option>
-                <option>Three</option>
+                @foreach($doctors as $docname)
+                <option value="{{$docname->employee_name}}">{{$docname->employee_name}}</option>
+                @endforeach
               </select>
             </div>
 
@@ -67,12 +66,12 @@
             </div>
 
 
-            <div class="mb-3">
+            <!-- <div class="mb-3">
               <label class="form-check m-0">
                 <input type="checkbox" class="form-check-input">
                 <span class="form-check-label">I want to book</span>
               </label>
-            </div>
+            </div> -->
             <input type="submit" class="btn btn-primary" value="Submit" >
             <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
           </form>

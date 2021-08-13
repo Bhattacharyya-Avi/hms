@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Patient;
 use App\Models\Appointment;
+use App\Models\Staff;
 
 class CustomController extends Controller
 {
@@ -32,7 +33,7 @@ class CustomController extends Controller
                 'confirm_password'=>$openacc->confirm_password
 
             ]);
-            return redirect()->back();
+            return redirect()->route('user.login');
     }
 
     public function dashboard(){
@@ -40,7 +41,8 @@ class CustomController extends Controller
     }
 
     public function bookAppointment(){
-        return view('backend.layout.appointment');
+        $doctors=Staff:: all();
+        return view('backend.layout.appointment',compact('doctors'));
     }
 
     public function submitappointment(Request $appointmentbook){

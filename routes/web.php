@@ -69,3 +69,15 @@ Route::get('/admin/payment/indoor',[AdminController::class,'indoorpay'])->name('
 Route::get('/admin/payment/outdoor',[AdminController::class,'outdoorpay'])->name('admin.outdoor');
 Route::get('/admin/information/bed',[AdminController::class,'bedinfo'])->name('admin.bedinfo');
 Route::post('/admin/add_bed',[AdminController::class,'addbed'])->name('admin.addbed');
+
+
+
+
+
+/*
+things need to do
+want to show only doctors name from Staff module
+in appoitment table it shows id in place of name
+
+
+*/

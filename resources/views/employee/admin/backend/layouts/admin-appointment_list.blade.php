@@ -41,6 +41,8 @@
                 
             </tbody>
         </table>
+        <!-- without this design will be broken -->
+        {{$appointment->links('pagination::bootstrap-4')}}
     </div>
 </div>
 @endsection
