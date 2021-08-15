@@ -28,30 +28,22 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($bedsinfo as $bedinfo)
                     <tr>
-                        <td>101</td>
-                        <td>general</td>
-                        <td class="d-none d-md-table-cell">booked</td>
-                        <td>100</td>
-                        <td>no additional services</td>
+                        <td>{{$bedinfo->bed_number}}</td>
+                        <td>{{$bedinfo->bed_type}}</td>
+                        <td class="d-none d-md-table-cell">{{$bedinfo->bed_status}}</td>
+                        <td>{{$bedinfo->bed_cost}}</td>
+                        <td>{{$bedinfo->bed_description}}</td>
                         <td class="table-action">
                             <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
                             <a href="#"><i class="align-middle" data-feather="trash"></i></a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>101</td>
-                        <td>general</td>
-                        <td class="d-none d-md-table-cell">booked</td>
-                        <td>100</td>
-                        <td>no additional services</td>
-                        <td class="table-action">
-                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                            <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                        </td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
+            {{$bedsinfo->links('pagination::bootstrap-4')}}
         </div>
     </div>
 

@@ -55,12 +55,12 @@
             <input type="email" class="form-control" placeholder="Email">
           </div>
 
-          <div class="mb-3">
+          <!-- <div class="mb-3">
             <label class="form-check m-0">
               <input type="checkbox" class="form-check-input">
               <span class="form-check-label">I Provider correct information</span>
             </label>
-          </div>
+          </div> -->
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>

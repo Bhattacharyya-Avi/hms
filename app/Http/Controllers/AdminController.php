@@ -17,7 +17,7 @@ class AdminController extends Controller
     }
 
     public function stafflist(){
-        $employees=Staff::all();
+        $employees=Staff::paginate(10);
         return view('employee.admin.backend.layouts.admin-staff_list',compact('employees'));
     }
 
@@ -42,7 +42,7 @@ class AdminController extends Controller
     }
 
     public function OTlist(){
-        $otlist = Addot::all();
+        $otlist = Addot::paginate(10);
         // dd($otlist->all());
         return view('employee.admin.backend.layouts.admin-OT_list',compact('otlist'));
     }
@@ -56,7 +56,8 @@ class AdminController extends Controller
     }
 
     public function bedinfo(){
-        return view('employee.admin.backend.layouts.admin-bed');
+        $bedsinfo = Bed::paginate(10);
+        return view('employee.admin.backend.layouts.admin-bed',compact('bedsinfo'));
     }
 
     public function addbed(Request $addbed){
