@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Addot extends Model
 {
     use HasFactory;
-    protected $fillable=['doctor_name','doctor_email','Patient_name','date','time'];
+    // protected $fillable=['doctor_name','doctor_email','Patient_name','date','time'];
+    protected $guarded=[];
 }

@@ -41,7 +41,8 @@ class CustomController extends Controller
     }
 
     public function bookAppointment(){
-        $doctors=Staff:: all();
+        // $doctors=Staff:: all();
+        $doctors=Staff:: where('employeetype','Doctor')->get(); // for only showing the type of doctor
         return view('backend.layout.appointment',compact('doctors'));
     }
 
@@ -52,7 +53,7 @@ class CustomController extends Controller
             'full_name'=>$appointmentbook->full_name,
             'phone_no'=>$appointmentbook->phone_no,
             'email'=>$appointmentbook->email,
-            'doctorname'=>$appointmentbook->doctorname,
+            'staff_id'=>$appointmentbook->doctorname,
             'appointmentfee'=>$appointmentbook->appointmentfee,
             'date'=>$appointmentbook->date,
             'time'=>$appointmentbook->time

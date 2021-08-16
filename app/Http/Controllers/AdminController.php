@@ -35,9 +35,10 @@ class AdminController extends Controller
     }
 
     public function appointmentlist(){
+        
         // $appointment=Appointment::all();
-        $appointment=Appointment::paginate(10);
-        // dd($appointment->all());
+        $appointment=Appointment::with("Staff")->paginate(10);
+        // dd($appointment);
         return view('employee.admin.backend.layouts.admin-appointment_list', compact('appointment'));
     }
 

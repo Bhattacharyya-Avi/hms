@@ -76,7 +76,8 @@ Route::post('/admin/add_bed',[AdminController::class,'addbed'])->name('admin.add
 
 /*
 things need to do
--> want to show only doctors name from Staff module
+-> want to show only doctors name from Staff DB table
+-> replace doctor id with the doctor name   
 
 
 */

@@ -9,5 +9,6 @@ class patient extends Model
 {
     use HasFactory;
 
-    protected $fillable=['name','gender','email','password','confirm_password'];
+    // protected $fillable=['name','gender','email','password','confirm_password'];
+    protected $guarded=[];
 }

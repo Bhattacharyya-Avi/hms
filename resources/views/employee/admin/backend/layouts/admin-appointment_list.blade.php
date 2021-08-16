@@ -29,7 +29,7 @@
                 @foreach($appointment as $appoint)
                 <tr>
                     <td>{{$appoint->full_name}}</td>
-                    <td>{{$appoint->doctorname}}</td>
+                    <td>{{$appoint->Staff->employee_name}}</td>
                     <td>{{$appoint->email}}</td>
                     <td>{{$appoint->time}}</td>
                     <td>{{$appoint->date}}</td>

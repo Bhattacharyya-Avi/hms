@@ -36,7 +36,7 @@
               <label class="form-label">Select doctor</label>
               <select class="form-select flex-grow-1" name="doctorname">
                 @foreach($doctors as $docname)
-                <option value="{{$docname->employee_name}}">{{$docname->employee_name}}</option>
+                <option value="{{$docname->id}}">{{$docname->employee_name}}</option>
                 @endforeach
               </select>
             </div>
