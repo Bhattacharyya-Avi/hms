@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bed;
+use App\Models\Staff;
 use Illuminate\Http\Request;
 use App\Models\Admitpatients;
 
@@ -20,7 +22,10 @@ class NurseController extends Controller
     }
 
     public function admitpatient(){
-        return view('employee.nurse.backend.layouts.nurse-admit');
+        $bedstype=Bed::all();
+        $bedsnum=Bed::all();
+        $doctors=Staff:: where('employeetype','Doctor')->get();
+        return view('employee.nurse.backend.layouts.nurse-admit',compact('bedstype','bedsnum','doctors'));
     }
 
     public function admit_patient(Request $admit){
@@ -42,10 +47,12 @@ class NurseController extends Controller
     }
 
     public function admitedpatient(){
+
         return view('employee.nurse.backend.layouts.nurse-admitedpatients');
     }
 
     public function bedinformation(){
-        return view('employee.nurse.backend.layouts.nurse-bedinfo');
+        $bedsinfo= Bed::all();
+        return view('employee.nurse.backend.layouts.nurse-bedinfo',compact('bedsinfo'));
     }
 }

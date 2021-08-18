@@ -14,7 +14,7 @@
     </div>
     <div class="col-12 col-xl-12">
         <div class="card">
-            
+
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -26,20 +26,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>101</td>
-                        <td>General</td>
-                        <td>100</td>
-                        <td class="d-none d-md-table-cell">No</td>
-                        <td>Booked</td>
-                    </tr>
-                    <tr>
-                        <td>101</td>
-                        <td>ICU</td>
-                        <td>1000</td>
-                        <td class="d-none d-md-table-cell">Yes</td>
-                        <td>empty</td>
-                    </tr>
+                    @foreach($bedsinfo as $bedinfo)
+                        <tr>
+                            <td>{{$bedinfo->bed_number}}</td>
+                            <td>{{$bedinfo->bed_type}}</td>
+                            <td>{{$bedinfo->bed_cost}}</td>
+                            <td class="d-none d-md-table-cell">{{$bedinfo->bed_description}}</td>
+                            <td>{{$bedinfo->bed_status}}</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

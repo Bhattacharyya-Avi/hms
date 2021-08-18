@@ -18,7 +18,7 @@ class CreateBedsTable extends Migration
             $table->string('bed_number')->unique();
             $table->string('bed_type');
             $table->string('bed_status')->default("Avilable");
-            $table->string('bed_description');
+            $table->string('bed_description')->nullable();
             $table->integer('bed_cost');
             $table->timestamps();
         });

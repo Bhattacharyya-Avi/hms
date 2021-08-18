@@ -16,7 +16,7 @@
     <div class="row">
     <div class="col-12 col-xl-12">
         <div class="card">
-        
+
         <div class="card-body">
             <form action="{{route('nurse.admit_patient')}}" method="post">
                 @csrf
@@ -30,9 +30,9 @@
                     <div class="input-group mb-3">
                     <select class="form-select flex-grow-1" name="doctor_name">
                         <option>click to select</option>
-                        <option>One</option>
-                        <option>Two</option>
-                        <option>Three</option>
+                            @foreach($doctors as $doctor)
+                                <option>{{$doctor->employee_name}}</option>
+                            @endforeach
                     </select>
                     </div>
                 </div>
@@ -57,9 +57,9 @@
                     <div class="input-group mb-3">
                     <select class="form-select flex-grow-1" name="bed_type">
                         <option>click to select</option>
-                        <option>General</option>
-                        <option>ICU</option>
-                        <option>Caben</option>
+                        @foreach($bedstype as $bedtype)
+                            <option>{{$bedtype->bed_type}}</option>
+                        @endforeach
                     </select>
                     </div>
                 </div>
@@ -69,9 +69,9 @@
                     <div class="input-group mb-3">
                     <select class="form-select flex-grow-1" name="bed_number">
                         <option>click to select</option>
-                        <option>101</option>
-                        <option>102</option>
-                        <option>103</option>
+                            @foreach($bedsnum as $bednum)
+                                <option>{{$bednum->bed_number}}</option>
+                            @endforeach
                     </select>
                     </div>
                 </div>

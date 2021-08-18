@@ -22,46 +22,30 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th style="width:30%;">Patient's name</th>
-                        <th style="width:25%">OT time</th>
-                        <th class="d-none d-md-table-cell" style="width:25%">OT Date</th>
-                        <th>Status</th>
-                        <th style="width:10%">Action</th>
+                        <th>Patient's name</th>
+                        <th>OT time</th>
+                        <th class="d-none d-md-table-cell" >OT Date</th>
+                        
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($otlists as $otlist)
                     <tr>
-                        <td>Varun Thakur</td>
-                        <td>3:00pm</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td>Active</td>
+                        <td>{{$otlist->doctor_name}}</td>
+                        <td>{{$otlist->time}}</td>
+                        <td class="d-none d-md-table-cell">{{$otlist->date}}</td>
+                        
                         <td class="table-action">
                             <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
                             <a href="#"><i class="align-middle" data-feather="trash"></i></a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Varun Thakur</td>
-                        <td>3:00pm</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td>Active</td>
-                        <td class="table-action">
-                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                            <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Varun Thakur</td>
-                        <td>3:00pm</td>
-                        <td class="d-none d-md-table-cell">June 21, 2020</td>
-                        <td>Active</td>
-                        <td class="table-action">
-                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                            <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                        </td>
-                    </tr>
+                    @endforeach
+                    
                 </tbody>
             </table>
+            {{$otlists->links('pagination::bootstrap-4')}}
         </div>
     </div>
     
