@@ -94,8 +94,6 @@ Route::group(['prefix'=>'/admin'],function (){
 
 /*
 things need to do
--> want to show only doctors name from Staff DB table
--> replace doctor id with the doctor name
 
 
 */

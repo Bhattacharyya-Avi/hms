@@ -22,18 +22,18 @@
 
 </head>
 <body>
-    
+
 <!-- header section starts  -->
 
 <header>
 
     <div class="container">
 
-        <a href="#" class="logo"><span>L</span>ife<span>S</span>upport</a>
+        <a href="{{route('index')}}" class="logo"><span>L</span>ife<span>S</span>upport</a>
 
         <nav class="nav">
             <ul>
-                <li><a href="#home">home</a></li>
+{{--                <li><a href="#home">home</a></li>--}}
                 <!-- <li><a href="#facility">facility</a></li> -->
                 <li><a href="{{route('user.login')}}">user login</a></li>
             </ul>
@@ -226,8 +226,8 @@
             <div class="col-md-4" data-aos="fade-right">
                 <a href="#" class="logo"><span>L</span>ife<span>S</span>upport.</a>
                 <h4 style="color:white; text-transform: none">
-                   Dhaka, Bangladesh. phone: 01423567891 
-                   <br>       
+                   Dhaka, Bangladesh. phone: 01423567891
+                   <br>
                    E-mail us on lifesupport@gmail.com
                 </h4>
             </div>
@@ -238,7 +238,7 @@
                 <a href="{{url('/employee-login')}}">Doctor</a>
                 <a href="#">facility</a>
                 <a href="#">appointment</a>-->
-            </div> 
+            </div>
 
             <div class="col-md-4 text-center" data-aos="fade-left">
             <h3>Stuff's login</h3>
@@ -246,7 +246,7 @@
                 <a href="{{route('employee_login')}}">Doctor</a>
                 <a href="#">Nurse</a>
                 <a href="#">Accountent</a>
-                
+
             </div>
 
         </div>

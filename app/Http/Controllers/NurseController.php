@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Addot;
 use App\Models\Bed;
 use App\Models\Staff;
 use Illuminate\Http\Request;
@@ -18,7 +19,8 @@ class NurseController extends Controller
     }
 
     public function otlist(){
-        return view('employee.nurse.backend.layouts.nurse-otlist');
+        $ots=Addot::paginate(10);
+        return view('employee.nurse.backend.layouts.nurse-otlist',compact('ots'));
     }
 
     public function admitpatient(){
@@ -47,8 +49,9 @@ class NurseController extends Controller
     }
 
     public function admitedpatient(){
+        $details=Admitpatients::paginate(10);
 
-        return view('employee.nurse.backend.layouts.nurse-admitedpatients');
+        return view('employee.nurse.backend.layouts.nurse-admitedpatients',compact('details'));
     }
 
     public function bedinformation(){
