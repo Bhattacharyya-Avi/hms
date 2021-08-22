@@ -60,10 +60,18 @@
               </div>
             </div>
 
-            <div class="mb-3">
-              <label class="form-label">Choose your time</label>
-              <input type="time" class="form-control" name="time">
-            </div>
+              <div class="mb-3">
+                  <label class="form-label">Select Time</label>
+                  <select class="form-select flex-grow-1" name="time">
+                      @foreach($slots as $slot)
+                          <option value="{{$slot->id}}">Slot {{$slot->slot_start}} - {{$slot->slot_end}}</option>
+                      @endforeach
+                  </select>
+              </div>
+{{--            <div class="mb-3">--}}
+{{--              <label class="form-label">Choose your time</label>--}}
+{{--              <input type="time" class="form-control" name="time">--}}
+{{--            </div>--}}
 
 
             <!-- <div class="mb-3">

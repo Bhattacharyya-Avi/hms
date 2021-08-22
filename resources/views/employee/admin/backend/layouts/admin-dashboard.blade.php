@@ -122,7 +122,7 @@
                                     </div> 
                                     <h3 class="mt-1 mb-3">OT list </h3>
                                     <div class="mb-0">
-                                        <a href="{{route('user.appointment_book')}}" class="btn btn-primary">Register</a> 
+                                        <a href="{{route('user.appointment_book')}}" class="btn btn-primary">view</a> 
                                     </div>
                                 </div>
                             </div>
@@ -135,13 +135,13 @@
 
                                         <div class="col mt-0">
                                             <div class="stat text-primary">
-                                                <i class="align-middle" data-feather="users"></i>
+                                            <i class="material-icons" style="font-size:18px">av_timer</i>
                                             </div>
                                         </div>
                                     </div> 
-                                    <h3 class="mt-1 mb-3">unknown button</h3>
+                                    <h3 class="mt-1 mb-3">Slots</h3>
                                     <div class="mb-0">
-                                    <a href="#" class="btn btn-primary">View</a>
+                                    <a href="{{route('admin.slotlist')}}" class="btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </div>

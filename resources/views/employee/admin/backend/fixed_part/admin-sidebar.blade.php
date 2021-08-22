@@ -11,7 +11,7 @@
 				<path d="M20 16L12 20L4 16"></path>
 			</svg>
 		</a>
-				
+
 		<div class="sidebar-user">
 			<div class="d-flex justify-content-center">
 				<div class="flex-shrink-0">
@@ -25,7 +25,7 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-start">
 						<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
-						<!-- <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a> 
+						<!-- <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
 						<div class="dropdown-divider"></div>-->
 						<!-- <a class="dropdown-item" href="pages-settings.html"><i class="align-middle me-1" data-feather="settings"></i> Settings &
 							Privacy</a>
@@ -41,18 +41,24 @@
 			<li class="sidebar-header">
 				Pages
 			</li>
-			
+
 			<li class="sidebar-item">
 				<a class="sidebar-link" href="{{route('admin.dashboard')}}">
 					<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
 				</a>
 			</li>
 
-			<li class="sidebar-item">
-				<a class="sidebar-link" href="#">
-					<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
-				</a>
-			</li>
+{{--			<li class="sidebar-item">--}}
+{{--				<a class="sidebar-link" href="#">--}}
+{{--					<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>--}}
+{{--				</a>--}}
+{{--			</li>--}}
+
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="{{route('admin.slotlist')}}">
+                    <i class="material-icons" style="font-size:18px">av_timer</i> <span class="align-middle">Slots</span>
+                </a>
+            </li>
 
 			<li class="sidebar-item">
 				<a class="sidebar-link" href="{{route('admin.appointmentlist')}}">
@@ -68,13 +74,13 @@
 
 			<li class="sidebar-item">
 				<a class="sidebar-link" href="{{route('admin.stafflist')}}">
-					<i class="material-icons" style="font-size:18px">format_list_bulleted</i> <span class="align-middle">Employees</span>
+                    <i class="material-icons" style="font-size:18px">person_add</i> <span class="align-middle">Employees</span>
 				</a>
 			</li>
 
 			<li class="sidebar-item">
 				<a class="sidebar-link" href="{{route('admin.bedinfo')}}">
-					<i class="material-icons" style="font-size:18px">format_list_bulleted</i> <span class="align-middle">Patient's bed</span>
+                    <i class="material-icons" style="font-size:18px">airline_seat_individual_suite</i> <span class="align-middle">Patient's bed</span>
 				</a>
 			</li>
 
@@ -85,11 +91,11 @@
 				<ul id="ot" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
 					<li class="sidebar-item"><a class="sidebar-link" href="{{route('admin.indoor')}}">Indoor payments</a></li>
 					<li class="sidebar-item"><a class="sidebar-link" href="{{route('admin.outdoor')}}">Outdoor payments</a></li>
-					
+
 				</ul>
 			</li>
 
-			<!-- 
+			<!--
 			<li class="sidebar-item">
 				<a class="sidebar-link" href="calendar.html">
 					<i class="align-middle" data-feather="calendar"></i> <span class="align-middle">Calendar</span>

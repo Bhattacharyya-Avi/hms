@@ -38,8 +38,8 @@ class DoctorController extends Controller
             'time'=>$addotform->time,
             'date'=>$addotform->date
         ]);
-        return redirect()->back();
-        
+        return redirect()->route('doctor.add_ot_list');
+
     }
-    
+
 }

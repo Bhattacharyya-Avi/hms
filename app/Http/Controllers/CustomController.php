@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Slot;
 use Illuminate\Http\Request;
 use App\Models\Patient;
 use App\Models\Appointment;
@@ -21,7 +22,7 @@ class CustomController extends Controller
         return view('backend.layout.signup');
     }
 
-    public function openaccount(Request $openacc){ 
+    public function openaccount(Request $openacc){
             //dd($openacc->all());
             Patient::create([
                 'name'=>$openacc->full_name,
@@ -43,7 +44,8 @@ class CustomController extends Controller
     public function bookAppointment(){
         // $doctors=Staff:: all();
         $doctors=Staff:: where('employeetype','Doctor')->get(); // for only showing the type of doctor
-        return view('backend.layout.appointment',compact('doctors'));
+        $slots=Slot::all();
+        return view('backend.layout.appointment',compact('doctors','slots'));
     }
 
     public function submitappointment(Request $appointmentbook){

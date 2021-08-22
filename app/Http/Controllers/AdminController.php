@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Slot;
 use Illuminate\Http\Request;
 use App\Models\Staff;
 use App\Models\Bed;
@@ -35,9 +36,10 @@ class AdminController extends Controller
     }
 
     public function appointmentlist(){
-        
+
         // $appointment=Appointment::all();
-        $appointment=Appointment::with("Staff")->paginate(10);
+        $appointment=Appointment::with("Staff","Slot")->paginate(10);
+
         // dd($appointment);
         return view('employee.admin.backend.layouts.admin-appointment_list', compact('appointment'));
     }
@@ -72,5 +74,19 @@ class AdminController extends Controller
         ]);
         return redirect()->back();
     }
-    
+
+    public function slotlist(){
+        $slots=Slot::paginate(10);
+        return view('employee.admin.backend.layouts.admin-slot',compact('slots'));
+    }
+
+    public function slotadd(Request $slots){
+        Slot::create([
+            'slot_name'=>$slots->slot_name,
+            'slot_start'=>$slots->start_time,
+            'slot_end'=>$slots->End_time,
+        ]);
+        return redirect()->back();
+    }
+
 }

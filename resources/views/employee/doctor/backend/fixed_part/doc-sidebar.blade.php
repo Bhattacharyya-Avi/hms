@@ -1,6 +1,6 @@
 <nav style="color:blue;" id="sidebar" class="sidebar js-sidebar"> <!-- navbar starts -->
 	<div class="sidebar-content js-simplebar">
-		<a class="sidebar-brand" href="{{url('/')}}">
+		<a class="sidebar-brand" href="{{route('index')}}">
 			<span class="sidebar-brand-text align-middle">
 				LifeSupport
 			</span>
@@ -11,7 +11,7 @@
 				<path d="M20 16L12 20L4 16"></path>
 			</svg>
 		</a>
-				
+
 		<div class="sidebar-user">
 			<div class="d-flex justify-content-center">
 				<div class="flex-shrink-0">
@@ -24,8 +24,8 @@
 						Doctor
 					</a>
 					<div class="dropdown-menu dropdown-menu-start">
-						<a class="dropdown-item" href="{{url('/doctor-profile')}}"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
-						<!-- <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a> 
+						<a class="dropdown-item" href="{{route('doctor.profile')}}"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
+						<!-- <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
 						<div class="dropdown-divider"></div>-->
 						<!-- <a class="dropdown-item" href="pages-settings.html"><i class="align-middle me-1" data-feather="settings"></i> Settings &
 							Privacy</a>
@@ -41,7 +41,7 @@
 			<li class="sidebar-header">
 				Pages
 			</li>
-			
+
 			<li class="sidebar-item">
 				<a class="sidebar-link" href="{{route('doctor.dashboard')}}">
 					<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
@@ -67,11 +67,11 @@
 				<ul id="ot" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
 					<li class="sidebar-item"><a class="sidebar-link" href="{{route('doctor.otlist')}}">Full OT list</a></li>
 					<li class="sidebar-item"><a class="sidebar-link" href="{{route('doctor.add_ot_list')}}">Add OT schedule</a></li>
-					
+
 				</ul>
 			</li>
 
-			<!-- 
+			<!--
 			<li class="sidebar-item">
 				<a class="sidebar-link" href="calendar.html">
 					<i class="align-middle" data-feather="calendar"></i> <span class="align-middle">Calendar</span>

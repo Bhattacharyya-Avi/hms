@@ -15,4 +15,12 @@ class Appointment extends Model
     public function Staff(){
         return $this->belongsto(Staff::class);
     }
+
+    // public function Slot(){
+    //     return $this->belongsTo(Slot::class,'id','time');
+    // }
+
+    public function Slot(){
+        return $this->belongsTo(Slot::class,'time','id');
+    }
 }

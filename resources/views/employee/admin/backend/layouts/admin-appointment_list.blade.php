@@ -12,7 +12,7 @@
     </div>
     <div class="col-12 col-xl-12">
     <div class="card">
-        
+
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -31,14 +31,14 @@
                     <td>{{$appoint->full_name}}</td>
                     <td>{{$appoint->Staff->employee_name}}</td>
                     <td>{{$appoint->email}}</td>
-                    <td>{{$appoint->time}}</td>
+                    <td>{{$appoint->Slot->slot_name}}</td>
                     <td>{{$appoint->date}}</td>
                     <td>{{$appoint->appointmentfee}}</td>
-                    
+
                      <td>active</td> <!--static data -->
                 </tr>
                 @endforeach
-                
+
             </tbody>
         </table>
         <!-- without this design will be broken -->

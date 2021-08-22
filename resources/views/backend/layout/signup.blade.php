@@ -16,7 +16,7 @@
 		</div>
 		<div class="login-content">
 			<form action="{{route('open.account')}}" method="post">
-                                @csrf 
+                                @csrf
 				<img src="{{url('/images/avatar.svg')}}">
 				<h2 class="title">Register</h2>
                                 <div class="input-div one">
@@ -28,7 +28,7 @@
                                                         <input type="text" class="input" name="full_name">
                                         </div>
                                 </div>
-                
+
                                 <div class="input-div one">
                                         <div class="i">
                                                 <i class="far fa-address-card"></i>
@@ -51,7 +51,7 @@
 
                                 <div class="input-div one">
                                         <div class="i">
-                                        <i class="fas fa-transgender"></i>           
+                                        <i class="fas fa-transgender"></i>
                                         </div>
                                         <div class="div">
                                                 <!-- <h5>Gender</h5> -->
@@ -67,7 +67,7 @@
                                                 </h5>
                                         </div>
                                 </div>
-                                                
+
                                 <div class="input-div one">
                                         <div class="i">
                                                 <i class="material-icons">&#xe0be;</i>
@@ -79,7 +79,7 @@
                                 </div>
 
                                 <div class="input-div pass">
-                                        <div class="i"> 
+                                        <div class="i">
                                                 <i class="fas fa-lock"></i>
                                         </div>
                                         <div class="div">
@@ -89,7 +89,7 @@
                                 </div>
 
                                 <div class="input-div pass">
-                                        <div class="i"> 
+                                        <div class="i">
                                                 <i class="fas fa-lock"></i>
                                         </div>
                                         <div class="div">
@@ -98,7 +98,7 @@
                                         </div>
                                 </div>
                                 <input type="submit" class="btn" value="Signup" >
-                                <a href="{{url('/login')}}">Already have an account?</a>
+                                <a href="{{route('user.login')}}">Already have an account?</a>
                         </form>
                 </div>
         </div>
