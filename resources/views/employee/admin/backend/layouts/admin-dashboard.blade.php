@@ -28,11 +28,11 @@
                                             <div class="stat text-primary">
                                                 <i class="align-middle" data-feather="user"></i>
                                             </div>
-                                        </div> 
-                                    </div> 
+                                        </div>
+                                    </div>
                                     <h3 class="mt-1 mb-3">My profile </h3>
                                     <div class="mb-0">
-                                        <a href="{{route('user.appointment_book')}}" class="btn btn-primary">View</a> 
+                                        <a href="#" class="btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </div>
@@ -48,10 +48,10 @@
                                                 <i class="material-icons">attach_money</i>
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>
                                     <h3 class="mt-1 mb-3">Indoor payments</h3>
                                     <div class="mb-0">
-                                    <a href="{{route('user.profile')}}" class="btn btn-primary">View</a>
+                                    <a href="{{route('admin.indoor')}}" class="btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </div>
@@ -59,7 +59,7 @@
                         <div class="col-sm-6">
                             <div class="card">
                                 <div class="card-body">
-                                    
+
                                     <div class="row">
                                         <!-- <div class="col mt-0">
                                             <h5 class="card-title">Earnings</h5>
@@ -74,7 +74,7 @@
                                     </div>
                                     <h3 class="mt-1 mb-3">Appointment list</h3>
                                     <div class="mb-0">
-                                        <a href="{{route('user.appointment_history')}}" class="btn btn-primary">View</a>
+                                        <a href="{{route('admin.appointmentlist')}}" class="btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </div>
@@ -93,7 +93,7 @@
                                     </div>
                                     <h3 class="mt-1 mb-3">Outdoor payments</h3>
                                     <div class="mb-0">
-                                    <a href="{{route('user.payment')}}" class="btn btn-primary">View</a>
+                                    <a href="{{route('admin.outdoor')}}" class="btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </div>
@@ -118,11 +118,11 @@
                                             <div class="stat text-primary">
                                                 <i class="material-icons">format_list_bulleted</i>
                                             </div>
-                                        </div> 
-                                    </div> 
+                                        </div>
+                                    </div>
                                     <h3 class="mt-1 mb-3">OT list </h3>
                                     <div class="mb-0">
-                                        <a href="{{route('user.appointment_book')}}" class="btn btn-primary">view</a> 
+                                        <a href="{{route('admin.OTlist')}}" class="btn btn-primary">view</a>
                                     </div>
                                 </div>
                             </div>
@@ -138,7 +138,7 @@
                                             <i class="material-icons" style="font-size:18px">av_timer</i>
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>
                                     <h3 class="mt-1 mb-3">Slots</h3>
                                     <div class="mb-0">
                                     <a href="{{route('admin.slotlist')}}" class="btn btn-primary">View</a>
@@ -149,7 +149,7 @@
                         <div class="col-sm-6">
                             <div class="card">
                                 <div class="card-body">
-                                    
+
                                     <div class="row">
                                         <!-- <div class="col mt-0">
                                             <h5 class="card-title">Earnings</h5>
@@ -164,7 +164,7 @@
                                     </div>
                                     <h3 class="mt-1 mb-3">Add Employee</h3>
                                     <div class="mb-0">
-                                        <a href="{{route('user.appointment_history')}}" class="btn btn-primary">View</a>
+                                        <a href="{{route('admin.stafflist')}}" class="btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </div>
@@ -181,9 +181,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <h3 class="mt-1 mb-3">unknown button</h3>
+                                    <h3 class="mt-1 mb-3">Beds info</h3>
                                     <div class="mb-0">
-                                    <a href="#" class="btn btn-primary">View</a>
+                                    <a href="{{route('admin.bedinfo')}}" class="btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </div>
@@ -192,12 +192,12 @@
                 </div>
             </div>
             <!-- second button group end -->
-        </div> 
+        </div>
 
         <!-- calendar start  -->
         <!-- <div class="row">
-        
-        
+
+
             <div class="col-12 col-md-6 col-xxl-3 d-flex order-2 order-xxl-1">
                 <div class="card flex-fill">
                     <div class="card-header">

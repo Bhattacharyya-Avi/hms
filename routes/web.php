@@ -1,7 +1,5 @@
 <?php
 
-
-use App\Http\Controllers\TestController;
 use App\Http\Controllers\CustomController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\NurseController;
@@ -54,12 +52,12 @@ Route::group(['prefix'=>'/doctor'],function (){
 // nurse
 Route::group(['prefix'=>'/nurse'],function (){
     Route::get('/dashboard',[NurseController::class,'dashboard'])->name('nurse.dashboard');
-    Route::get('profile',[NurseController::class,'profile'])->name('nurse.profile');
-    Route::get('otlist',[NurseController::class,'otlist'])->name('nurse.otlist');
-    Route::get('admit_patient',[NurseController::class,'admitpatient'])->name('nurse.admit');
+    Route::get('/profile',[NurseController::class,'profile'])->name('nurse.profile');
+    Route::get('/otlist',[NurseController::class,'otlist'])->name('nurse.otlist');
+    Route::get('/admit_patient',[NurseController::class,'admitpatient'])->name('nurse.admit');
     Route::post('/admit_patient',[NurseController::class,'admit_patient'])->name('nurse.admit_patient');
-    Route::get('bedinfo',[NurseController::class,'bedinformation'])->name('nurse.bedinfo');
-    Route::get('admited_patient',[NurseController::class,'admitedpatient'])->name('nurse.admited_patient_list');
+    Route::get('/bedinfo',[NurseController::class,'bedinformation'])->name('nurse.bedinfo');
+    Route::get('/admited_patient',[NurseController::class,'admitedpatient'])->name('nurse.admited_patient_list');
 });
 
 
@@ -69,7 +67,6 @@ Route::group(['prefix'=>'/accountant'],function (){
     Route::get('/profile',[AccountantController::class,'profile'])->name('accountant.profile');
     Route::get('/paymentlistin',[AccountantController::class,'accept_indor_payment'])->name('accountant.indoorpay');
     Route::get('/paymentlistout',[AccountantController::class,'accept_outdor_payment'])->name('accountant.outdoorpay');
-
 });
 
 //Admin
@@ -85,7 +82,6 @@ Route::group(['prefix'=>'/admin'],function (){
     Route::post('/add_bed',[AdminController::class,'addbed'])->name('admin.addbed');
     Route::get('/slot/list',[AdminController::class,'slotlist'])->name('admin.slotlist');
     Route::post('/slot/add',[AdminController::class,'slotadd'])->name('admin.slotadd');
-
 });
 
 

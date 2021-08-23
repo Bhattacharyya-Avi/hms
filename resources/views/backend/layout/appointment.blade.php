@@ -35,6 +35,7 @@
             <div class="mb-3">
               <label class="form-label">Select doctor</label>
               <select class="form-select flex-grow-1" name="doctorname">
+                  <option>click to select</option>
                 @foreach($doctors as $docname)
                 <option value="{{$docname->id}}">{{$docname->employee_name}}</option>
                 @endforeach
@@ -63,6 +64,7 @@
               <div class="mb-3">
                   <label class="form-label">Select Time</label>
                   <select class="form-select flex-grow-1" name="time">
+                      <option>Click to select</option>
                       @foreach($slots as $slot)
                           <option value="{{$slot->id}}">Slot {{$slot->slot_start}} - {{$slot->slot_end}}</option>
                       @endforeach
