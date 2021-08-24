@@ -21,7 +21,6 @@ use Illuminate\Support\Facades\Route;
 
 // front page
 Route::get('/',[CustomController::class,'index'])->name('index');
-
 // user
 Route::group(['prefix'=>'/user'],function (){
     Route::get('/login',[CustomController::class,'login'])->name('user.login');
@@ -34,10 +33,8 @@ Route::group(['prefix'=>'/user'],function (){
     Route::get('/profile',[CustomController::class,'profile'])->name('user.profile');
     Route::get('/payment',[CustomController::class,'payment'])->name('user.payment');
 });
-
 // employee login
 Route::get('/employee-login',[EmployeeloginController::class,'employeelogin'])->name('employee_login');
-
 //Doctor
 Route::group(['prefix'=>'/doctor'],function (){
     Route::get('/dashboard',[DoctorController::class,'dashboard'])->name('doctor.dashboard');
@@ -47,8 +44,6 @@ Route::group(['prefix'=>'/doctor'],function (){
     Route::get('/addot',[DoctorController::class,'addotlist'])->name('doctor.add_ot_list');
     Route::post('/addot/form',[DoctorController::class,'addotlistform'])->name('doctor.add.ot.form');
 });
-
-
 // nurse
 Route::group(['prefix'=>'/nurse'],function (){
     Route::get('/dashboard',[NurseController::class,'dashboard'])->name('nurse.dashboard');
@@ -59,8 +54,6 @@ Route::group(['prefix'=>'/nurse'],function (){
     Route::get('/bedinfo',[NurseController::class,'bedinformation'])->name('nurse.bedinfo');
     Route::get('/admited_patient',[NurseController::class,'admitedpatient'])->name('nurse.admited_patient_list');
 });
-
-
 // accountent
 Route::group(['prefix'=>'/accountant'],function (){
     Route::get('/dashboard',[AccountantController::class,'dashboard'])->name('accountant.dashboard');
@@ -68,7 +61,6 @@ Route::group(['prefix'=>'/accountant'],function (){
     Route::get('/paymentlistin',[AccountantController::class,'accept_indor_payment'])->name('accountant.indoorpay');
     Route::get('/paymentlistout',[AccountantController::class,'accept_outdor_payment'])->name('accountant.outdoorpay');
 });
-
 //Admin
 Route::group(['prefix'=>'/admin'],function (){
     Route::get('/dashboard',[AdminController::class,'dashboard'])->name('admin.dashboard');
@@ -82,6 +74,8 @@ Route::group(['prefix'=>'/admin'],function (){
     Route::post('/add_bed',[AdminController::class,'addbed'])->name('admin.addbed');
     Route::get('/slot/list',[AdminController::class,'slotlist'])->name('admin.slotlist');
     Route::post('/slot/add',[AdminController::class,'slotadd'])->name('admin.slotadd');
+    Route::get('/doctor/list',[AdminController::class,'doctorlist'])->name('admin.doctor list');
+    Route::get('/{id}/appointment/details',[AdminController::class,'appointlist'])->name('appointlist');
 });
 
 

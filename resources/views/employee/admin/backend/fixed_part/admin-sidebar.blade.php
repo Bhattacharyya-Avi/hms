@@ -66,6 +66,12 @@
 				</a>
 			</li>
 
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="{{route('admin.doctor list')}}">
+                    <i class="material-icons" style="font-size:18px">filter_list</i> <span class="align-middle">Appointment Details</span>
+                </a>
+            </li>
+
 			<li class="sidebar-item">
 				<a class="sidebar-link" href="{{route('admin.OTlist')}}">
 					<i class="material-icons" style="font-size:18px">format_list_bulleted</i> <span class="align-middle">OT list</span>

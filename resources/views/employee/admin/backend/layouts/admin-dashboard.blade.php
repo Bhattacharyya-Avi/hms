@@ -30,9 +30,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <h3 class="mt-1 mb-3">My profile </h3>
+                                    <h3 class="mt-1 mb-3">Appointment's info </h3>
                                     <div class="mb-0">
-                                        <a href="#" class="btn btn-primary">View</a>
+                                        <a href="{{route('admin.doctor list')}}" class="btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </div>

@@ -89,4 +89,18 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+    public function doctorlist(){
+//        $doctors= Staff::all();
+        $doctors=Staff::where('employeetype','Doctor')->get();
+        return view('employee.admin.backend.layouts.admin-doctorlist',compact('doctors'));
+    }
+
+    public function appointlist($id){
+
+//                dd($id);
+        $appointment_detail=Appointment::where('staff_id','$id')->get();
+//        dd($appointment_detail);
+        return view('employee.admin.backend.layouts.admin-appointment-details',compact('appointment_detail'));
+    }
+
 }
