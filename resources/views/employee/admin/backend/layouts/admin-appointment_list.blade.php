@@ -16,6 +16,7 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
+                    <th>Sl.</th>
                     <th>Patient's Name</th>
                     <th>Doctor Name</th>
                     <th>Email</th>
@@ -26,14 +27,15 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($appointment as $appoint)
+                @foreach($appointments as $appointment)
                 <tr>
-                    <td>{{$appoint->full_name}}</td>
-                    <td>{{$appoint->Staff->employee_name}}</td>
-                    <td>{{$appoint->email}}</td>
-                    <td>{{$appoint->Slot->slot_name}}</td>
-                    <td>{{$appoint->date}}</td>
-                    <td>{{$appoint->appointmentfee}}</td>
+                    <td>{{$loop->iteration}}</td>
+                    <td>{{$appointment->full_name}}</td>
+                    <td>{{$appointment->staff->employee_name}}</td>
+                    <td>{{$appointment->email}}</td>
+                    <td>{{ $appointment->time }}</td>
+                    <td>{{$appointment->date}}</td>
+                    <td>{{$appointment->appointmentfee}}</td>
 
                      <td>active</td> <!--static data -->
                 </tr>
@@ -42,7 +44,7 @@
             </tbody>
         </table>
         <!-- without this design will be broken -->
-        {{$appointment->links('pagination::bootstrap-4')}}
+        {{-- {{$appointment->links('pagination::bootstrap-4')}} --}}
     </div>
 </div>
 @endsection

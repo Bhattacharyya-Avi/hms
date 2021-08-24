@@ -38,10 +38,11 @@ class AdminController extends Controller
     public function appointmentlist(){
 
         // $appointment=Appointment::all();
-        $appointment=Appointment::with("Staff","Slot")->paginate(10);
+        $appointments=Appointment::with('staff')->get();
+        // dd($appointments);
 
-        // dd($appointment);
-        return view('employee.admin.backend.layouts.admin-appointment_list', compact('appointment'));
+        // dd($appointments);
+        return view('employee.admin.backend.layouts.admin-appointment_list', compact('appointments'));
     }
 
     public function OTlist(){
@@ -96,11 +97,10 @@ class AdminController extends Controller
     }
 
     public function appointlist($id){
+        $appointment_details=Appointment::where('staff_id',$id)->get();
+        $doctor_name = Staff::where('id',$id)->first();
 
-//                dd($id);
-        $appointment_detail=Appointment::where('staff_id','$id')->get();
-//        dd($appointment_detail);
-        return view('employee.admin.backend.layouts.admin-appointment-details',compact('appointment_detail'));
+        return view('employee.admin.backend.layouts.admin-appointment-details',compact('appointment_details','doctor_name'));
     }
 
 }

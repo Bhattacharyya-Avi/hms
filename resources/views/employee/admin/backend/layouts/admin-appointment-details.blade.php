@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="{{url('/css/table-style.css')}}">
     <div class="row mb-2 mb-xl-3">
         <div class="col-auto d-none d-sm-block">
-            <h4><strong>Admin/</strong> Appointment details</h4>
+            <h4><strong>Doctor : {{ $doctor_name->employee_name}}/</strong> Appointment details</h4>
         </div>
 
     <!-- <div class="col-auto ms-auto text-end mt-n1">
@@ -12,6 +12,7 @@
     </div>
     <div class="col-12 col-xl-12">
         <div class="card">
+
             <table class="table table-bordered">
                 <thead>
                 <tr>
@@ -22,10 +23,10 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($appointment_detail as $key=>$appointment)
+                @foreach($appointment_details as $appointment)
                     <tr>
-                        <td>{{$key}}</td>
-                        <td>{{$appointment->Patient_name}}</td>
+                        <td>{{$loop->iteration}}</td>
+                        <td>{{$appointment->full_name}}</td>
                         <td>{{$appointment->time}}</td>
                         <td>{{$appointment->date}}</td>
                     </tr>

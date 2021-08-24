@@ -12,7 +12,7 @@ class Appointment extends Model
     // protected $fillable=['full_name','phone_no','email','doctorname','date','time','appointmentfee'];
     protected $guarded=[];
 
-    public function Staff(){
+    public function staff(){
         return $this->belongsto(Staff::class);
     }
 
