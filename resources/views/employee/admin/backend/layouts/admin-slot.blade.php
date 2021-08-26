@@ -27,7 +27,7 @@
                 <tbody>
                 @foreach($slots as $slot)
                     <tr>
-                        <td>{{$slot->id}}</td>
+                        <td>{{$loop->iteration}}</td>
                         <td>{{$slot->slot_name}}</td>
                         <td class="d-none d-md-table-cell">{{$slot->slot_start}}</td>
                         <td>{{$slot->slot_end}}</td>

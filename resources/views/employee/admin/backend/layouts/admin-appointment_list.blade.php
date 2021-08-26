@@ -33,7 +33,7 @@
                     <td>{{$appointment->full_name}}</td>
                     <td>{{$appointment->staff->employee_name}}</td>
                     <td>{{$appointment->email}}</td>
-                    <td>{{ $appointment->time }}</td>
+                    <td>{{ $appointment->slot->slot_name }}</td>
                     <td>{{$appointment->date}}</td>
                     <td>{{$appointment->appointmentfee}}</td>
 

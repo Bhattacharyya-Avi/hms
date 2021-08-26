@@ -15,6 +15,7 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
+                    <th>SL</th>
                     <th>Patient's Name</th>
                     <th>Doctor Name</th>
                     <th>Doctor Email</th>
@@ -26,6 +27,7 @@
             <tbody>
                 @foreach($otlist as $list)
                 <tr>
+                    <td>{{$loop->iteration}}</td>
                     <td>{{$list->Patient_name}}</td>
                     <td>{{$list->doctor_name}}</td>
                     <td>{{$list->doctor_email}}</td>

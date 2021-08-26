@@ -19,17 +19,19 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th style="width:15%;">Bed number</th>
-                        <th style="width:15%">Bed type</th>
-                        <th class="d-none d-md-table-cell" style="width:15%">Status</th>
-                        <th style="width:10%;">Cost</th>
-                        <th style="width:35%;">Services</th>
-                        <th style="width:10%">Action</th>
+                        <th>SL</th>
+                        <th >Bed number</th>
+                        <th>Bed type</th>
+                        <th class="d-none d-md-table-cell">Status</th>
+                        <th >Cost</th>
+                        <th >Services</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($bedsinfo as $bedinfo)
                     <tr>
+                        <td>{{$loop->iteration}}</td>
                         <td>{{$bedinfo->bed_number}}</td>
                         <td>{{$bedinfo->bed_type}}</td>
                         <td class="d-none d-md-table-cell">{{$bedinfo->bed_status}}</td>

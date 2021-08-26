@@ -18,17 +18,19 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th style="width:20%;">Employee name</th>
-                        <th style="width:30%">Address</th>
-                        <th class="d-none d-md-table-cell" style="width:15%">Mobile number</th>
-                        <th style="width:10%;">Type</th>
-                        <th style="width:15%;">Email</th>
-                        <th style="width:10%">Action</th>
+                        <th>SL</th>
+                        <th>Employee name</th>
+                        <th>Address</th>
+                        <th class="d-none d-md-table-cell">Mobile number</th>
+                        <th>Type</th>
+                        <th>Email</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($employees as $employee)
                     <tr>
+                        <td>{{$loop->iteration}}</td>
                         <td>{{$employee->employee_name}}</td>
                         <td>{{$employee->employee_address}}</td>
                         <td class="d-none d-md-table-cell">{{$employee->phone_no}}</td>
