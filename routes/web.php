@@ -76,6 +76,9 @@ Route::group(['prefix'=>'/admin'],function (){
     Route::post('/slot/add',[AdminController::class,'slotadd'])->name('admin.slotadd');
     Route::get('/doctor/list',[AdminController::class,'doctorlist'])->name('admin.doctor list');
     Route::get('/{id}/appointment/details',[AdminController::class,'appointlist'])->name('appointlist');
+    Route::get('/services',[AdminController::class,'services'])->name('services');
+    Route::get('/Chamber/list',[AdminController::class,'chamberlist'])->name('chamberlist'); 
+    Route::post('/Chamber/add',[AdminController::class,'chamberadd'])->name('chamberadd');
 });
 
 
@@ -84,6 +87,8 @@ Route::group(['prefix'=>'/admin'],function (){
 
 /*
 things need to do
-
+-> create teable for chamber and service
+-> show chamber number on the doctor account create form
+-> service will have service name and cost
 
 */

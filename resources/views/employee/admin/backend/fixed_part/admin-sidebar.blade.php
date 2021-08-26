@@ -91,6 +91,18 @@
 			</li>
 
 			<li class="sidebar-item">
+				<a class="sidebar-link" href="{{route('chamberlist')}}">
+                    <i class="material-icons" style="font-size:18px">airline_seat_individual_suite</i> <span class="align-middle">Chamber</span>
+				</a>
+			</li>
+
+			<li class="sidebar-item">
+				<a class="sidebar-link" href="{{route('services')}}">
+                    <i class="material-icons" style="font-size:18px">airline_seat_individual_suite</i> <span class="align-middle">Services</span>
+				</a>
+			</li>
+
+			<li class="sidebar-item">
 				<a href="#ot" data-bs-toggle="collapse" class="sidebar-link collapsed">
 					<i class="material-icons" style="font-size:18px">attach_money</i> <span class="align-middle">Payment list</span>
 				</a>

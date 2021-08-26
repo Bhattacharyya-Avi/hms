@@ -8,8 +8,8 @@ use App\Models\Staff;
 use App\Models\Bed;
 use App\Models\Appointment;
 use App\Models\Addot;
-
-
+use App\Models\Chamber;
+use PhpParser\Builder\Function_;
 
 class AdminController extends Controller
 {
@@ -101,6 +101,21 @@ class AdminController extends Controller
         $doctor_name = Staff::where('id',$id)->first();
 
         return view('employee.admin.backend.layouts.admin-appointment-details',compact('appointment_details','doctor_name'));
+    }
+
+    public function services(){
+        return view('employee.admin.backend.layouts.admin-service');
+    }
+    public function chamberlist(){
+        return view('employee.admin.backend.layouts.admin-chamber');
+    }
+
+    public Function chamberadd(Request $chamber){
+        Chamber::create([
+            'chamber number'=>$chamber->chamber_number,
+            'chamber discription'=>$chamber->chamber_description
+        ]);
+        return redirect()->back();
     }
 
 }
