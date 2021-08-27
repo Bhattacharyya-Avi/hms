@@ -77,6 +77,7 @@ Route::group(['prefix'=>'/admin'],function (){
     Route::get('/doctor/list',[AdminController::class,'doctorlist'])->name('admin.doctor list');
     Route::get('/{id}/appointment/details',[AdminController::class,'appointlist'])->name('appointlist');
     Route::get('/services',[AdminController::class,'services'])->name('services');
+    Route::post('/services/add',[AdminController::class,'serviceadd'])->name('admin.serviceadd');
     Route::get('/Chamber/list',[AdminController::class,'chamberlist'])->name('chamberlist'); 
     Route::post('/Chamber/add',[AdminController::class,'chamberadd'])->name('chamberadd');
 });

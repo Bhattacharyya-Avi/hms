@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateChambersTable extends Migration
+class CreateServicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateChambersTable extends Migration
      */
     public function up()
     {
-        Schema::create('chambers', function (Blueprint $table) {
+        Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string('chamber_number')->unique();
-            $table->string('chamber_discription')->nullable();
-            $table->string('chamber_status');
+            $table->string('service_name')->unique();
+            $table->string('service_description');
+            $table->string('service_cost');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateChambersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('chambers');
+        Schema::dropIfExists('services');
     }
 }

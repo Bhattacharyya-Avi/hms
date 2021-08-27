@@ -9,6 +9,7 @@ use App\Models\Bed;
 use App\Models\Appointment;
 use App\Models\Addot;
 use App\Models\Chamber;
+use App\Models\Service;
 use PhpParser\Builder\Function_;
 
 class AdminController extends Controller
@@ -104,16 +105,29 @@ class AdminController extends Controller
     }
 
     public function services(){
-        return view('employee.admin.backend.layouts.admin-service');
+        $services=Service::paginate(10);
+        return view('employee.admin.backend.layouts.admin-service',compact('services'));
     }
+
+    public function serviceadd(Request $service){
+        Service::create([
+            'service_name'=>$service->service_name,
+            'service_description'=>$service->service_description,
+            'service_cost'=>$service->service_cost
+        ]);
+        return redirect()->back();
+    }
+
     public function chamberlist(){
-        return view('employee.admin.backend.layouts.admin-chamber');
+        $chambers=Chamber::paginate(10);
+        return view('employee.admin.backend.layouts.admin-chamber',compact('chambers'));
     }
 
     public Function chamberadd(Request $chamber){
         Chamber::create([
-            'chamber number'=>$chamber->chamber_number,
-            'chamber discription'=>$chamber->chamber_description
+            'chamber_number'=>$chamber->chamber_number,
+            'chamber_discription'=>$chamber->chamber_description,
+            'chamber_status'=>$chamber->chamber_status
         ]);
         return redirect()->back();
     }

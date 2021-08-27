@@ -22,13 +22,27 @@
                         <th>SL</th>
                         <th>name</th>
                         <th>Descriptione</th>
-                        <th >Cost</th>
+                        <th>Charge</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($services as $service )
+                    <tr>
+                        <td>{{$loop->iteration}}</td>
+                        <td>{{$service->service_name}}</td>
+                        <td>{{$service->service_description}}</td>
+                        <td>{{$service->service_cost}}</td>
+                        <td class="table-action">
+                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
+                            <a href="#"><i class="align-middle" data-feather="trash"></i></a>
+                        </td>
+                    </tr>
+                    @endforeach
                     
                 </tbody>
             </table>
+            {{$services->links('pagination::bootstrap-4')}}
         </div>
     </div>
 
@@ -37,26 +51,26 @@
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Add a bed</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Add a Service</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             
-        <form action="" method="">
+        <form action="{{route('admin.serviceadd')}}" method="post">
             @csrf
             <div class="mb-3">
-                <label class="form-label">service name</label>
-                <input type="text" placeholder="Enter service name" class="form-control" name="bed_number">
+                <label class="form-label">Service name</label>
+                <input type="text" placeholder="Enter service name" class="form-control" name="service_name">
             </div>
 
             <div class="mb-3">
-                <label class="form-label">service Description</label>
-                <textarea class="form-control" placeholder="Enter service description" rows="1" name="bed_description"></textarea>
+                <label class="form-label">Service Description</label>
+                <textarea class="form-control" placeholder="Enter service description" rows="1" name="service_description"></textarea>
             </div>
 
             <div class="mb-3">
-                <label class="form-label">service Cost</label>
-                <input type="number" placeholder="Enter service cost" class="form-control" name="bed_cost">
+                <label class="form-label">Service charge</label>
+                <input type="number" placeholder="Enter service cost" class="form-control" name="service_cost">
             </div>
 
             

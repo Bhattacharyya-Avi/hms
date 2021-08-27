@@ -22,12 +22,27 @@
                         <th>SL</th>
                         <th>Chamber number</th>
                         <th>Chamber Descriptione</th>
+                        <th>Status</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($chambers as $chamber)
+                    <tr>
+                        <td>{{$loop->iteration}}</td>
+                        <td>{{$chamber->chamber_number}}</td>
+                        <td>{{$chamber->chamber_discription}}</td>
+                        <td>{{$chamber->chamber_status}}</td>
+                        <td class="table-action">
+                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
+                            <a href="#"><i class="align-middle" data-feather="trash"></i></a>
+                        </td>
+                    </tr>
+                    @endforeach
                     
                 </tbody>
             </table>
+            {{$chambers->links('pagination::bootstrap-4')}}
         </div>
     </div>
 
@@ -53,11 +68,22 @@
                     <textarea class="form-control" placeholder="Enter service description" rows="1" name="chamber_description"></textarea>
                 </div>
 
-                
+                <div class="mb-3">
+                    <label class="form-label">Bed status</label>
+                    <div class="input-group mb-3">
+                        <select class="form-select flex-grow-1" name="chamber_status">
+                            <option>Avilable </option>
+                            <option>Notavilable</option>
+                        </select>
+                    </div>
+                </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Add</button>
                 </div>
+
+                
             
         </div>
     </div>
