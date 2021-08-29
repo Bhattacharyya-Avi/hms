@@ -19,10 +19,12 @@
                 <thead>
                     <tr>
                         <th>SL</th>
+                        <th>Type</th>
+                        <th>Room number</th>
                         <th>Employee name</th>
                         <th>Address</th>
                         <th class="d-none d-md-table-cell">Mobile number</th>
-                        <th>Type</th>
+                        
                         <th>Email</th>
                         <th>Action</th>
                     </tr>
@@ -31,10 +33,11 @@
                     @foreach($employees as $employee)
                     <tr>
                         <td>{{$loop->iteration}}</td>
+                        <td>{{$employee->employeetype}}</td>
+                        <td>{{$employee->employee_room}}</td>
                         <td>{{$employee->employee_name}}</td>
                         <td>{{$employee->employee_address}}</td>
                         <td class="d-none d-md-table-cell">{{$employee->phone_no}}</td>
-                        <td>{{$employee->employeetype}}</td>
                         <td>{{$employee->email}}</td>
                         <td class="table-action">
                             <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
@@ -60,6 +63,28 @@
             
             <form action="{{route('admin.add_staff')}}" method="post">
                 @csrf
+
+                <div class="mb-3">
+                    <label class="form-label">Select employee type</label>
+                    <select class="form-select flex-grow-1" name="employeetype">
+                        <option>click to select</option>
+                        <option>Admin</option>
+                        <option>Doctor</option>
+                        <option>Nurse</option>
+                        <option>Accountant</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Select employee Room</label>
+                    <select class="form-select flex-grow-1" name="employeeroom">
+                        <option>click to select</option>
+                        @foreach($chambers as $chamber)
+                        <option>{{$chamber->chamber_number}}</option>
+                        @endforeach
+                    </select>
+                </div>
+
                 <div class="mb-3">
                     <label class="form-label">Employee name</label>
                     <input type="text" placeholder="Enter Full name" class="form-control" name="employee_name">
@@ -85,16 +110,7 @@
                 <input type="password" class="form-control" placeholder="Password" name="password">
                 </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Select employee type</label>
-                    <select class="form-select flex-grow-1" name="employeetype">
-                        <option>click to select</option>
-                        <option>Admin</option>
-                        <option>Doctor</option>
-                        <option>Nurse</option>
-                        <option>Accountant</option>
-                    </select>
-                </div>
+                
 
                 <!-- <input type="submit" class="btn btn-primary" value="Submit" > -->
                 

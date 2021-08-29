@@ -7,6 +7,7 @@ use App\Models\Bed;
 use App\Models\Staff;
 use Illuminate\Http\Request;
 use App\Models\Admitpatients;
+use App\Models\Service;
 
 class NurseController extends Controller
 {
@@ -27,7 +28,8 @@ class NurseController extends Controller
         $bedstype=Bed::all();
         $bedsnum=Bed::all();
         $doctors=Staff:: where('employeetype','Doctor')->get();
-        return view('employee.nurse.backend.layouts.nurse-admit',compact('bedstype','bedsnum','doctors'));
+        $services=Service::all();
+        return view('employee.nurse.backend.layouts.nurse-admit',compact('bedstype','bedsnum','doctors','services'));
     }
 
     public function admit_patient(Request $admit){
@@ -40,7 +42,7 @@ class NurseController extends Controller
             'patient_address'=>$admit->patient_address,
             'bed_type'=>$admit->bed_type,
             'bed_number'=>$admit->bed_number,
-            'add_note'=>$admit->add_note,
+            'services'=>$admit->services,
             'admission_date'=>$admit->admission_date,
             'release_date'=>$admit->release_date,
             'admission_time'=>$admit->admission_time

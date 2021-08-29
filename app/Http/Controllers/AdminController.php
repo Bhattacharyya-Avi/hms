@@ -20,7 +20,8 @@ class AdminController extends Controller
 
     public function stafflist(){
         $employees=Staff::paginate(10);
-        return view('employee.admin.backend.layouts.admin-staff_list',compact('employees'));
+        $chambers= Chamber::all();
+        return view('employee.admin.backend.layouts.admin-staff_list',compact('employees','chambers'));
     }
 
     public function add_staff(Request $addstaff){
@@ -31,7 +32,8 @@ class AdminController extends Controller
             'phone_no'=>$addstaff->phone_no,
             'email'=>$addstaff->email,
             'password'=>$addstaff->password,
-            'employeetype'=>$addstaff->employeetype
+            'employeetype'=>$addstaff->employeetype,
+            'employee_room'=>$addstaff->employeeroom
         ]);
         return redirect()->back();
     }

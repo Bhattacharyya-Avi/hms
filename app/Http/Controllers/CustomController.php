@@ -34,7 +34,7 @@ class CustomController extends Controller
                 'confirm_password'=>$openacc->confirm_password
 
             ]);
-            return redirect()->route('user.login');
+            return redirect()->route('user.login')->with('success','User Registration Successful ');
     }
 
     public function dashboard(){

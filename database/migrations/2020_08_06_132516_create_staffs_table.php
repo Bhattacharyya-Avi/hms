@@ -21,6 +21,7 @@ class CreateStaffsTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('employeetype');
+            $table->string('employee_room')->nullable();
             $table->timestamps();
         });
     }

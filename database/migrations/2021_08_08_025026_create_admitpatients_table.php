@@ -22,7 +22,7 @@ class CreateAdmitpatientsTable extends Migration
             $table->string('patient_address');
             $table->string('bed_type');
             $table->string('bed_number');
-            $table->string('add_note')->nullable();
+            $table->string('services')->nullable();
             $table->string('admission_date');
             $table->string('release_date')->nullable();
             $table->string('admission_time');

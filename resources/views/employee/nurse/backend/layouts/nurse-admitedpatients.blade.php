@@ -23,7 +23,7 @@
                         <th>Patient's phone</th>
                         <th>Patient's address</th>
                         <th>Bed</th>
-                        <th>Notes</th>
+                        <th>Services</th>
                         <th>Duration</th>
                         <th class="table-action">Action</th>
                     </tr>
@@ -36,7 +36,7 @@
                             <td>{{$info->patient_phone}}</td>
                             <td>{{$info->patient_address}}</td>
                             <td>{{$info->bed_type}} - {{$info->bed_number}}</td>
-                            <td>{{$info->add_note}}</td>
+                            <td>{{$info->services}}</td>
                             <td>{{$info->admission_date}} - {{$info->release_date}}</td>
                             <td class="table-action">
                                 <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
