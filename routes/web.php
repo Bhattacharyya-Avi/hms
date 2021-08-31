@@ -21,9 +21,10 @@ use Illuminate\Support\Facades\Route;
 // front page
 Route::get('/',[CustomController::class,'index'])->name('index');
 // user
-Route::group(['prefix'=>'/user'],function (){
-    Route::get('/login',[CustomController::class,'login'])->name('user.login');
-    Route::get('/signup',[CustomController::class,'signup'])->name('user.signup');
+Route::get('/user/login',[CustomController::class,'login'])->name('user.login');
+Route::get('/user/signup',[CustomController::class,'signup'])->name('user.signup');
+
+Route::group(['prefix'=>'/user','middleware'=>'auth'],function (){
     Route::post('/open-account',[CustomController::class,'openaccount'])->name('open.account');
     Route::get('/dashboard',[CustomController::class,'dashboard'])->name('user.dashboard');
     Route::get('/appointment',[CustomController::class,'bookAppointment'])->name('user.appointment_book');
@@ -79,7 +80,7 @@ Route::group(['prefix'=>'/admin'],function (){
     Route::post('/services/add',[AdminController::class,'serviceadd'])->name('admin.serviceadd');
     Route::get('/Chamber/list',[AdminController::class,'chamberlist'])->name('chamberlist'); 
     Route::post('/Chamber/add',[AdminController::class,'chamberadd'])->name('chamberadd');
-    Route::get('/patient_service/details',[AdminController::class,'patientservice'])->name('admin.patient_service');
+    Route::get('/admited_patient/list',[AdminController::class,'admitedpatient'])->name('admin.admited.patient');
 });
 
 

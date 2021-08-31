@@ -11,4 +11,9 @@ class Admitpatients extends Model
 
     // protected $fillable=['patient_name','doctor_name','patient_email','patient_phone','patient_address','bed_type','bed_number','add_note','admission_date','release_date','admission_time'];
     protected $guarded=[];
+
+    public function admitService()
+    {
+        return $this->hasMany(Admitpatients_service::class);
+    }
 }

@@ -62,8 +62,8 @@ class NurseController extends Controller
     }
 
     public function admitedpatient(){
-        $details=Admitpatients::paginate(10);
-
+        $details=Admitpatients::with('admitService')->paginate(10);
+      
         return view('employee.nurse.backend.layouts.nurse-admitedpatients',compact('details'));
     }
 
