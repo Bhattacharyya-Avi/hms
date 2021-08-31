@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 // front page
 Route::get('/',[CustomController::class,'index'])->name('index');
 // user
@@ -80,6 +79,7 @@ Route::group(['prefix'=>'/admin'],function (){
     Route::post('/services/add',[AdminController::class,'serviceadd'])->name('admin.serviceadd');
     Route::get('/Chamber/list',[AdminController::class,'chamberlist'])->name('chamberlist'); 
     Route::post('/Chamber/add',[AdminController::class,'chamberadd'])->name('chamberadd');
+    Route::get('/patient_service/details',[AdminController::class,'patientservice'])->name('admin.patient_service');
 });
 
 

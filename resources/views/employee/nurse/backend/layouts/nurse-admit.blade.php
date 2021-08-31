@@ -99,17 +99,31 @@
                     </div>
 
                     <!-- multiple -->
-                    <div class="mb-3">
-                    <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">  need to provide link additionaly  -->
+                    <!-- <div class="mb-3" >
+                    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">  need to provide link additionaly 
                     
                         <label class="form-label">Services</label>
-                        <div class="input-group mb-3">
-                            <select id="choices-multiple-remove-button" name="services" placeholder="Select Services"
+                        <div style="size:100%!important;" class="input-group mb-3" >
+                            <select id="choices-multiple-remove-button"  name="services" placeholder="Select Services"
                                 multiple>
                                 @foreach($services as $service)
                                 <option value="{{$service->id}}">{{$service->service_name}}</option>
                                 @endforeach
                             </select>
+                        </div>
+                    </div> -->
+
+                    <div class="mb-3" >
+                    <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">  need to provide link additionaly  -->
+                    
+                        <label class="form-label">Services</label>
+                        <div style="size:100%!important;" class="input-group mb-3" >
+                        <select name="services[]" class="custom-select mb-3" multiple>
+                            <option selected>Hold ctrl to select multiple option.</option>
+                            @foreach($services as $service)
+                                <option value="{{$service->id}}">{{$service->service_name}}</option>
+                            @endforeach
+                        </select>
                         </div>
                     </div>
 

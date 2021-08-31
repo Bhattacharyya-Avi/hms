@@ -71,6 +71,12 @@
                     <i class="material-icons" style="font-size:18px">filter_list</i> <span class="align-middle">Appointment Details</span>
                 </a>
             </li>
+			
+			<li class="sidebar-item">
+                <a class="sidebar-link" href="{{route('admin.patient_service')}}">
+                    <i class="material-icons" style="font-size:18px">filter_list</i> <span class="align-middle">Patient Service Details</span>
+                </a>
+            </li>
 
 			<li class="sidebar-item">
 				<a class="sidebar-link" href="{{route('admin.OTlist')}}">

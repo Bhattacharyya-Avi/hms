@@ -8,6 +8,7 @@ use App\Models\Staff;
 use App\Models\Bed;
 use App\Models\Appointment;
 use App\Models\Addot;
+use App\Models\Admitpatients_service;
 use App\Models\Chamber;
 use App\Models\Service;
 use PhpParser\Builder\Function_;
@@ -132,6 +133,12 @@ class AdminController extends Controller
             'chamber_status'=>$chamber->chamber_status
         ]);
         return redirect()->back();
+    }
+
+    public function patientservice(){
+        $service=Admitpatients_service::all();
+        // dd($service);
+        return view('employee.admin.backend.layouts.admin-patient_service',compact('service'));
     }
 
 }
