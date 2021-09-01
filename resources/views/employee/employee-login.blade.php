@@ -13,11 +13,11 @@
 	 <img class="wave" src="">
 	<div class="container">
 		<div class="img">
-			<img src="{{url('/images/Hello.svg')}}">
+			<img src="{{url('/images/hospital.svg')}}">
 		</div>
 		<div class="login-content">
 			<form action="#">
-				<img src="{{url('/images/avatar.svg')}}">
+				<img src="{{url('/images/employee.svg')}}">
 				<h3 class="title">Welcome Employee</h3>
            		<div class="input-div one">
            		   <div class="i">
@@ -39,46 +39,21 @@
             	   </div>
             	</div>
 
-				<div class="input-div pass">
+				<!-- <div class="input-div pass">
            		   <div class="i"> 
-           		    	<!-- <i class="fas fa-question"></i> -->
+           		     <i class="fas fa-question"></i> 
            		   </div>
 					
-						<div class="div">
-							<select class="form-select" aria-label="Default select example">
-								<option >Select a type</option>
-								<option value="admin">Admin</option>
-								<option value="doctor">Doctor</option>
-								<option value="nurse">Nurse</option>
-								<option value="accountant">Accountant</option>
-							</select>
-							
-							<!-- <select class="">  	
-								<option>Staff type</option>
-								<option>Admin</option>
-								<option>Doctor</option>
-								<option>Accountent</option>
-								<option>Pharmacist</option>
-							<!-- <div class="col-12 col-lg-6">
-								<div class="card">
-									
-									<div class="card-body">
-										<div class="input-group mb-3">
-											<select class="form-select flex-grow-1">
-												<option>Select...</option>
-												<option>One</option>
-												<option>Two</option>
-												<option>Three</option>
-											</select>
-											<!-- <button class="btn btn-secondary" type="button">Go!</button> 
-										</div>
-									</div>
-								</div>
-							</div>
-							</select> -->
-						</div>
-					  
-            	</div>
+					<div class="div">
+						<select class="form-select" aria-label="Default select example">
+							<option >Select a type</option>
+							<option value="admin">Admin</option>
+							<option value="doctor">Doctor</option>
+							<option value="nurse">Nurse</option>
+							<option value="accountant">Accountant</option>
+						</select>
+					</div>
+            	</div> -->
 
             	<a style="color:red;">Forgot Password? contct with admin.</a>
             	<input type="submit" class="btn" value="Login">

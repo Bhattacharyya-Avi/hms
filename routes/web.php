@@ -22,10 +22,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[CustomController::class,'index'])->name('index');
 // user
 Route::get('/user/login',[CustomController::class,'login'])->name('user.login');
+// Route::post('/user/login/post',[CustomController::class,'loginPost'])->name('user.login.post');
 Route::get('/user/signup',[CustomController::class,'signup'])->name('user.signup');
-
+Route::post('/open-account',[CustomController::class,'openaccount'])->name('open.account');
 Route::group(['prefix'=>'/user','middleware'=>'auth'],function (){
-    Route::post('/open-account',[CustomController::class,'openaccount'])->name('open.account');
+    
     Route::get('/dashboard',[CustomController::class,'dashboard'])->name('user.dashboard');
     Route::get('/appointment',[CustomController::class,'bookAppointment'])->name('user.appointment_book');
     Route::post('/appointment/book',[CustomController::class,'submitappointment'])->name('user.appointment.submit');

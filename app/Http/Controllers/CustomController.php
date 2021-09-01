@@ -17,6 +17,7 @@ class CustomController extends Controller
     public function login(){
         return view('backend.layout.login');
     }
+    
 
     public function signup(){
         return view('backend.layout.signup');
