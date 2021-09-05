@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Addot;
+use Illuminate\Support\Facades\Auth;
 
 class DoctorController extends Controller
 {
@@ -40,6 +41,10 @@ class DoctorController extends Controller
         ]);
         return redirect()->route('doctor.add_ot_list');
 
+    }
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('index');
     }
 
 }

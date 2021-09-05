@@ -64,12 +64,18 @@
 
         <div class="login-content">
 
-            <form action="{{route('user.dashboard')}}">
-                @if(session()->has('success'))
+            <form action="{{route('user.login.post')}}" method="post">
+                @csrf
+                @if(session()->has('message'))
                 <div class="alert alert-success">
-                    {{ session()->get('success') }}
+                    {{ session()->get('message') }}
                 </div>
                 @endif
+{{--                @if(session()->has('success'))--}}
+{{--                    <div class="alert alert-success">--}}
+{{--                        {{ session()->get('success') }}--}}
+{{--                    </div>--}}
+{{--                @endif--}}
                 <img src="{{url('/images/avatar.svg')}}">
                 <h2 class="title">Welcome</h2>
                 <div class="input-div one">
@@ -92,25 +98,7 @@
                     </div>
                 </div>
 
-                <!-- dropdown menu -->
-                <!-- 
-					<div class="input-div pass">
-						<div class="i">
-							<i class='fas fa-question-circle'></i>
-						</div>				
-						<div class="dropdown">
-							<button class="dropbtn">Dropdown</button>
-							<div class="dropdown-content">
-								<a href="#">Link 1</a>
-								<a href="#">Link 2</a>
-								<a href="#">Link 3</a>
-								<a href="#">Link 3</a>
-								<a href="#">Link 3</a>
-							</div>
-						</div>
-					</div>
-				 -->
-                <!-- dropdown end -->
+
 
                 <a href="#">Forgot Password?</a>
                 <input type="submit" class="btn" value="Login">

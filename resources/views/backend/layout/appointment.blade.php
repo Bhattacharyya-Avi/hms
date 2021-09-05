@@ -19,17 +19,17 @@
             @csrf
             <div class="mb-3">
               <label class="form-label">Full name</label>
-              <input type="text" placeholder="Enter Full name" class="form-control" name="full_name">
+              <input type="text" placeholder="Enter your name." value="{{$data->name}}" class="form-control" name="full_name">
             </div>
 
             <div class="mb-3">
               <label class="form-label">Mobile Number</label>
-              <input type="number" placeholder="Enter mobile number" class="form-control" name="phone_no">
+              <input type="number" placeholder="Enter your mobile number." value="{{$data->phone_no}}" class="form-control" name="phone_no">
             </div>
 
             <div class="mb-3">
               <label class="form-label">Email address</label>
-              <input type="email" class="form-control" placeholder="Email" name="email">
+              <input type="email" class="form-control" placeholder="Enter your email." value="{{$data->email}}" name="email">
             </div>
 
             <div class="mb-3">
@@ -37,7 +37,7 @@
               <select class="form-select flex-grow-1" name="doctorname">
                   <option>click to select</option>
                 @foreach($doctors as $docname)
-                <option value="{{$docname->id}}">{{$docname->employee_name}}</option>
+                <option value="{{$docname->id}}">{{$docname->name}}</option>
                 @endforeach
               </select>
             </div>

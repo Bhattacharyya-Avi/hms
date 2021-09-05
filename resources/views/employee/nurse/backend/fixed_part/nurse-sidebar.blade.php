@@ -11,7 +11,7 @@
 				<path d="M20 16L12 20L4 16"></path>
 			</svg>
 		</a>
-				
+
 		<div class="sidebar-user">
 			<div class="d-flex justify-content-center">
 				<div class="flex-shrink-0">
@@ -25,13 +25,13 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-start">
 						<a class="dropdown-item" href="{{route('nurse.profile')}}"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
-						<!-- <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a> 
+						<!-- <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
 						<div class="dropdown-divider"></div>-->
 						<!-- <a class="dropdown-item" href="pages-settings.html"><i class="align-middle me-1" data-feather="settings"></i> Settings &
 							Privacy</a>
 						<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a> -->
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="{{route('index')}}">Log out</a>
+						<a class="dropdown-item" href="{{route('nurse.logout')}}">Log out</a>
 					</div>
 				</div>
 			</div>
@@ -41,7 +41,7 @@
 			<li class="sidebar-header">
 				Pages
 			</li>
-			
+
 			<li class="sidebar-item">
 				<a class="sidebar-link" href="{{route('nurse.dashboard')}}">
 					<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
@@ -73,11 +73,11 @@
 				<ul id="ot" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
 					<li class="sidebar-item"><a class="sidebar-link" href="{{route('nurse.admit')}}">Admit a patient</a></li>
 					<li class="sidebar-item"><a class="sidebar-link" href="{{route('nurse.admited_patient_list')}}">Admited patients</a></li>
-					
+
 				</ul>
 			</li>
 
-			<!-- 
+			<!--
 			<li class="sidebar-item">
 				<a class="sidebar-link" href="calendar.html">
 					<i class="align-middle" data-feather="calendar"></i> <span class="align-middle">Calendar</span>

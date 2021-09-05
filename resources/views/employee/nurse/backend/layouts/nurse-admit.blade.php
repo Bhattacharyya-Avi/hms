@@ -53,7 +53,7 @@
                             <select class="form-select flex-grow-1" name="doctor_name">
                                 <option>click to select</option>
                                 @foreach($doctors as $doctor)
-                                <option>{{$doctor->employee_name}}</option>
+                                <option>{{$doctor->name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -100,8 +100,8 @@
 
                     <!-- multiple -->
                     <!-- <div class="mb-3" >
-                    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">  need to provide link additionaly 
-                    
+                    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">  need to provide link additionaly
+
                         <label class="form-label">Services</label>
                         <div style="size:100%!important;" class="input-group mb-3" >
                             <select id="choices-multiple-remove-button"  name="services" placeholder="Select Services"
@@ -115,7 +115,7 @@
 
                     <div class="mb-3" >
                     <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">  need to provide link additionaly  -->
-                    
+
                         <label class="form-label">Services</label>
                         <div style="size:100%!important;" class="input-group mb-3" >
                         <select name="services[]" class="custom-select mb-3" multiple>

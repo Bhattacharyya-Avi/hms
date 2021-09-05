@@ -27,7 +27,7 @@
                     <tr>
                         <td>{{$loop->iteration}}</td>
                         <td>{{$appointment->full_name}}</td>
-                        <td>{{$appointment->time}}</td>
+                        <td>{{$appointment->Slot->slot_name}}</td>
                         <td>{{$appointment->date}}</td>
                     </tr>
                 @endforeach

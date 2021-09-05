@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Slot;
+//use http\Client\Curl\User;
 use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\Staff;
 use App\Models\Bed;
 use App\Models\Appointment;
@@ -12,6 +14,7 @@ use App\Models\Admitpatients;
 use App\Models\Admitpatients_service;
 use App\Models\Chamber;
 use App\Models\Service;
+use Illuminate\Support\Facades\Auth;
 use PhpParser\Builder\Function_;
 
 class AdminController extends Controller
@@ -21,21 +24,24 @@ class AdminController extends Controller
     }
 
     public function stafflist(){
-        $employees=Staff::paginate(10);
+        $employees=User::where('role','Doctor')->paginate(10);
         $chambers= Chamber::all();
         return view('employee.admin.backend.layouts.admin-staff_list',compact('employees','chambers'));
     }
 
     public function add_staff(Request $addstaff){
         //dd($addstaff->all());
-        Staff::create([
-            'employee_name'=>$addstaff->employee_name,
-            'employee_address'=>$addstaff->employee_address,
+        User::create([
+            'role'=>$addstaff->employeetype,
+            'room'=>$addstaff->employeeroom,
+            'name'=>$addstaff->employee_name,
+            'address'=>$addstaff->employee_address,
             'phone_no'=>$addstaff->phone_no,
+            'gender'=>$addstaff->gender,
             'email'=>$addstaff->email,
-            'password'=>$addstaff->password,
-            'employeetype'=>$addstaff->employeetype,
-            'employee_room'=>$addstaff->employeeroom
+            'password'=>bcrypt($addstaff->password)
+
+
         ]);
         return redirect()->back();
     }
@@ -43,10 +49,9 @@ class AdminController extends Controller
     public function appointmentlist(){
 
         // $appointment=Appointment::all();
-        $appointments=Appointment::with('staff')->get();
-        // dd($appointments);
+        $appointments=Appointment::with('user')->get();
+//        dd($appointments);
 
-        // dd($appointments);
         return view('employee.admin.backend.layouts.admin-appointment_list', compact('appointments'));
     }
 
@@ -97,14 +102,14 @@ class AdminController extends Controller
 
     public function doctorlist(){
 //        $doctors= Staff::all();
-        $doctors=Staff::where('employeetype','Doctor')->get();
+        $doctors=User::where('role','Doctor')->get();
         return view('employee.admin.backend.layouts.admin-doctorlist',compact('doctors'));
     }
 
     public function appointlist($id){
-        $appointment_details=Appointment::where('staff_id',$id)->get();
-        $doctor_name = Staff::where('id',$id)->first();
-
+        $appointment_details=Appointment::where('doctor_id',$id)->get();
+        $doctor_name = User::where('id',$id)->first();
+//dd($appointment_details);
         return view('employee.admin.backend.layouts.admin-appointment-details',compact('appointment_details','doctor_name'));
     }
 
@@ -138,8 +143,13 @@ class AdminController extends Controller
 
     public function admitedpatient(){
         $details=Admitpatients::with('admitService')->paginate(10);
-      
+
         return view('employee.admin.backend.layouts.admin-admitedpatient',compact('details'));
+    }
+
+    public function AdminLogout(){
+        Auth::logout();
+        return redirect()->route('index');
     }
 
 }

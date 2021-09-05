@@ -20,30 +20,30 @@
         <form>
           <div class="mb-3">
             <label class="form-label">Full name</label>
-            <input type="text" placeholder="Enter Full name" class="form-control">
+            <input type="text" placeholder="Enter your name." class="form-control" value="{{$profile->name}}" >
           </div>
 
           <div class="mb-3">
             <label class="form-label">Address</label>
-            <input type="text" placeholder="Enter Address" class="form-control">
+            <input type="text" placeholder="Enter your address." class="form-control" value="{{$profile->address}}">
           </div>
 
           <div class="mb-3">
             <label class="form-label">Mobile Number</label>
-            <input type="number" placeholder="Enter mobile number" class="form-control">
+            <input type="number" placeholder="Enter your mobile number." class="form-control" value="{{$profile->phone_no}}">
           </div>
 
           <div class="mb-3">
             <label class="form-label">Gender</label>
             <div class="div">
-                                
+
                 <h5>
                     <label class="radio-container m-r-45">Male
-                        <input type="radio" checked="checked" name="gender">
+                        <input type="radio" @if($profile->gender=='Male') checked @endif name="gender">
                         <span class=""></span>
                     </label>
                     <label class="radio-container">Female
-                        <input type="radio" name="gender">
+                        <input type="radio" @if($profile->gender=='Female') checked @endif name="gender">
                         <span class=""></span>
                     </label>
                 </h5>
@@ -52,7 +52,7 @@
 
           <div class="mb-3">
             <label class="form-label">Email address</label>
-            <input type="email" class="form-control" placeholder="Email">
+            <input type="email" class="form-control" placeholder="Enter your email." value="{{$profile->email}}">
           </div>
 
           <!-- <div class="mb-3">

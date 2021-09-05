@@ -25,7 +25,7 @@
                     @foreach($doctors as $key=>$list)
                         <tr>
                             <td>{{$key+1}}</td>
-                            <td>{{$list->employee_name}}</td>
+                            <td>{{$list->name}}</td>
                             <td>{{$list->email}}</td>
                             <td>
                                 <a href="{{route('appointlist',$list->id)}}" type="button" class="btn btn-info">view</a>

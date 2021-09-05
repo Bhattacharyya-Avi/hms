@@ -28,10 +28,11 @@
             </thead>
             <tbody>
                 @foreach($appointments as $appointment)
+{{--                    @dd($appointment)--}}
                 <tr>
                     <td>{{$loop->iteration}}</td>
                     <td>{{$appointment->full_name}}</td>
-                    <td>{{$appointment->staff->employee_name}}</td>
+                    <td>{{$appointment->user->name}}</td>
                     <td>{{$appointment->email}}</td>
                     <td>{{ $appointment->slot->slot_name }}</td>
                     <td>{{$appointment->date}}</td>

@@ -16,7 +16,7 @@
 			<img src="{{url('/images/hospital.svg')}}">
 		</div>
 		<div class="login-content">
-			<form action="{{route('employee_login.post')}}" method="post">
+			<form action="{{route('doctor.login.post')}}" method="post">
                 @csrf
 				<img src="{{url('/images/employee.svg')}}">
 				<h3 class="title">Welcome Employee</h3>

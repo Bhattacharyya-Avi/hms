@@ -31,7 +31,7 @@
 							Privacy</a>
 						<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a> -->
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="{{url('/')}}">Log out</a>
+						<a class="dropdown-item" href="{{route('admin.logout')}}">Log out</a>
 					</div>
 				</div>
 			</div>
@@ -47,7 +47,7 @@
 					<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
 				</a>
 			</li>
-<!-- 
+<!--
 {{--			<li class="sidebar-item">--}}
 {{--				<a class="sidebar-link" href="#">--}}
 {{--					<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>--}}

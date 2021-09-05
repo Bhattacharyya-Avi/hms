@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Addot;
 use App\Models\Bed;
 use App\Models\Staff;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Admitpatients;
 use App\Models\Admitpatients_service;
 use App\Models\Service;
+use Illuminate\Support\Facades\Auth;
 
 class NurseController extends Controller
 {
@@ -28,7 +30,7 @@ class NurseController extends Controller
     public function admitpatient(){
         $bedstype=Bed::all();
         $bedsnum=Bed::all();
-        $doctors=Staff:: where('employeetype','Doctor')->get();
+        $doctors=User:: where('role','Doctor')->get();
         $services=Service::all();
         return view('employee.nurse.backend.layouts.nurse-admit',compact('bedstype','bedsnum','doctors','services'));
     }
@@ -63,12 +65,17 @@ class NurseController extends Controller
 
     public function admitedpatient(){
         $details=Admitpatients::with('admitService')->paginate(10);
-      
+
         return view('employee.nurse.backend.layouts.nurse-admitedpatients',compact('details'));
     }
 
     public function bedinformation(){
         $bedsinfo= Bed::all();
         return view('employee.nurse.backend.layouts.nurse-bedinfo',compact('bedsinfo'));
+    }
+
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('index');
     }
 }

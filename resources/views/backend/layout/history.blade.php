@@ -17,54 +17,28 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th style="width:25%;">Doctor Name</th>
-                    <th style="width:25%">Appointment time</th>
-                    <th class="d-none d-md-table-cell" style="width:25%">Appointment Date</th>
-                    <th style="width:15%">Appointment Status</th>
+                    <th>SL</th>
+                    <th>Doctor Name</th>
+                    <th>Appointment time</th>
+                    <th class="d-none d-md-table-cell">Appointment Date</th>
+                    <th>Appointment Status</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
+            @foreach($appointment as $info)
                 <tr>
-                    <td>Vanessa Tucker</td>
-                    <td>10:00 am</td>
-                    <td class="d-none d-md-table-cell">June 21, 2020</td>
+                    <td>{{$loop->iteration}}</td>
+                    <td>{{$info->doctor_id}}</td>
+                    <td>{{$info->Slot->slot_start}} - {{$info->Slot->slot_end}}</td>
+                    <td class="d-none d-md-table-cell">{{$info->date}}</td>
                     <td>active</td>
                     <td class="table-action">
                         <!-- <a href="#"><i class="align-middle" data-feather="edit-2"></i></a> -->
                         <a href="#"><i class="align-middle" data-feather="trash"></i></a>
                     </td>
                 </tr>
-                <tr>
-                    <td>Vanessa Tucker</td>
-                    <td>10:00 am</td>
-                    <td class="d-none d-md-table-cell">June 21, 2020</td>
-                    <td>active</td>
-                    <td class="table-action">
-                        <!-- <a href="#"><i class="align-middle" data-feather="edit-2"></i></a> -->
-                        <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Vanessa Tucker</td>
-                    <td>10:00 am</td>
-                    <td class="d-none d-md-table-cell">June 21, 2020</td>
-                    <td>active</td>
-                    <td class="table-action">
-                        <!-- <a href="#"><i class="align-middle" data-feather="edit-2"></i></a> -->
-                        <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Vanessa Tucker</td>
-                    <td>10:00 am</td>
-                    <td class="d-none d-md-table-cell">June 21, 2020</td>
-                    <td>active</td>
-                    <td class="table-action">
-                        <!-- <a href="#"><i class="align-middle" data-feather="edit-2"></i></a> -->
-                        <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                    </td>
-                </tr>
+            @endforeach
             </tbody>
         </table>
     </div>

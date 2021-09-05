@@ -10,11 +10,11 @@
             <!-- <a href="{{route('doctor.add_ot_list')}}" class="btn btn-light bg-white me-2">Add</a> -->
             <!-- modal trigger -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Employee</button>
-        </div> 
+        </div>
     </div>
     <div class="col-12 col-xl-12">
         <div class="card">
-            
+
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -22,9 +22,11 @@
                         <th>Type</th>
                         <th>Room number</th>
                         <th>Employee name</th>
+                        <th>Gender</th>
                         <th>Address</th>
+
                         <th class="d-none d-md-table-cell">Mobile number</th>
-                        
+
                         <th>Email</th>
                         <th>Action</th>
                     </tr>
@@ -33,10 +35,11 @@
                     @foreach($employees as $employee)
                     <tr>
                         <td>{{$loop->iteration}}</td>
-                        <td>{{$employee->employeetype}}</td>
-                        <td>{{$employee->employee_room}}</td>
-                        <td>{{$employee->employee_name}}</td>
-                        <td>{{$employee->employee_address}}</td>
+                        <td>{{$employee->role}}</td>
+                        <td>{{$employee->room}}</td>
+                        <td>{{$employee->name}}</td>
+                        <td>{{$employee->gender}}</td>
+                        <td>{{$employee->address}}</td>
                         <td class="d-none d-md-table-cell">{{$employee->phone_no}}</td>
                         <td>{{$employee->email}}</td>
                         <td class="table-action">
@@ -60,7 +63,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            
+
             <form action="{{route('admin.add_staff')}}" method="post">
                 @csrf
 
@@ -101,6 +104,18 @@
                 </div>
 
                 <div class="mb-3">
+                    <label class="form-label">Gender</label>
+                    <div class="custom-control custom-radio">
+                        <input name="gender" value="Male" type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                        <label  class="custom-control-label" for="customRadio1">Male</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input name="gender" value="Female" type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                        <label  class="custom-control-label" for="customRadio1">Female</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
                 <label class="form-label">Email address</label>
                 <input type="email" class="form-control" placeholder="Email" name="email">
                 </div>
@@ -110,16 +125,18 @@
                 <input type="password" class="form-control" placeholder="Password" name="password">
                 </div>
 
-                
+
+
+
 
                 <!-- <input type="submit" class="btn btn-primary" value="Submit" > -->
-                
-               
+
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Add</button>
                 </div>
-            </form> 
+            </form>
         </div>
     </div>
     </div>
