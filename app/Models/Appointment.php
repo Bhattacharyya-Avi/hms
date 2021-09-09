@@ -15,6 +15,9 @@ class Appointment extends Model
     public function user(){
         return $this->belongsto(User::class,'doctor_id','id');
     }
+    public function doctor(){
+        return $this->belongsto(User::class,'user_id','id');
+    }
 
     // public function Slot(){
     //     return $this->belongsTo(Slot::class,'id','time');

@@ -17,46 +17,41 @@
         <form>
           <div class="mb-3">
             <label class="form-label">Full name</label>
-            <input type="text" placeholder="Full name" class="form-control">
+            <input type="text" placeholder="Full name" class="form-control" value="{{$profile->name}}">
           </div>
 
           <div class="mb-3">
             <label class="form-label">Address</label>
-            <input type="text" placeholder="Address" class="form-control">
+            <input type="text" placeholder="Address" class="form-control" value="{{$profile->address}}">
           </div>
 
           <div class="mb-3">
             <label class="form-label">Mobile Number</label>
-            <input type="number" placeholder="mobile number" class="form-control">
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label">Appointment fee</label>
-            <input type="number" placeholder="Appointment fee" class="form-control">
+            <input type="number" placeholder="mobile number" class="form-control" value="{{$profile->phone_no}}">
           </div>
 
           <div class="mb-3">
             <label class="form-label">Gender</label>
-            <div class="div">                 
+            <div class="div">
               <h5>
                 <label class="radio-container m-r-45">Male
-                  <input type="radio" checked="checked" name="gender">
+                  <input type="radio" @if($profile->gender=='Male') checked @endif name="gender">
                   <span class=""></span>
                 </label>
                 <label class="radio-container">Female
-                  <input type="radio" name="gender">
+                  <input type="radio" name="gender" @if($profile->gender=='Female') checked @endif>
                   <span class=""></span>
                 </label>
               </h5>
             </div>
           </div>
 
-          <!-- <div class="mb-3">
+          <div class="mb-3">
             <label class="form-label">Email address</label>
-            <input type="email" class="form-control" placeholder="Email">
-          </div> -->
+            <input type="email" class="form-control" placeholder="Email" value="{{$profile->email}}">
+          </div>
 
-          
+
           <button type="submit" class="btn btn-primary">Update</button>
         </form>
       </div>

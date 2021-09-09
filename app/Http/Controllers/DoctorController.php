@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
 use Illuminate\Http\Request;
 use App\Models\Addot;
 use Illuminate\Support\Facades\Auth;
@@ -14,11 +15,17 @@ class DoctorController extends Controller
     }
 
     public function appointmentlist(){
-        return view('employee.doctor.backend.layout.doc-appointmentlist');
+        $data=Auth::user()->id;
+//        dd($data);
+        $appointment=Appointment::where('doctor_id',$data)->get();
+//        dd($appointment);
+        return view('employee.doctor.backend.layout.doc-appointmentlist',compact('appointment'));
     }
 
     public function profile(){
-        return view('employee.doctor.backend.layout.doc-profile');
+        $profile=Auth::user();
+
+        return view('employee.doctor.backend.layout.doc-profile',compact('profile'));
     }
 
     public function otlist(){
@@ -27,7 +34,8 @@ class DoctorController extends Controller
     }
 
     public function addotlist(){
-        return view('employee.doctor.backend.layout.doc-addot');
+        $info=Auth::user();
+        return view('employee.doctor.backend.layout.doc-addot',compact('info'));
     }
 
     public function addotlistform(Request $addotform){

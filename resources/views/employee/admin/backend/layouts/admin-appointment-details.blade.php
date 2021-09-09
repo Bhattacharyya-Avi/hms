@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="{{url('/css/table-style.css')}}">
     <div class="row mb-2 mb-xl-3">
         <div class="col-auto d-none d-sm-block">
-            <h4><strong>Doctor : {{ $doctor_name->employee_name}}/</strong> Appointment details</h4>
+            <h4><strong>Doctor : {{ $doctor_name->name}}/</strong> Appointment details</h4>
         </div>
 
     <!-- <div class="col-auto ms-auto text-end mt-n1">

@@ -87,6 +87,10 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','roleadmin']],function ()
     Route::get('/payment/outdoor',[AdminController::class,'outdoorpay'])->name('admin.outdoor');
     Route::get('/information/bed',[AdminController::class,'bedinfo'])->name('admin.bedinfo');
     Route::post('/add_bed',[AdminController::class,'addbed'])->name('admin.addbed');
+    Route::get('/bed/delete/{id}',[AdminController::class,'beddelete'])->name('admin.delete.bed');
+
+    Route::get('/bed/edit/{id}',[AdminController::class,'bededit'])->name('admin.edit.bed');
+    Route::put('/bed/update/{id}',[AdminController::class,'bedupdate'])->name('admin.update.bed');
     Route::get('/slot/list',[AdminController::class,'slotlist'])->name('admin.slotlist');
     Route::post('/slot/add',[AdminController::class,'slotadd'])->name('admin.slotadd');
     Route::get('/doctor/list',[AdminController::class,'doctorlist'])->name('admin.doctor list');
@@ -104,8 +108,12 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','roleadmin']],function ()
 
 /*
 things need to do
--> create teable for chamber and service
--> show chamber number on the doctor account create form
--> service will have service name and cost
+
+-> showing admited patient table on admin panel
+-> make validation on employee add area so that room number can unique
+->add status field in bed table
 
 */
+/*
+ * main work bill making
+ * */

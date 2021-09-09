@@ -11,11 +11,11 @@
             <!-- <a href="{{route('doctor.add_ot_list')}}" class="btn btn-light bg-white me-2">Add</a> -->
             <!-- modal trigger -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add chamber</button>
-        </div> 
+        </div>
     </div>
     <div class="col-12 col-xl-12">
         <div class="card">
-            
+
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -39,7 +39,7 @@
                         </td>
                     </tr>
                     @endforeach
-                    
+
                 </tbody>
             </table>
             {{$chambers->links('pagination::bootstrap-4')}}
@@ -55,7 +55,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            
+
             <form action="{{route('chamberadd')}}" method="post">
                 @csrf
                 <div class="mb-3">
@@ -72,8 +72,8 @@
                     <label class="form-label">Bed status</label>
                     <div class="input-group mb-3">
                         <select class="form-select flex-grow-1" name="chamber_status">
-                            <option>Avilable </option>
-                            <option>Notavilable</option>
+                            <option>Available </option>
+                            <option>Reserved</option>
                         </select>
                     </div>
                 </div>
@@ -83,8 +83,8 @@
                     <button type="submit" class="btn btn-primary">Add</button>
                 </div>
 
-                
-            
+            </form>
+
         </div>
     </div>
     </div>

@@ -19,7 +19,9 @@ class NurseController extends Controller
     }
 
     public function profile(){
-        return view('employee.nurse.backend.layouts.nurse-profile');
+        $profile=Auth::user();
+//        dd($profile);
+        return view('employee.nurse.backend.layouts.nurse-profile', compact('profile'));
     }
 
     public function otlist(){
@@ -29,7 +31,8 @@ class NurseController extends Controller
 
     public function admitpatient(){
         $bedstype=Bed::all();
-        $bedsnum=Bed::all();
+//        $bedsnum=Bed::all();
+        $bedsnum=Bed::where('bed_status', 'Avilable');
         $doctors=User:: where('role','Doctor')->get();
         $services=Service::all();
         return view('employee.nurse.backend.layouts.nurse-admit',compact('bedstype','bedsnum','doctors','services'));
@@ -59,6 +62,11 @@ class NurseController extends Controller
 
         }
 
+        //update bed status
+        Bed::where('bed_number',$admit->bed_number)->update([
+            'bed_status'=>'Acquired'
+        ]);
+        // update bed status end
 
         return redirect()->route('nurse.admit');
     }

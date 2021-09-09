@@ -29,7 +29,7 @@
             @foreach($appointment as $info)
                 <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$info->doctor_id}}</td>
+                    <td>{{$info->user->name}}</td>
                     <td>{{$info->Slot->slot_start}} - {{$info->Slot->slot_end}}</td>
                     <td class="d-none d-md-table-cell">{{$info->date}}</td>
                     <td>active</td>

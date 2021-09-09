@@ -7,7 +7,7 @@
         </div>
          <!-- <div class="col-auto ms-auto text-end mt-n1">
             <a href="{{route('doctor.add_ot_list')}}" class="btn btn-light bg-white me-2">Add</a>
-            
+
         </div>  -->
     </div>
     <div class="row">
@@ -18,12 +18,12 @@
                         @csrf
                         <div class="mb-3">
                             <label class="form-label">Doctor name</label>
-                            <input type="text" placeholder="Enter Doctor name" class="form-control" name='doctor_name'>
+                            <input type="text" placeholder="Enter Doctor name" class="form-control" name='doctor_name' value="{{$info->name}}">
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Doctor email</label>
-                            <input type="email" placeholder="Enter email" class="form-control" name='doctor_email'>
+                            <input type="email" placeholder="Enter email" class="form-control" name='doctor_email' value="{{$info->email}}">
                         </div>
 
                         <div class="mb-3">

@@ -15,38 +15,38 @@
 <div class="row">
   <div class="col-12 col-xl-12">
     <div class="card">
-      
+
       <div class="card-body">
         <form>
           <div class="mb-3">
             <label class="form-label">Full name</label>
-            <input type="text" placeholder="Full name" class="form-control">
+            <input type="text" placeholder="Full name" class="form-control" value="{{$profile->name}}">
           </div>
 
           <div class="mb-3">
             <label class="form-label">Address</label>
-            <input type="text" placeholder="Address" class="form-control">
+            <input type="text" placeholder="Address" class="form-control" value="{{$profile->address}}">
           </div>
 
           <div class="mb-3">
             <label class="form-label">Mobile Number</label>
-            <input type="number" placeholder="mobile number" class="form-control">
+            <input type="number" placeholder="mobile number" class="form-control"value="{{$profile->phone_no}}">
           </div>
 
-          <div class="mb-3">
-            <label class="form-label">Appointment fee</label>
-            <input type="number" placeholder="Appointment fee" class="form-control">
-          </div>
+{{--          <div class="mb-3">--}}
+{{--            <label class="form-label">Appointment fee</label>--}}
+{{--            <input type="number" placeholder="Appointment fee" class="form-control">--}}
+{{--          </div>--}}
 
           <div class="mb-3">
             <label class="form-label">Gender</label>
-            <div class="div">                 
+            <div class="div">
               <h5>
                 <label class="radio-container m-r-45">Male
-                  <input type="radio" checked="checked" name="gender">
+                  <input type="radio" name="gender" @if($profile->gender=='Male') checked @endif>
                   <span class=""></span>
                 </label>
-                <label class="radio-container">Female
+                <label class="radio-container" @if($profile->gender=='Female') checked @endif>Female
                   <input type="radio" name="gender">
                   <span class=""></span>
                 </label>
@@ -56,7 +56,7 @@
 
           <div class="mb-3">
             <label class="form-label">Email address</label>
-            <input type="email" class="form-control" placeholder="Email">
+            <input type="email" class="form-control" placeholder="Email" value="{{$profile->email}}">
           </div>
 
           <!-- <div class="mb-3">

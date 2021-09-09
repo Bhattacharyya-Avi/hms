@@ -30,7 +30,7 @@ class AdminController extends Controller
     }
 
     public function add_staff(Request $addstaff){
-        //dd($addstaff->all());
+//        dd($addstaff->all());
         User::create([
             'role'=>$addstaff->employeetype,
             'room'=>$addstaff->employeeroom,
@@ -75,15 +75,42 @@ class AdminController extends Controller
     }
 
     public function addbed(Request $addbed){
-        // dd($addbed->all());
+//        dd($addbed->all());
         Bed::create([
             'bed_number'=>$addbed->bed_number,
             'bed_type'=>$addbed->bed_type,
-            'bed_status'=>$addbed->bed_status,
+            'bed_status'=>$addbed->status,
             'bed_description'=>$addbed->bed_description,
             'bed_cost'=>$addbed->bed_cost
         ]);
         return redirect()->back();
+    }
+
+    public function beddelete($id){
+//        dd($id);
+        $bed=Bed::find($id);
+        if ($bed){
+            $bed->delete();
+            return redirect()->back()->with('message','Bed deleted successfully!');
+        }
+        return redirect()->back()->with('message','No information found');
+    }
+
+    public function bededit($id){
+        $bed=Bed::find($id);
+//        dd($bed);
+        return view('employee.admin.backend.layouts.admin-edit_bed',compact('bed'));
+    }
+    public function bedupdate(Request $request,$id){
+        $bed=Bed::find($id);
+        $bed->update([
+            'bed_number'=>$request->bed_number,
+//            'bed_type'=>$request->bed_type,
+            'bed_status'=>$request->status,
+            'bed_description'=>$request->bed_description,
+            'bed_cost'=>$request->bed_cost
+        ]);
+        return redirect()->route('admin.bedinfo')->with('message','Bed information updated successfully');
     }
 
     public function slotlist(){

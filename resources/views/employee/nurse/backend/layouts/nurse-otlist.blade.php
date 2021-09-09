@@ -17,6 +17,7 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
+                        <th>SL</th>
                         <th>Doctor's name</th>
                         <th>Patient's name</th>
                         <th class="d-none d-md-table-cell">OT Date</th>
@@ -27,6 +28,7 @@
                 <tbody>
                     @foreach($ots as $ot)
                         <tr>
+                            <td>{{$loop->iteration}}</td>
                             <td>{{$ot->doctor_name}}</td>
                             <td>{{$ot->Patient_name}}</td>
                             <td class="d-none d-md-table-cell">{{$ot->date}}</td>
