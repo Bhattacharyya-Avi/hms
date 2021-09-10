@@ -1,9 +1,9 @@
-@extends('employee.nurse.backend.nurse-master')
+@extends('employee.Admin.backend.admin-master')
 
 @section('content')
     <div class="row mb-2 mb-xl-3">
         <div class="col-auto d-none d-sm-block">
-            <h3><strong>Nurse/</strong> Admited Patients</h3>
+            <h3><strong>Admin/</strong> Admited Patients</h3>
         </div>
 
         <!-- <div class="col-auto ms-auto text-end mt-n1">

@@ -35,6 +35,7 @@ class NurseController extends Controller
         $bedsnum=Bed::where('bed_status', 'Avilable');
         $doctors=User:: where('role','Doctor')->get();
         $services=Service::all();
+//        dd($bedsnum);
         return view('employee.nurse.backend.layouts.nurse-admit',compact('bedstype','bedsnum','doctors','services'));
     }
 

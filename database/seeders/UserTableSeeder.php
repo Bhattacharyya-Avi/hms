@@ -15,14 +15,14 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         //for user account
-//        User::create([
-//            'name'=>'Avindra',
-//            'email'=>'avindra@gmail.com',
-//            'password'=>bcrypt('12345'),
-//            'phone_no'=>'01737352441',
-//            'gender'=>'Male',
-//            'address'=>'BD'
-//        ]);
+        User::create([
+            'name'=>'Avindra',
+            'email'=>'avindra@gmail.com',
+            'password'=>bcrypt('12345'),
+            'phone_no'=>'01737352441',
+            'gender'=>'Male',
+            'address'=>'BD'
+        ]);
         //for admin account
         User::create([
             'name'=>'Admin',
@@ -34,16 +34,16 @@ class UserTableSeeder extends Seeder
             'address'=>'BD'
         ]);
         //for doctor account
-//        User::create([
-//            'name'=>'Karim',
-//            'role'=>'Doctor',
-//            'email'=>'karim@gmail.com',
-//            'password'=>bcrypt('12345'),
-//            'phone_no'=>'01234587649',
-//            'gender'=>'Male',
-//            'address'=>'BD',
-//            'room'=>'001'
-//        ]);
+        User::create([
+            'name'=>'Karim',
+            'role'=>'Doctor',
+            'email'=>'karim@gmail.com',
+            'password'=>bcrypt('12345'),
+            'phone_no'=>'01234587649',
+            'gender'=>'Male',
+            'address'=>'BD',
+            'room'=>'001'
+        ]);
         //for nurse account
         User::create([
             'name'=>'Sofia',

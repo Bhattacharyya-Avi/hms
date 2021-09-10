@@ -47,12 +47,12 @@
 					<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
 				</a>
 			</li>
-<!--
-{{--			<li class="sidebar-item">--}}
-{{--				<a class="sidebar-link" href="#">--}}
-{{--					<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>--}}
-{{--				</a>--}}
-{{--			</li>--}} -->
+
+			<li class="sidebar-item">
+				<a class="sidebar-link" href="{{route('admin.admited.patient')}}">
+                    <i class="material-icons" style="font-size:18px">airline_seat_individual_suite</i> <span class="align-middle">Admited patients</span>
+				</a>
+			</li>
 
             <li class="sidebar-item">
                 <a class="sidebar-link" href="{{route('admin.slotlist')}}">

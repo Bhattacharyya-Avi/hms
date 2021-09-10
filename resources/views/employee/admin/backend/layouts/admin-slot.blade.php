@@ -12,6 +12,11 @@
         </div>
     </div>
     <div class="col-12 col-xl-12">
+        @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
         <div class="card">
 
             <table class="table table-bordered">
@@ -33,7 +38,7 @@
                         <td>{{$slot->slot_end}}</td>
                         <td class="table-action">
                             <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                            <a href="#"><i class="align-middle" data-feather="trash"></i></a>
+                            <a href="{{route('admin.slot.delete', $slot->id)}}"><i class="align-middle" data-feather="trash"></i></a>
                         </td>
                     </tr>
                 @endforeach

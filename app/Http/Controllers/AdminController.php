@@ -24,9 +24,19 @@ class AdminController extends Controller
     }
 
     public function stafflist(){
-        $employees=User::where('role','Doctor')->paginate(10);
+        $employees=User::where('role','!=','user')->paginate(10);
         $chambers= Chamber::all();
         return view('employee.admin.backend.layouts.admin-staff_list',compact('employees','chambers'));
+    }
+
+    public function staffdelete($id){
+//        dd($id);
+        $employee=User::find($id);
+        if ($employee){
+            $employee->delete();
+            return redirect()->back()->with('message','Employee removed successfully!');
+        }
+        return redirect()->back()->with('message','No information found');
     }
 
     public function add_staff(Request $addstaff){
@@ -127,6 +137,16 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+    public function SlotDelete($id){
+//        dd($id);
+        $slot=Slot::find($id);
+        if ($slot){
+            $slot->delete();
+            return redirect()->back()->with('message','Slot deleted successfully!');
+        }
+        return redirect()->back()->with('message','Slot not found!');
+    }
+
     public function doctorlist(){
 //        $doctors= Staff::all();
         $doctors=User::where('role','Doctor')->get();
@@ -154,6 +174,15 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+    public function serviceDelete($id){
+        $service=Service::find($id);
+        if ($service){
+            $service->delete();
+            return redirect()->back()->with('message','Service deleted successfully!');
+        }
+        return redirect()->back()->with('message','Service not found!');
+    }
+
     public function chamberlist(){
         $chambers=Chamber::paginate(10);
         return view('employee.admin.backend.layouts.admin-chamber',compact('chambers'));
@@ -166,6 +195,16 @@ class AdminController extends Controller
             'chamber_status'=>$chamber->chamber_status
         ]);
         return redirect()->back();
+    }
+
+    public function chamberDelete($id){
+//        dd($id);
+        $chamber=Chamber::find($id);
+        if ($chamber){
+            $chamber->delete();
+            return redirect()->back()->with('message','Chamber deleted successfully!');
+        }
+        return redirect()->back()->with('message','Chamber not found!');
     }
 
     public function admitedpatient(){

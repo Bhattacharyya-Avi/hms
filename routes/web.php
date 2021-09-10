@@ -81,6 +81,7 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','roleadmin']],function ()
     Route::get('/dashboard',[AdminController::class,'dashboard'])->name('admin.dashboard');
     Route::get('/employee-list',[AdminController::class,'stafflist'])->name('admin.stafflist');
     Route::post('/add-staff',[AdminController::class,'add_staff'])->name('admin.add_staff');
+    Route::get('/staff/delete{id}',[AdminController::class,'staffdelete'])->name('admin.staff.delete');
     Route::get('/appointmentlist',[AdminController::class,'appointmentlist'])->name('admin.appointmentlist');
     Route::get('/OTlist',[AdminController::class,'OTlist'])->name('admin.OTlist');
     Route::get('/payment/indoor',[AdminController::class,'indoorpay'])->name('admin.indoor');
@@ -88,17 +89,19 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','roleadmin']],function ()
     Route::get('/information/bed',[AdminController::class,'bedinfo'])->name('admin.bedinfo');
     Route::post('/add_bed',[AdminController::class,'addbed'])->name('admin.addbed');
     Route::get('/bed/delete/{id}',[AdminController::class,'beddelete'])->name('admin.delete.bed');
-
     Route::get('/bed/edit/{id}',[AdminController::class,'bededit'])->name('admin.edit.bed');
     Route::put('/bed/update/{id}',[AdminController::class,'bedupdate'])->name('admin.update.bed');
     Route::get('/slot/list',[AdminController::class,'slotlist'])->name('admin.slotlist');
     Route::post('/slot/add',[AdminController::class,'slotadd'])->name('admin.slotadd');
+    Route::get('/slot/delete{id}',[AdminController::class,'SlotDelete'])->name('admin.slot.delete');
     Route::get('/doctor/list',[AdminController::class,'doctorlist'])->name('admin.doctor list');
     Route::get('/{id}/appointment/details',[AdminController::class,'appointlist'])->name('appointlist');
     Route::get('/services',[AdminController::class,'services'])->name('services');
     Route::post('/services/add',[AdminController::class,'serviceadd'])->name('admin.serviceadd');
     Route::get('/Chamber/list',[AdminController::class,'chamberlist'])->name('chamberlist');
+    Route::get('/services/delete{id}',[AdminController::class,'serviceDelete'])->name('admin.service.delete');
     Route::post('/Chamber/add',[AdminController::class,'chamberadd'])->name('chamberadd');
+    Route::get('/Chamber/delete{id}',[AdminController::class,'chamberDelete'])->name('chamber.delete');
     Route::get('/admited_patient/list',[AdminController::class,'admitedpatient'])->name('admin.admited.patient');
 });
 
