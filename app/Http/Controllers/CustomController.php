@@ -97,10 +97,32 @@ class CustomController extends Controller
         return view('backend.layout.history',compact('appointment'));
     }
 
+    public function appointmentDelete($id){
+//        dd($id);
+        $appointment=Appointment::find($id);
+        if ($appointment){
+            $appointment->delete();
+            return redirect()->back()->with('message','Appointment deleted.');
+        }
+        return redirect()->back()->with('message','No appointment found.');
+    }
+
     public function profile(){
         $profile=Auth::user();
 //        dd($profile);
         return view('backend.layout.profile',compact('profile'));
+    }
+
+    public function profileUpdate(Request $request,$id){
+        $profile=User::find($id);
+//        dd($profile);
+        $profile->update([
+            'name'=>$request->name,
+            'phone_no'=>$request->phone_no,
+            'gender'=>$request->gender,
+            'address'=>$request->address
+        ]);
+        return redirect()->route('user.profile')->with('message','Information updated');
     }
 
     public function payment(){

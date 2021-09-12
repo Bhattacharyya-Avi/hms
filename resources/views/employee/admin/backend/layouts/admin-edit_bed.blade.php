@@ -31,7 +31,7 @@
             <label class="form-label">Bed status</label>
             <div class="input-group mb-3">
                 <select class="form-select flex-grow-1" name="status">
-                    <option @if($bed->bed_status=='Avilable') selected @endif>Avilable </option>
+                    <option @if($bed->bed_status=='Available') selected @endif>Available </option>
                     <option @if($bed->bed_status=='Booked') selected @endif>Booked</option>
                 </select>
             </div>

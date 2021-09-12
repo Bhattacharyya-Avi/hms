@@ -48,7 +48,7 @@
                         <td class="d-none d-md-table-cell">{{$employee->phone_no}}</td>
                         <td>{{$employee->email}}</td>
                         <td class="table-action">
-                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
+                            <a href="{{route('admin.staff.edit',$employee->id)}}"><i class="align-middle" data-feather="edit-2"></i></a>
                             <a href="{{route('admin.staff.delete', $employee->id)}}"><i class="align-middle" data-feather="trash"></i></a>
                         </td>
                     </tr>

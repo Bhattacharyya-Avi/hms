@@ -31,7 +31,9 @@ Route::group(['prefix'=>'/user','middleware'=>'auth'],function (){
     Route::get('/appointment',[CustomController::class,'bookAppointment'])->name('user.appointment_book');
     Route::post('/appointment/book',[CustomController::class,'submitappointment'])->name('user.appointment.submit');
     Route::get('/history',[CustomController::class,'appointmenthistory'])->name('user.appointment_history');
+    Route::get('/appointment/delete{id}',[CustomController::class,'appointmentDelete'])->name('user.appointment.delete');
     Route::get('/profile',[CustomController::class,'profile'])->name('user.profile');
+    Route::put('/profile/update/{id}',[CustomController::class,'profileUpdate'])->name('user.profile.update');
     Route::get('/payment',[CustomController::class,'payment'])->name('user.payment');
 });
 // login
@@ -82,6 +84,8 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','roleadmin']],function ()
     Route::get('/employee-list',[AdminController::class,'stafflist'])->name('admin.stafflist');
     Route::post('/add-staff',[AdminController::class,'add_staff'])->name('admin.add_staff');
     Route::get('/staff/delete{id}',[AdminController::class,'staffdelete'])->name('admin.staff.delete');
+    Route::get('/staff/edit{id}',[AdminController::class,'staffEdit'])->name('admin.staff.edit');
+    Route::put('/staff/update{id}',[AdminController::class,'staffUpdate'])->name('admin.staff.update');
     Route::get('/appointmentlist',[AdminController::class,'appointmentlist'])->name('admin.appointmentlist');
     Route::get('/OTlist',[AdminController::class,'OTlist'])->name('admin.OTlist');
     Route::get('/payment/indoor',[AdminController::class,'indoorpay'])->name('admin.indoor');
@@ -94,14 +98,20 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','roleadmin']],function ()
     Route::get('/slot/list',[AdminController::class,'slotlist'])->name('admin.slotlist');
     Route::post('/slot/add',[AdminController::class,'slotadd'])->name('admin.slotadd');
     Route::get('/slot/delete{id}',[AdminController::class,'SlotDelete'])->name('admin.slot.delete');
+    Route::get('/slot/edit{id}',[AdminController::class,'SlotEdit'])->name('admin.slot.edit');
+    Route::put('/slot/Update{id}',[AdminController::class,'SlotUpdate'])->name('admin.slot.update');
     Route::get('/doctor/list',[AdminController::class,'doctorlist'])->name('admin.doctor list');
     Route::get('/{id}/appointment/details',[AdminController::class,'appointlist'])->name('appointlist');
     Route::get('/services',[AdminController::class,'services'])->name('services');
     Route::post('/services/add',[AdminController::class,'serviceadd'])->name('admin.serviceadd');
-    Route::get('/Chamber/list',[AdminController::class,'chamberlist'])->name('chamberlist');
     Route::get('/services/delete{id}',[AdminController::class,'serviceDelete'])->name('admin.service.delete');
+    Route::get('/services/edit{id}',[AdminController::class,'serviceEdit'])->name('admin.service.edit');
+    Route::put('/services/update{id}',[AdminController::class,'serviceUpdate'])->name('admin.service.Update');
+    Route::get('/Chamber/list',[AdminController::class,'chamberlist'])->name('chamberlist');
     Route::post('/Chamber/add',[AdminController::class,'chamberadd'])->name('chamberadd');
     Route::get('/Chamber/delete{id}',[AdminController::class,'chamberDelete'])->name('chamber.delete');
+    Route::get('/Chamber/edit{id}',[AdminController::class,'chamberEdit'])->name('chamber.edit');
+    Route::put('/Chamber/update{id}',[AdminController::class,'chamberUpdate'])->name('chamber.update');
     Route::get('/admited_patient/list',[AdminController::class,'admitedpatient'])->name('admin.admited.patient');
 });
 
@@ -112,7 +122,6 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','roleadmin']],function ()
 /*
 things need to do
 
--> showing admited patient table on admin panel
 -> make validation on employee add area so that room number can unique
 ->add status field in bed table
 

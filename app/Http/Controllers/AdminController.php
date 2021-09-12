@@ -39,6 +39,25 @@ class AdminController extends Controller
         return redirect()->back()->with('message','No information found');
     }
 
+    public function staffEdit($id){
+        $employee=User::find($id);
+        dd($employee);
+        $chambers=Chamber::all();
+        return view('employee.admin.backend.layouts.admin-edit_employee',compact('employee','chambers'));
+    }
+    public function staffUpdate(Request $request,$id){
+        $employee=User::find($id);
+        $employee->update([
+            'name'=>$request->employee_name,
+            'address'=>$request->employee_address,
+            'phone_no'=>$request->phone_no,
+            'gender'=>$request->gender,
+
+        ]);
+//        dd($employee);
+        return redirect()->route('admin.stafflist')->with('message','Information updated successfully');
+    }
+
     public function add_staff(Request $addstaff){
 //        dd($addstaff->all());
         User::create([
@@ -147,6 +166,21 @@ class AdminController extends Controller
         return redirect()->back()->with('message','Slot not found!');
     }
 
+    public function SlotEdit($id){
+        $slot=Slot::find($id);
+        return view('employee.admin.backend.layouts.admin-edit_slot',compact('slot'));
+    }
+
+    public function SlotUpdate(Request $request,$id){
+        $slot=Slot::find($id);
+        $slot->update([
+            'slot_name'=>$request->slot_name,
+            'slot_start'=>$request->start_time,
+            'slot_end'=>$request->End_time
+        ]);
+        return redirect()->route('admin.slotlist')->with('message','Slot updated successfully');
+    }
+
     public function doctorlist(){
 //        $doctors= Staff::all();
         $doctors=User::where('role','Doctor')->get();
@@ -183,6 +217,22 @@ class AdminController extends Controller
         return redirect()->back()->with('message','Service not found!');
     }
 
+    public function serviceEdit($id){
+        $service=Service::find($id);
+//        dd($service);
+        return view('employee.admin.backend.layouts.admin-edit_service',compact('service'));
+    }
+
+    public function serviceUpdate(Request $request,$id){
+        $service=Service::find($id);
+        $service->update([
+            'service_name'=>$request->service_name,
+            'service_description'=>$request->service_description,
+            'service_cost'=>$request->service_cost
+        ]);
+        return redirect()->route('services')->with('message','services updated successfully');
+    }
+
     public function chamberlist(){
         $chambers=Chamber::paginate(10);
         return view('employee.admin.backend.layouts.admin-chamber',compact('chambers'));
@@ -205,6 +255,20 @@ class AdminController extends Controller
             return redirect()->back()->with('message','Chamber deleted successfully!');
         }
         return redirect()->back()->with('message','Chamber not found!');
+    }
+
+    public function chamberEdit($id){
+        $chamber=Chamber::find($id);
+        return view('employee.admin.backend.layouts.admin-edit_chamber',compact('chamber'));
+    }
+    public function chamberUpdate(Request $request,$id){
+        $chamber=Chamber::find($id);
+        $chamber->update([
+            'chamber_number'=>$request->chamber_number,
+            'chamber_discription'=>$request->chamber_discription,
+            'chamber_status'=>$request->chamber_status
+        ]);
+        return redirect()->route('chamberlist')->with('message','Bed information updated successfully');
     }
 
     public function admitedpatient(){

@@ -31,8 +31,7 @@ class NurseController extends Controller
 
     public function admitpatient(){
         $bedstype=Bed::all();
-//        $bedsnum=Bed::all();
-        $bedsnum=Bed::where('bed_status', 'Avilable');
+        $bedsnum=Bed::where('bed_status', 'Available')->get();
         $doctors=User:: where('role','Doctor')->get();
         $services=Service::all();
 //        dd($bedsnum);

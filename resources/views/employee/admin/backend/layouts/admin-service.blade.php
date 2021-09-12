@@ -39,7 +39,7 @@
                         <td>{{$service->service_description}}</td>
                         <td>{{$service->service_cost}}</td>
                         <td class="table-action">
-                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
+                            <a href="{{route('admin.service.edit',$service->id)}}"><i class="align-middle" data-feather="edit-2"></i></a>
                             <a href="{{route('admin.service.delete',$service->id)}}"><i class="align-middle" data-feather="trash"></i></a>
                         </td>
                     </tr>

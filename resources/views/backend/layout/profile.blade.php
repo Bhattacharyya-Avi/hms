@@ -17,20 +17,22 @@
   <div class="col-12 col-xl-12">
     <div class="card">
       <div class="card-body">
-        <form>
+        <form action="{{route('user.profile.update',$profile->id)}}" method="post">
+            @csrf
+            @method('PUT')
           <div class="mb-3">
             <label class="form-label">Full name</label>
-            <input type="text" placeholder="Enter your name." class="form-control" value="{{$profile->name}}" >
+            <input type="text" placeholder="Enter your name." class="form-control" name="name" value="{{$profile->name}}" >
           </div>
 
           <div class="mb-3">
             <label class="form-label">Address</label>
-            <input type="text" placeholder="Enter your address." class="form-control" value="{{$profile->address}}">
+            <input type="text" placeholder="Enter your address." class="form-control" name="address" value="{{$profile->address}}">
           </div>
 
           <div class="mb-3">
             <label class="form-label">Mobile Number</label>
-            <input type="number" placeholder="Enter your mobile number." class="form-control" value="{{$profile->phone_no}}">
+            <input type="number" placeholder="Enter your mobile number." class="form-control" name="phone_no" value="{{$profile->phone_no}}">
           </div>
 
           <div class="mb-3">
@@ -39,11 +41,11 @@
 
                 <h5>
                     <label class="radio-container m-r-45">Male
-                        <input type="radio" @if($profile->gender=='Male') checked @endif name="gender">
+                        <input value="Male" type="radio" @if($profile->gender=='Male') checked @endif name="gender" >
                         <span class=""></span>
                     </label>
                     <label class="radio-container">Female
-                        <input type="radio" @if($profile->gender=='Female') checked @endif name="gender">
+                        <input value="Female" type="radio" @if($profile->gender=='Female') checked @endif name="gender" >
                         <span class=""></span>
                     </label>
                 </h5>

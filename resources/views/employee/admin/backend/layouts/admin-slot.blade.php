@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="{{url('/css/table-style.css')}}">
     <div class="row mb-2 mb-xl-3">
         <div class="col-auto d-none d-sm-block">
-            <h4><strong>Admin/</strong> Employee List</h4>
+            <h4><strong>Admin/</strong> Slot List</h4>
         </div>
 
         <div class="col-auto ms-auto text-end mt-n1">
@@ -37,7 +37,7 @@
                         <td class="d-none d-md-table-cell">{{$slot->slot_start}}</td>
                         <td>{{$slot->slot_end}}</td>
                         <td class="table-action">
-                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
+                            <a href="{{route('admin.slot.edit',$slot->id)}}"><i class="align-middle" data-feather="edit-2"></i></a>
                             <a href="{{route('admin.slot.delete', $slot->id)}}"><i class="align-middle" data-feather="trash"></i></a>
                         </td>
                     </tr>

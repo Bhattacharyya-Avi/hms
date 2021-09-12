@@ -39,7 +39,7 @@
                         <td>{{$chamber->chamber_discription}}</td>
                         <td>{{$chamber->chamber_status}}</td>
                         <td class="table-action">
-                            <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
+                            <a href="{{route('chamber.edit',$chamber->id)}}"><i class="align-middle" data-feather="edit-2"></i></a>
                             <a href="{{route('chamber.delete',$chamber->id)}}"><i class="align-middle" data-feather="trash"></i></a>
                         </td>
                     </tr>

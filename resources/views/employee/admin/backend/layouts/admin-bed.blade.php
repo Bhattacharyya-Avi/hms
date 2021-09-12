@@ -86,8 +86,8 @@
                 <label class="form-label">Bed status</label>
                 <div class="input-group mb-3">
                 <select class="form-select flex-grow-1" name="status">
-                    <option>Avilable </option>
-                    <option>Booked</option>
+                    <option value="Available">Available </option>
+                    <option value="Booked">Booked</option>
                 </select>
                 </div>
             </div>
