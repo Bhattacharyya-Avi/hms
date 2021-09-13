@@ -1,4 +1,4 @@
-@extends('employee.nurse.backend.nurse-master')
+@extends('employee.employee-master')
 
 @section('content')
   <div class="row mb-2 mb-xl-3">

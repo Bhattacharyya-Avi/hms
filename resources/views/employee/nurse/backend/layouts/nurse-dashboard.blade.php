@@ -1,4 +1,4 @@
-@extends('employee.nurse.backend.nurse-master')
+@extends('employee.employee-master')
 
 @section('content')
     <div class="container-fluid p-0">
@@ -29,11 +29,11 @@
                                             <div class="stat text-primary">
                                                 <i class="align-middle" data-feather="user"></i>
                                             </div>
-                                        </div> 
-                                    </div> 
+                                        </div>
+                                    </div>
                                     <h3 class="mt-1 mb-3">My Information </h3>
                                     <div class="mb-0">
-                                        <a href="{{route('nurse.profile')}}" class="btn btn-primary">View</a> 
+                                        <a href="{{route('nurse.profile')}}" class="btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </div>
@@ -49,18 +49,18 @@
                                                 <i class="material-icons">format_list_bulleted</i>
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>
                                     <h3 class="mt-1 mb-3">OT list</h3>
                                     <div class="mb-0">
                                     <a href="{{route('nurse.otlist')}}" class="btn btn-primary">View</a>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="card">
                                 <div class="card-body">
-                                    
+
                                     <div class="row">
                                         <!-- <div class="col mt-0">
                                             <h5 class="card-title">Earnings</h5>
@@ -96,7 +96,7 @@
                                     <a href="{{route('nurse.bedinfo')}}" class="btn btn-primary">View</a>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -131,8 +131,8 @@
             </div>
         </div>
         <!-- <div class="row">
-        
-        
+
+
             <div class="col-12 col-md-6 col-xxl-3 d-flex order-2 order-xxl-1">
                 <div class="card flex-fill">
                     <div class="card-header">

@@ -1,4 +1,4 @@
-@extends('employee.doctor.backend.doctor-master')
+@extends('employee.employee-master')
 
 @section('content')
 
@@ -17,20 +17,20 @@
     <div class="card">
 
       <div class="card-body">
-        <form>
+        <form action="{{route('doctor.profile.update',$profile->id)}}">
           <div class="mb-3">
             <label class="form-label">Full name</label>
-            <input type="text" placeholder="Full name" class="form-control" value="{{$profile->name}}">
+            <input type="text" placeholder="Full name" name="name" class="form-control" value="{{$profile->name}}">
           </div>
 
           <div class="mb-3">
             <label class="form-label">Address</label>
-            <input type="text" placeholder="Address" class="form-control" value="{{$profile->address}}">
+            <input type="text" placeholder="Address" name="address" class="form-control" value="{{$profile->address}}">
           </div>
 
           <div class="mb-3">
             <label class="form-label">Mobile Number</label>
-            <input type="number" placeholder="mobile number" class="form-control"value="{{$profile->phone_no}}">
+            <input type="number" placeholder="mobile number" name="phone_no" class="form-control"value="{{$profile->phone_no}}">
           </div>
 
 {{--          <div class="mb-3">--}}
@@ -43,11 +43,11 @@
             <div class="div">
               <h5>
                 <label class="radio-container m-r-45">Male
-                  <input type="radio" name="gender" @if($profile->gender=='Male') checked @endif>
+                  <input type="radio" value="Male" name="gender" @if($profile->gender=='Male') checked @endif>
                   <span class=""></span>
                 </label>
-                <label class="radio-container" @if($profile->gender=='Female') checked @endif>Female
-                  <input type="radio" name="gender">
+                <label class="radio-container" >Female
+                  <input type="radio" value="Female" name="gender"  @if($profile->gender=='Female') checked @endif>
                   <span class=""></span>
                 </label>
               </h5>
@@ -56,7 +56,7 @@
 
           <div class="mb-3">
             <label class="form-label">Email address</label>
-            <input type="email" class="form-control" placeholder="Email" value="{{$profile->email}}">
+            <input type="email" readonly class="form-control" placeholder="Email" value="{{$profile->email}}">
           </div>
 
           <!-- <div class="mb-3">

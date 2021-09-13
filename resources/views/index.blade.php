@@ -243,9 +243,9 @@
             <div class="col-md-4 text-center" data-aos="fade-left">
             <h3>Stuff's login</h3>
                 <a href="{{route('employee_login')}}">Admin</a>
-                <a href="{{route('doctor.login')}}">Doctor</a>
-                <a href="{{route('nurse.login')}}">Nurse</a>
-                <a href="{{route('accountant.login')}}">Accountant</a>
+                <a href="{{route('employee_login')}}">Doctor</a>
+                <a href="{{route('employee_login')}}">Nurse</a>
+                <a href="{{route('employee_login')}}">Accountant</a>
 
             </div>
 

@@ -20,6 +20,9 @@ class CheckAdmin
         if (auth()->user()->role=='Admin'){
             return $next($request);
         }
+//        elseif (auth()->user()->role=='Doctor'){
+//            return $next($request);
+//        }
         else{
             Auth::logout();
             return redirect()->route('index');

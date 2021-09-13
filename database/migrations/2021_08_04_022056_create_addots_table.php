@@ -20,6 +20,7 @@ class CreateAddotsTable extends Migration
             $table->string('Patient_name', 80);
             $table->string('time');
             $table->string('date');
+            $table->string('status')->default("Active");
             $table->timestamps();
         });
     }

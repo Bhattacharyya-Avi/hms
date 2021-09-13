@@ -1,4 +1,4 @@
-@extends('employee.admin.backend.admin-master')
+@extends('employee.employee-master')
 @section('content')
 
     <form action="{{route('admin.slot.update',$slot->id)}}" method="post">

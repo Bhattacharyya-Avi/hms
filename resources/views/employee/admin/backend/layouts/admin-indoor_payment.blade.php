@@ -1,4 +1,4 @@
-@extends('employee.admin.backend.admin-master')
+@extends('employee.employee-master')
 @section('content')
     <div class="col-12 col-xl-12">
         <div class="card">
@@ -17,11 +17,11 @@
                         <th>Total bill</th>
                         <th>Action</th>
                         <th>bill copy</th>
-                        
+
                     </tr>
                 </thead>
                 <tbody>
-                    
+
                     <tr>
                         <td>1</td>
                         <td>Vanessa Tucker</td>
@@ -34,7 +34,7 @@
                         </td>
                         <td><a href="#"><button type="button" class="btn btn-warning">Download</button></a></td>
                     </tr>
-                    
+
                 </tbody>
             </table>
         </div>

@@ -1,4 +1,4 @@
-@extends('employee.accountant.accountant-master')
+@extends('employee.employee-master')
 
 @section('content')
     <div class="col-12 col-xl-12">
@@ -17,7 +17,7 @@
                         <th style="width:12%;">Total bill</th>
                         <th style="width:20%;">Action</th>
                         <th style="width:10%;">bill copy</th>
-                        
+
                     </tr>
                 </thead>
                 <tbody>

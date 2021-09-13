@@ -1,4 +1,4 @@
-@extends('employee.admin.backend.admin-master')
+@extends('employee.employee-master')
 @section('content')
 
     <link rel="stylesheet" href="{{url('/css/table-style.css')}}">

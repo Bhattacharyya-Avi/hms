@@ -17,21 +17,21 @@
 				<div class="flex-shrink-0">
 					<!-- <img src="https://demo.adminkit.io/img/avatars/avatar-5.jpg" class="avatar img-fluid rounded me-1" alt="User's image" />
 				 -->
-				 <img src="{{url('/images/accountant profile.png')}}" class="avatar img-fluid rounded me-1" alt="User's image" />
+				 <img src="{{url('/images/admin-profile.png')}}" class="avatar img-fluid rounded me-1" alt="User's image" />
 				</div>
 				<div class="flex-grow-1 ps-2">
 					<a class="sidebar-user-title dropdown-toggle" href="#" data-bs-toggle="dropdown">
-						Accountant's Name
+                        {{auth()->user()->name}}
 					</a>
 					<div class="dropdown-menu dropdown-menu-start">
-						<a class="dropdown-item" href="{{route('accountant.profile')}}"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
+						<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
 						<!-- <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
 						<div class="dropdown-divider"></div>-->
 						<!-- <a class="dropdown-item" href="pages-settings.html"><i class="align-middle me-1" data-feather="settings"></i> Settings &
 							Privacy</a>
 						<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a> -->
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="{{route('accountant.logout')}}">Log out</a>
+						<a class="dropdown-item" href="{{route('employee.logout')}}">Log out</a>
 					</div>
 				</div>
 			</div>
@@ -41,41 +41,168 @@
 			<li class="sidebar-header">
 				Pages
 			</li>
+            @if(auth()->user()->role=='Admin')
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('admin.dashboard')}}">
+                        <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+                    </a>
+                </li>
 
-			<li class="sidebar-item">
-				<a class="sidebar-link" href="{{route('accountant.dashboard')}}">
-					<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
-				</a>
-			</li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('admin.admited.patient')}}">
+                        <i class="material-icons" style="font-size:18px">airline_seat_individual_suite</i> <span class="align-middle">Admited patients</span>
+                    </a>
+                </li>
 
-			<li class="sidebar-item">
-				<a class="sidebar-link" href="{{route('accountant.profile')}}">
-					<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
-				</a>
-			</li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('admin.slotlist')}}">
+                        <i class="material-icons" style="font-size:18px">av_timer</i> <span class="align-middle">Slots</span>
+                    </a>
+                </li>
 
-			<!-- <li class="sidebar-item">
-				<a class="sidebar-link" href="{{route('nurse.otlist')}}">
-					<i class="align-middle" data-feather="list"></i><span class="align-middle">Payment list</span>
-				</a>
-			</li> -->
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('admin.appointmentlist')}}">
+                        <i class="material-icons" style="font-size:18px">format_list_bulleted</i> <span class="align-middle">Appointment list</span>
+                    </a>
+                </li>
 
-			<!-- <li class="sidebar-item">
-				<a class="sidebar-link" href="{{route('nurse.bedinfo')}}">
-					<i class="align-middle" data-feather="list"></i><span class="align-middle">Bed information</span>
-				</a>
-			</li> -->
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('admin.doctor list')}}">
+                        <i class="material-icons" style="font-size:18px">filter_list</i> <span class="align-middle">Appointment Details</span>
+                    </a>
+                </li>
 
-			 <li class="sidebar-item">
-				<a href="#ot" data-bs-toggle="collapse" class="sidebar-link collapsed">
-				<i class="material-icons" style="font-size:16px">attach_money</i> <span class="align-middle">Payment</span>
-				</a>
-				<ul id="ot" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
-					<li class="sidebar-item"><a class="sidebar-link" href="{{route('accountant.indoorpay')}}">Indor Payment</a></li>
-					<li class="sidebar-item"><a class="sidebar-link" href="{{route('accountant.outdoorpay')}}">Outdoor payment</a></li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('admin.OTlist')}}">
+                        <i class="material-icons" style="font-size:18px">format_list_bulleted</i> <span class="align-middle">OT list</span>
+                    </a>
+                </li>
 
-				</ul>
-			</li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('admin.stafflist')}}">
+                        <i class="material-icons" style="font-size:18px">person_add</i> <span class="align-middle">Employees</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('admin.bedinfo')}}">
+                        <i class="material-icons" style="font-size:18px">airline_seat_individual_suite</i> <span class="align-middle">Patient's bed</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('chamberlist')}}">
+                    <i class="material-icons" style="font-size:18px">home</i> <span class="align-middle">Chamber</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('services')}}">
+                    <i class="material-icons" style="font-size:18px">room_service</i> <span class="align-middle">Services</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a href="#ot" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                        <i class="material-icons" style="font-size:18px">attach_money</i> <span class="align-middle">Payment list</span>
+                    </a>
+                    <ul id="ot" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                        <li class="sidebar-item"><a class="sidebar-link" href="{{route('admin.indoor')}}">Indoor payments</a></li>
+                        <li class="sidebar-item"><a class="sidebar-link" href="{{route('admin.outdoor')}}">Outdoor payments</a></li>
+
+                    </ul>
+                </li>
+            @endif
+            @if(auth()->user()->role=='Nurse')
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('nurse.dashboard')}}">
+                        <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('nurse.profile')}}">
+                        <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('nurse.otlist')}}">
+                        <i class="align-middle" data-feather="list"></i><span class="align-middle">OT list</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('nurse.bedinfo')}}">
+                        <i class="align-middle" data-feather="list"></i><span class="align-middle">Bed information</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a href="#ot" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                        <i class="align-middle" data-feather="users"></i> <span class="align-middle">Admit</span>
+                    </a>
+                    <ul id="ot" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                        <li class="sidebar-item"><a class="sidebar-link" href="{{route('nurse.admit')}}">Admit a patient</a></li>
+                        <li class="sidebar-item"><a class="sidebar-link" href="{{route('nurse.admited_patient_list')}}">Admited patients</a></li>
+
+                    </ul>
+                </li>
+            @endif
+            @if(auth()->user()->role=='Doctor')
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('doctor.dashboard')}}">
+                        <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('doctor.profile')}}">
+                        <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('doctor.appointmentlist')}}">
+                        <i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Appointment list</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a href="#ot" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                        <i class="align-middle" data-feather="users"></i> <span class="align-middle">Oparation list</span>
+                    </a>
+                    <ul id="ot" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                        <li class="sidebar-item"><a class="sidebar-link" href="{{route('doctor.otlist')}}">Full OT list</a></li>
+                        <li class="sidebar-item"><a class="sidebar-link" href="{{route('doctor.add_ot_list')}}">Add OT schedule</a></li>
+
+                    </ul>
+                </li>
+            @endif
+            @if(auth()->user()->role=='Accountant')
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('accountant.dashboard')}}">
+                        <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('accountant.profile')}}">
+                        <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a href="#ot" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                        <i class="material-icons" style="font-size:16px">attach_money</i> <span class="align-middle">Payment</span>
+                    </a>
+                    <ul id="ot" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                        <li class="sidebar-item"><a class="sidebar-link" href="{{route('accountant.indoorpay')}}">Indor Payment</a></li>
+                        <li class="sidebar-item"><a class="sidebar-link" href="{{route('accountant.outdoorpay')}}">Outdoor payment</a></li>
+
+                    </ul>
+                </li>
+            @endif
 
 			<!--
 			<li class="sidebar-item">

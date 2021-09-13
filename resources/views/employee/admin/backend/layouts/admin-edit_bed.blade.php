@@ -1,4 +1,4 @@
-@extends('employee.admin.backend.admin-master')
+@extends('employee.employee-master')
 @section('content')
 
     <form action="{{route('admin.update.bed',$bed->id)}}" method="post">
