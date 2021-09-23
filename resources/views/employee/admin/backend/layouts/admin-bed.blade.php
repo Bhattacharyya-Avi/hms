@@ -20,7 +20,9 @@
             </div>
         @endif
         <div class="card">
-
+            <div class="card-header">
+                <input type="text" class="form-control form-control-sm bg-light rounded-2 border-0" style="width: 100px;" placeholder="Search..">
+            </div>
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -68,16 +70,18 @@
             @csrf
             <div class="mb-3">
                 <label class="form-label">Bed Number</label>
-                <input type="text" placeholder="Enter bed number" class="form-control" name="bed_number">
+                <input type="text" placeholder="Enter bed number" class="form-control" name="bed_number" required>
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Bed type</label>
                 <div class="input-group mb-3">
-                <select class="form-select flex-grow-1" name="bed_type">
+                <select class="form-select flex-grow-1" name="bed_type" required>
+                    <option>Click to select </option>
                     <option>General </option>
-                    <option>ICU</option>
-                    <option>Cabin</option>
+                    <option>Single Cabin </option>
+                    <option>Double Cabin(Non-AC)</option>
+                    <option>Double Cabin(AC)</option>
                 </select>
                 </div>
             </div>
@@ -85,7 +89,7 @@
             <div class="mb-3">
                 <label class="form-label">Bed status</label>
                 <div class="input-group mb-3">
-                <select class="form-select flex-grow-1" name="status">
+                <select class="form-select flex-grow-1" name="status" required>
                     <option value="Available">Available </option>
                     <option value="Booked">Booked</option>
                 </select>
@@ -99,7 +103,7 @@
 
             <div class="mb-3">
                 <label class="form-label">Bed Cost</label>
-                <input type="number" placeholder="Enter bed cost" class="form-control" name="bed_cost">
+                <input type="number" placeholder="Enter bed cost" class="form-control" name="bed_cost" required>
             </div>
 
 

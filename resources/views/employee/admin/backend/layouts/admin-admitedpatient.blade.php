@@ -13,6 +13,9 @@
     </div>
     <div class="col-12 col-xl-12">
         <div class="card">
+            <div class="card-header">
+                <input type="text" class="form-control form-control-sm bg-light rounded-2 border-0" style="width: 100px;" placeholder="Search..">
+            </div>
 
             <table class="table table-bordered">
                 <thead>
@@ -20,6 +23,7 @@
 
                         <th>Doctor's name</th>
                         <th>Patient's name</th>
+                        <th>Patient's age</th>
                         <th>Patient's phone</th>
                         <th>Patient's address</th>
                         <th>Bed</th>
@@ -31,8 +35,9 @@
                 <tbody>
                     @foreach($details as $info)
                         <tr>
-                            <td>{{$info->doctor_name}}</td>
+                            <td>{{$info->user->name}}</td>
                             <td>{{$info->patient_name}}</td>
+                            <td>{{$info->patient_age}}</td>
                             <td>{{$info->patient_phone}}</td>
                             <td>{{$info->patient_address}}</td>
                             <td>{{$info->bed_type}} - {{$info->bed_number}}</td>
@@ -49,6 +54,7 @@
                             <td class="table-action">
                                 <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
                                 <a href="#"><i class="align-middle" data-feather="trash"></i></a>
+                                <a href="{{route('admin.admited.release',$info->id)}}"><i class="material-icons" style="font-size:18px">exit_to_app</i></a>
                             </td>
                         </tr>
                     @endforeach

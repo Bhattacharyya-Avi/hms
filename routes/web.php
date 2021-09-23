@@ -49,6 +49,7 @@ Route::group(['middleware'=>'auth'],function (){
         Route::get('/profile',[DoctorController::class,'profile'])->name('doctor.profile');
         Route::get('/profile/update/{id}',[DoctorController::class,'profileUpdate'])->name('doctor.profile.update');
         Route::get('/Appointmentlist',[DoctorController::class,'appointmentlist'])->name('doctor.appointmentlist');
+        Route::get('{id}/appointment/delete',[DoctorController::class,'appointmentCancel'])->name('doctor.appointment.cancel');
         Route::get('/otlist',[DoctorController::class,'otlist'])->name('doctor.otlist');
         Route::get('/addot',[DoctorController::class,'addotlist'])->name('doctor.add_ot_list');
         Route::post('/addot/form',[DoctorController::class,'addotlistform'])->name('doctor.add.ot.form');
@@ -112,6 +113,8 @@ Route::group(['middleware'=>'auth'],function (){
         Route::get('/Chamber/edit{id}',[AdminController::class,'chamberEdit'])->name('chamber.edit');
         Route::put('/Chamber/update{id}',[AdminController::class,'chamberUpdate'])->name('chamber.update');
         Route::get('/admited_patient/list',[AdminController::class,'admitedpatient'])->name('admin.admited.patient');
+        Route::get('{id}/admited_patient/release_note',[AdminController::class,'releaseNote'])->name('admin.admited.release');
+
     });
 });
 

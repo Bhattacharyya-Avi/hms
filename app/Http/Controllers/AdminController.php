@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Payment;
 use App\Models\Slot;
 //use http\Client\Curl\User;
 use Illuminate\Http\Request;
@@ -41,7 +42,7 @@ class AdminController extends Controller
 
     public function staffEdit($id){
         $employee=User::find($id);
-        dd($employee);
+        //dd($employee);
         $chambers=Chamber::all();
         return view('employee.admin.backend.layouts.admin-edit_employee',compact('employee','chambers'));
     }
@@ -60,6 +61,16 @@ class AdminController extends Controller
 
     public function add_staff(Request $addstaff){
 //        dd($addstaff->all());
+        $addstaff->validate([
+            'employeetype'=>'required',
+            'employee_name'=>'required',
+            'employee_address'=>'required',
+            'phone_no'=>'required',
+            'gender'=>'required',
+            'email'=>'required',
+            'password'=>'required'
+
+        ]);
         User::create([
             'role'=>$addstaff->employeetype,
             'room'=>$addstaff->employeeroom,
@@ -91,6 +102,8 @@ class AdminController extends Controller
     }
 
     public function indoorpay(){
+        $payment= Payment::with('appointment')->get();
+        //dd($payment->all());
         return view('employee.admin.backend.layouts.admin-indoor_payment');
     }
 
@@ -105,6 +118,13 @@ class AdminController extends Controller
 
     public function addbed(Request $addbed){
 //        dd($addbed->all());
+        $addbed->validate([
+            'bed_number'=>'required',
+            'bed_type'=>'required',
+            'status'=>'required',
+            'bed_cost'=>'required'
+
+        ]);
         Bed::create([
             'bed_number'=>$addbed->bed_number,
             'bed_type'=>$addbed->bed_type,
@@ -148,6 +168,11 @@ class AdminController extends Controller
     }
 
     public function slotadd(Request $slots){
+        $slots->validate([
+            'slot_name'=>'required',
+            'start_time'=>'required',
+            'End_time'=>'required'
+        ]);
         Slot::create([
             'slot_name'=>$slots->slot_name,
             'slot_start'=>$slots->start_time,
@@ -200,6 +225,10 @@ class AdminController extends Controller
     }
 
     public function serviceadd(Request $service){
+        $service->validate([
+            'service_name'=>'required|unique',
+            'service_cost'=>'required'
+        ]);
         Service::create([
             'service_name'=>$service->service_name,
             'service_description'=>$service->service_description,
@@ -239,6 +268,10 @@ class AdminController extends Controller
     }
 
     public Function chamberadd(Request $chamber){
+        $chamber->validate([
+            'chamber_number'=>'required|unique',
+            'chamber_status'=>'required'
+        ]);
         Chamber::create([
             'chamber_number'=>$chamber->chamber_number,
             'chamber_discription'=>$chamber->chamber_description,
@@ -273,8 +306,16 @@ class AdminController extends Controller
 
     public function admitedpatient(){
         $details=Admitpatients::with('admitService')->paginate(10);
+        $doctor=Admitpatients::with('user')->get();
 
-        return view('employee.admin.backend.layouts.admin-admitedpatient',compact('details'));
+        return view('employee.admin.backend.layouts.admin-admitedpatient',compact('details','doctor'));
+    }
+
+    public function releaseNote($id){
+        //dd($id);
+        $notes=Admitpatients::find($id);
+//        dd($notes);
+        return view('employee.admin.backend.layouts.admin-release',compact('notes'));
     }
 
     public function AdminLogout(){

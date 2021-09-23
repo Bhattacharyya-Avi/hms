@@ -53,25 +53,33 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Add an employee</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Add an Slot</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <form action="{{route('admin.slotadd')}}" method="post">
                         @csrf
                         <div class="mb-3">
                             <label class="form-label">Slot name</label>
-                            <input type="text" placeholder="Enter Full name" class="form-control" name="slot_name">
+                            <input type="text" placeholder="Enter Full name" class="form-control" name="slot_name" required>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Slot starting time</label>
-                            <input type="time" class="form-control" name="start_time">
+                            <input type="time" class="form-control" name="start_time" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Slot ending time</label>
-                            <input type="time" class="form-control" name="End_time">
+                            <input type="time" class="form-control" name="End_time" required>
                         </div>
                         <!-- <input type="submit" class="btn btn-primary" value="Submit" > -->
                         <div class="modal-footer">

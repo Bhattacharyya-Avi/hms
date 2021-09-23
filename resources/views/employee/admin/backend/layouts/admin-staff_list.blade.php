@@ -25,7 +25,7 @@
                     <tr>
                         <th>SL</th>
                         <th>Type</th>
-                        <th>Room number</th>
+                        <th>Chamber number</th>
                         <th>Employee name</th>
                         <th>Gender</th>
                         <th>Address</th>
@@ -74,7 +74,7 @@
 
                 <div class="mb-3">
                     <label class="form-label">Select employee type</label>
-                    <select class="form-select flex-grow-1" name="employeetype">
+                    <select class="form-select flex-grow-1" name="employeetype" required>
                         <option>click to select</option>
                         <option>Admin</option>
                         <option>Doctor</option>
@@ -95,39 +95,48 @@
 
                 <div class="mb-3">
                     <label class="form-label">Employee name</label>
-                    <input type="text" placeholder="Enter Full name" class="form-control" name="employee_name">
+                    <input type="text" placeholder="Enter Full name" class="form-control" name="employee_name" required>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Employee Address</label>
-                    <input type="text" placeholder="Enter Full name" class="form-control" name="employee_address">
+                    <input type="text" placeholder="Enter Full name" class="form-control" name="employee_address" required>
                 </div>
 
                 <div class="mb-3">
                 <label class="form-label">Mobile Number</label>
-                <input type="number" placeholder="Enter mobile number" class="form-control" name="phone_no">
+                <input type="number" placeholder="Enter mobile number" class="form-control" name="phone_no" required>
                 </div>
+
+{{--                <div class="mb-3">--}}
+{{--                    <label class="form-label">Gender</label>--}}
+{{--                    <div class="custom-control custom-radio">--}}
+{{--                        <input name="gender" value="Male" type="radio" id="customRadio1"  class="custom-control-input">--}}
+{{--                        <label  class="custom-control-label" for="customRadio1">Male</label>--}}
+{{--                    </div>--}}
+{{--                    <div class="custom-control custom-radio">--}}
+{{--                        <input name="gender" value="Female" type="radio" id="customRadio2"  class="custom-control-input">--}}
+{{--                        <label  class="custom-control-label" for="customRadio1">Female</label>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
                 <div class="mb-3">
                     <label class="form-label">Gender</label>
-                    <div class="custom-control custom-radio">
-                        <input name="gender" value="Male" type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                        <label  class="custom-control-label" for="customRadio1">Male</label>
-                    </div>
-                    <div class="custom-control custom-radio">
-                        <input name="gender" value="Female" type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                        <label  class="custom-control-label" for="customRadio1">Female</label>
-                    </div>
+                    <select class="form-select flex-grow-1" name="gender" required>
+                        <option>click to select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
                 </div>
 
                 <div class="mb-3">
                 <label class="form-label">Email address</label>
-                <input type="email" class="form-control" placeholder="Email" name="email">
+                <input type="email" class="form-control" placeholder="Email" name="email" required>
                 </div>
 
                 <div class="mb-3">
                 <label class="form-label">Password</label>
-                <input type="password" class="form-control" placeholder="Password" name="password">
+                <input type="password" class="form-control" placeholder="Password" name="password" required>
                 </div>
 
 

@@ -59,6 +59,16 @@
                         <i class="material-icons" style="font-size:18px">av_timer</i> <span class="align-middle">Slots</span>
                     </a>
                 </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('services')}}">
+                        <i class="material-icons" style="font-size:18px">room_service</i> <span class="align-middle">Services</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('chamberlist')}}">
+                        <i class="material-icons" style="font-size:18px">home</i> <span class="align-middle">Chamber</span>
+                    </a>
+                </li>
 
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="{{route('admin.appointmentlist')}}">
@@ -90,17 +100,9 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="{{route('chamberlist')}}">
-                    <i class="material-icons" style="font-size:18px">home</i> <span class="align-middle">Chamber</span>
-                    </a>
-                </li>
 
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="{{route('services')}}">
-                    <i class="material-icons" style="font-size:18px">room_service</i> <span class="align-middle">Services</span>
-                    </a>
-                </li>
+
+
 
                 <li class="sidebar-item">
                     <a href="#ot" data-bs-toggle="collapse" class="sidebar-link collapsed">

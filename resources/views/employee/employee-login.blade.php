@@ -13,12 +13,12 @@
 	 <img class="wave" src="">
 	<div class="container">
 		<div class="img">
-			<img src="{{url('/images/hospital.svg')}}">
+			<img src="{{url('/images/Hello.svg')}}">
 		</div>
 		<div class="login-content">
 			<form action="{{route('employee_login.post')}}" method="post">
                 @csrf
-				<img src="{{url('/images/employee.svg')}}">
+				<img src="{{url('/images/employee2.svg')}}">
 				<h3 class="title">Welcome Employee</h3>
            		<div class="input-div one">
            		   <div class="i">

@@ -122,21 +122,22 @@
                                     <th>Patient's name</th>
                                     <th>OT time</th>
                                     <th class="d-none d-md-table-cell" >OT Date</th>
-
-                                    <th>Action</th>
+                                    <th>Status</th>
+{{--                                    <th>Action</th>--}}
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($ots as $ot)
                                 <tr>
-                                    <td>{{$ot->doctor_name}}</td>
+                                    <td>{{$ot->Patient_name}}</td>
                                     <td>{{$ot->time}}</td>
                                     <td class="d-none d-md-table-cell">{{$ot->date}}</td>
+                                    <td>{{$ot->status}}</td>
                                     <!-- <td>Active</td> -->
-                                    <td class="table-action">
-                                        <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                                        <a href="#"><i class="align-middle" data-feather="trash"></i></a>
-                                    </td>
+{{--                                    <td class="table-action">--}}
+{{--                                        <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>--}}
+{{--                                        <a href="#"><i class="align-middle" data-feather="trash"></i></a>--}}
+{{--                                    </td>--}}
                                 </tr>
                                 @endforeach
                             </tbody>

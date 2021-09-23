@@ -37,10 +37,10 @@
                     <td>{{$info->user->name}}</td>
                     <td>{{$info->Slot->slot_start}} - {{$info->Slot->slot_end}}</td>
                     <td class="d-none d-md-table-cell">{{$info->date}}</td>
-                    <td>active</td>
+                    <td>{{$info->status}}</td>
                     <td class="table-action">
                         <!-- <a href="#"><i class="align-middle" data-feather="edit-2"></i></a> -->
-                        <a href="{{route('user.appointment.delete',$info->id)}}"><i class="align-middle" data-feather="trash"></i></a>
+                        <a href="{{route('user.appointment.delete',$info->id)}}"><i class="material-icons">close</i></a>
                     </td>
                 </tr>
             @endforeach

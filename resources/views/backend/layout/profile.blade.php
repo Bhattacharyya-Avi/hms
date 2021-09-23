@@ -54,7 +54,7 @@
 
           <div class="mb-3">
             <label class="form-label">Email address</label>
-            <input type="email" class="form-control" placeholder="Enter your email." value="{{$profile->email}}">
+            <input type="email" readonly class="form-control" placeholder="Enter your email." value="{{$profile->email}}">
           </div>
 
           <!-- <div class="mb-3">

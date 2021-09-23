@@ -51,7 +51,7 @@
                             <label class="form-label">OT status</label>
                             <select class="form-select flex-grow-1" name="ot_status">
                                 <option>click to select</option>
-                                <option @if($ot->status=='Deactive') selected @endif>Deactive</option>
+                                <option @if($ot->status=='Delayed') selected @endif>Delayed</option>
                                 <option @if($ot->status=='Active') selected @endif>Active</option>
                                 <option @if($ot->status=='Cancel') selected @endif>Cancel</option>
                             </select>

@@ -11,17 +11,22 @@
         </div>  -->
     </div>
     <div class="col-12 col-xl-12">
+        @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
         <div class="card">
 
             <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>SL</th>
-                        <th style="width:40%;">Patients's Name</th>
-                        <th style="width:20%">Appointment time</th>
-                        <th class="d-none d-md-table-cell" style="width:20%">Appointment Date</th>
+                        <th>Patients's Name</th>
+                        <th>Appointment time</th>
+                        <th class="d-none d-md-table-cell">Appointment Date</th>
                         <th>Status</th>
-                        <th class="table-action" style="width:10%">Action</th>
+                        <th class="table-action">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,10 +36,10 @@
                         <td>{{$info->doctor->name}}</td>
                         <td>{{$info->Slot->slot_start}} - {{$info->Slot->slot_end}}</td>
                         <td class="d-none d-md-table-cell">{{$info->date}}</td>
-                        <td>Active</td>
+                        <td>{{$info->status}}</td>
                         <td class="table-action">
                             <!-- <a href="#"><i class="align-middle" data-feather="edit-2"></i></a> -->
-                            <a href="#"><i class="material-icons">close</i></a>
+                            <a href="{{route('doctor.appointment.cancel', $info->id)}}"><i class="material-icons">close</i></a>
                         </td>
                     </tr>
                     @endforeach

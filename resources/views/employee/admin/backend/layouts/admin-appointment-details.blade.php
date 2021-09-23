@@ -20,6 +20,7 @@
                     <th>Patient's Name</th>
                     <th>Appointment time</th>
                     <th class="d-none d-md-table-cell">Appointment Date</th>
+                    <th>Appointment status</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -29,6 +30,7 @@
                         <td>{{$appointment->full_name}}</td>
                         <td>{{$appointment->Slot->slot_name}}</td>
                         <td>{{$appointment->date}}</td>
+                        <td>{{$appointment->status}}</td>
                     </tr>
                 @endforeach
 

@@ -33,6 +33,7 @@ class NurseController extends Controller
         $bedstype=Bed::all();
         $bedsnum=Bed::where('bed_status', 'Available')->get();
         $doctors=User:: where('role','Doctor')->get();
+
         $services=Service::all();
 //        dd($bedsnum);
         return view('employee.nurse.backend.layouts.nurse-admit',compact('bedstype','bedsnum','doctors','services'));
@@ -42,6 +43,7 @@ class NurseController extends Controller
         // dd($admit->all());
         $admission=Admitpatients::create([
             'patient_name'=>$admit->patient_name,
+            'patient_age'=>$admit->patient_age,
             'doctor_name'=>$admit->doctor_name,
             'patient_email'=>$admit->patient_email,
             'patient_phone'=>$admit->patient_phone,

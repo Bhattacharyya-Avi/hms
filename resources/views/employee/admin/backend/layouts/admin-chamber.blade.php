@@ -56,7 +56,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Add a bed</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Add a Chamber</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -65,7 +65,7 @@
                 @csrf
                 <div class="mb-3">
                     <label class="form-label">Chamber number</label>
-                    <input type="text" placeholder="Enter service name" class="form-control" name="chamber_number">
+                    <input type="text" placeholder="Enter service name" class="form-control" name="chamber_number" required>
                 </div>
 
                 <div class="mb-3">
@@ -76,7 +76,7 @@
                 <div class="mb-3">
                     <label class="form-label">Bed status</label>
                     <div class="input-group mb-3">
-                        <select class="form-select flex-grow-1" name="chamber_status">
+                        <select class="form-select flex-grow-1" name="chamber_status" required>
                             <option>Available </option>
                             <option>Reserved</option>
                         </select>

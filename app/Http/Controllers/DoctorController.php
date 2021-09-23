@@ -23,6 +23,14 @@ class DoctorController extends Controller
         return view('employee.doctor.backend.layout.doc-appointmentlist',compact('appointment'));
     }
 
+    public function appointmentCancel($id){
+//        dd($id);
+        Appointment::find($id)->update([
+            'status'=>'Cancel by doctor'
+        ]);
+        return redirect()->back()->with('message','Appointment updated!!');
+    }
+
     public function profile(){
         $profile=Auth::user();
 

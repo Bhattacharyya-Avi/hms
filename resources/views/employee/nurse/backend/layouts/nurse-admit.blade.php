@@ -48,12 +48,17 @@
                     </div>
 
                     <div class="mb-3">
+                        <label class="form-label">patient's age</label>
+                        <input type="number" placeholder="Enter patient's age" class="form-control" name="patient_age">
+                    </div>
+
+                    <div class="mb-3">
                         <label class="form-label">Doctor's name</label>
                         <div class="input-group mb-3">
                             <select class="form-select flex-grow-1" name="doctor_name">
                                 <option>click to select</option>
                                 @foreach($doctors as $doctor)
-                                <option>{{$doctor->name}}</option>
+                                <option value="{{$doctor->id}}">{{$doctor->name}}</option>
                                 @endforeach
                             </select>
                         </div>

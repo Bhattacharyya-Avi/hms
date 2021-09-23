@@ -65,7 +65,7 @@
                 @csrf
                 <div class="mb-3">
                     <label class="form-label">Service name</label>
-                    <input type="text" placeholder="Enter service name" class="form-control" name="service_name">
+                    <input type="text" placeholder="Enter service name" class="form-control" name="service_name" required>
                 </div>
 
                 <div class="mb-3">
@@ -75,7 +75,7 @@
 
                 <div class="mb-3">
                     <label class="form-label">Service charge</label>
-                    <input type="number" placeholder="Enter service cost" class="form-control" name="service_cost">
+                    <input type="number" placeholder="Enter service cost" class="form-control" name="service_cost" required>
                 </div>
 
 

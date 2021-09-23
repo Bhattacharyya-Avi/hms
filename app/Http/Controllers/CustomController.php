@@ -9,6 +9,7 @@ use App\Models\Patient;
 use App\Models\Appointment;
 use App\Models\Staff;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CustomController extends Controller
 {
@@ -75,6 +76,15 @@ class CustomController extends Controller
 
     public function submitappointment(Request $appointmentbook){
 //        dd($appointmentbook-> all());
+        $appointmentbook->validate([
+            'full_name'=>'required',
+            'phone_no'=>'required',
+            'email'=>'required|email',
+            'doctorname'=>'required',
+            'appointmentfee'=>'required',
+            'date'=>'required',
+            'time'=>'required'
+        ]);
         //field name db ||| field name of form
         Appointment::create([
             'full_name'=>$appointmentbook->full_name,
@@ -99,12 +109,15 @@ class CustomController extends Controller
 
     public function appointmentDelete($id){
 //        dd($id);
-        $appointment=Appointment::find($id);
-        if ($appointment){
-            $appointment->delete();
-            return redirect()->back()->with('message','Appointment deleted.');
-        }
-        return redirect()->back()->with('message','No appointment found.');
+        Appointment::find($id)->update([
+            'status'=>'Cancel by user'
+        ]);
+//        $appointment=Appointment::find($id);
+//        if ($appointment){
+//            $appointment->delete();
+//            return redirect()->back()->with('message','Appointment deleted.');
+//        }
+        return redirect()->back()->with('message','Appointment updated!!');
     }
 
     public function profile(){

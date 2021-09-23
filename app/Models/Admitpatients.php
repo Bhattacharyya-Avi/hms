@@ -16,4 +16,8 @@ class Admitpatients extends Model
     {
         return $this->hasMany(Admitpatients_service::class);
     }
+
+    public function user(){
+        return $this->belongsto(User::class,'doctor_name','id');
+    }
 }
