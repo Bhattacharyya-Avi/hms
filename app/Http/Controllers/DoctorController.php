@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appointment;
+use App\Models\Operation;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Addot;
@@ -57,14 +58,16 @@ class DoctorController extends Controller
 
     public function addotlist(){
         $info=Auth::user();
-        return view('employee.doctor.backend.layout.doc-addot',compact('info'));
+        $operations=Operation::all();
+        return view('employee.doctor.backend.layout.doc-addot',compact('info', 'operations'));
     }
 
     public function addotlistform(Request $addotform){
-        // dd($addotform->all());
+//         dd($addotform->all());
         Addot::create([
             'doctor_name'=>$addotform->doctor_name,
             'doctor_email'=>$addotform->doctor_email,
+            'operation_name'=>$addotform->operation_name,
             'Patient_name'=>$addotform->Patient_name,
             'time'=>$addotform->time,
             'date'=>$addotform->date

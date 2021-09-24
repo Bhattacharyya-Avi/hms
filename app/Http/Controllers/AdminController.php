@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Operation;
 use App\Models\Payment;
 use App\Models\Slot;
 //use http\Client\Curl\User;
@@ -316,6 +317,58 @@ class AdminController extends Controller
         $notes=Admitpatients::find($id);
 //        dd($notes);
         return view('employee.admin.backend.layouts.admin-release',compact('notes'));
+    }
+
+    public function operationlist()
+    {
+        $operations=Operation::paginate(10);
+//        dd($operations);
+        return view('employee.admin.backend.layouts.admin-operation',compact('operations'));
+    }
+
+    public function AddOperation(Request $request)
+    {
+//        dd($request->all());
+        Operation::create([
+            'name'=>$request->operation_name,
+            'description'=>$request->operation_description,
+            'cost'=>$request->operation_cost,
+            'status'=>$request->operation_status
+        ]);
+        return redirect()->back()->with('message','Operation added successful');
+
+    }
+
+    public function DeleteOperation($id)
+    {
+        $operation=Operation::find($id);
+        if ($operation){
+            $operation->delete();
+            return redirect()->back()->with('message','Operation deleted successfully!');
+        }
+        return redirect()->back()->with('message','Item not found!');
+
+    }
+
+    public function EditOperation($id)
+    {
+//        dd($id);
+        $operation=Operation::find($id);
+//        dd($operation);
+        return view('employee.admin.backend.layouts.admin-edit_operation',compact('operation'));
+
+    }
+
+    public function UpdateOperation(Request $request,$id)
+    {
+        $operation=Operation::find($id);
+        $operation->update([
+            'name'=>$request->operation_name,
+            'description'=>$request->operation_description,
+            'cost'=>$request->operation_cost,
+            'status'=>$request->operation_status
+        ]);
+        return redirect()->route('admin.operation list')->with('message','operation updated successful');
     }
 
     public function AdminLogout(){

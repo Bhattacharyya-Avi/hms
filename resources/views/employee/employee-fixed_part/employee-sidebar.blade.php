@@ -84,7 +84,13 @@
 
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="{{route('admin.OTlist')}}">
-                        <i class="material-icons" style="font-size:18px">format_list_bulleted</i> <span class="align-middle">OT list</span>
+                        <i class="material-icons" style="font-size:18px">format_list_bulleted</i> <span class="align-middle">Doctor's OT list</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('admin.operation list')}}">
+                        <i class="material-icons" style="font-size:18px">format_list_bulleted</i> <span class="align-middle">Operation list</span>
                     </a>
                 </li>
 

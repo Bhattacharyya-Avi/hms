@@ -17,6 +17,7 @@ class CreateAddotsTable extends Migration
             $table->id();
             $table->string('doctor_name',80);
             $table->string('doctor_email');
+            $table->string('operation_name');
             $table->string('Patient_name', 80);
             $table->string('time');
             $table->string('date');
