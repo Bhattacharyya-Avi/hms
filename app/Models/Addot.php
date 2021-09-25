@@ -10,4 +10,9 @@ class Addot extends Model
     use HasFactory;
     // protected $fillable=['doctor_name','doctor_email','Patient_name','date','time'];
     protected $guarded=[];
+
+    public function operation()
+    {
+        return $this-> belongsTo(Operation::class,'operation_name','id');
+    }
 }

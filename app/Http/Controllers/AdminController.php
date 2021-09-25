@@ -319,6 +319,21 @@ class AdminController extends Controller
         return view('employee.admin.backend.layouts.admin-release',compact('notes'));
     }
 
+    public function releaseUpdate($id)
+    {
+//        dd($id);
+        Admitpatients::find($id)->update([
+            'status'=>'Released'
+        ]);
+       $addmition= Admitpatients::find($id);
+//        dd($addmition);
+
+        Bed::where('bed_number',$addmition->bed_number)->update([
+            'bed_status'=>'Available'
+        ]);
+        return redirect()->route('admin.admited.patient');
+    }
+
     public function operationlist()
     {
         $operations=Operation::paginate(10);

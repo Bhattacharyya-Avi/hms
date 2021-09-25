@@ -28,6 +28,7 @@
                 <thead>
                     <tr>
                         <th>Patient's name</th>
+                        <th>OT name</th>
                         <th>OT time</th>
                         <th class="d-none d-md-table-cell" >OT Date</th>
                         <th>status</th>
@@ -38,6 +39,7 @@
                     @foreach($otlists as $otlist)
                     <tr>
                         <td>{{$otlist->Patient_name}}</td>
+                        <td>{{$otlist->operation->name}}</td>
                         <td>{{$otlist->time}}</td>
                         <td class="d-none d-md-table-cell">{{$otlist->date}}</td>
                         <td>{{$otlist->status}}</td>

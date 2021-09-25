@@ -114,6 +114,7 @@ Route::group(['middleware'=>'auth'],function (){
         Route::put('/Chamber/update{id}',[AdminController::class,'chamberUpdate'])->name('chamber.update');
         Route::get('/admited_patient/list',[AdminController::class,'admitedpatient'])->name('admin.admited.patient');
         Route::get('{id}/admited_patient/release_note',[AdminController::class,'releaseNote'])->name('admin.admited.release');
+        Route::get('{id}/admited_patient/status/update',[AdminController::class,'releaseUpdate'])->name('admin.admited.status.update');
         Route::get('/operation/list',[AdminController::class,'operationlist'])->name('admin.operation list');
         Route::post('/add/operation',[AdminController::class,'AddOperation'])->name('admin.operation.add');
         Route::get('/operation/delete/{id}',[AdminController::class,'DeleteOperation'])->name('admin.operation.delete');

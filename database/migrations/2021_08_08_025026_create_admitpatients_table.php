@@ -27,6 +27,7 @@ class CreateAdmitpatientsTable extends Migration
             $table->string('admission_date');
             $table->string('release_date')->nullable();
             $table->string('admission_time');
+            $table->string('status')->default('Admitted');
             $table->timestamps();
         });
     }
