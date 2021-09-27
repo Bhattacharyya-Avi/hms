@@ -2,6 +2,8 @@
 
 @section('content')
     <div class="col-12 col-xl-12">
+
+
         <div class="card">
             <!-- <div class="card-header">
                 <h5 class="card-title">Hoverable Rows</h5>
@@ -11,60 +13,37 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th style="width:20%;">Patient's name</th>
-                        <th style="width:20%;">Patient's email</th>
-                        <th style="width:18%;">Doctor's name</th>
-                        <th style="width:12%;">Total bill</th>
-                        <th style="width:20%;">Action</th>
-                        <th style="width:10%;">bill copy</th>
+                        <th>SL</th>
+                        <th>Patient's name</th>
+                        <th>Doctor's name</th>
+                        <th>Appointment time</th>
+                        <th>Appointment date</th>
+                        <th>Payment Status</th>
+                        <th>Total</th>
+                        <th>Due</th>
+                        <th>Action</th>
 
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($payments as $data)
+
                     <tr>
-                        <td>Vanessa Tucker</td>
-                        <td>Tucker@gmail.com</td>
-                        <td>Harris William</td>
-                        <td>1200</td>
+                        <td>{{$loop->iteration}}</td>
+                        <td>{{$data-> user_name}}</td>
+                        <td>{{$data->user->name}}</td>
+                        <td>{{$data->appointment_time}}</td>
+                        <td>{{$data->appointment_date}}</td>
+                        <td>{{$data->payment_status}}</td>
+                        <td>{{$data->total_amount}}</td>
+                        <td>0</td>
                         <td class="table-action">
-                            <a href="#"><button type="button" class="btn btn-success">Accept</button></a>
-                            <a href="#"><button type="button" class="btn btn-danger">Delete</button></a>
+                            <a href="{{route('accountant.outdoorpay.accept',$data->id)}}"><i class="material-icons">check</i></a>
+                            <a href="{{route('accountant.outdoorpay.bill',$data->id)}}"><i class="material-icons">file_download</i></a>
                         </td>
-                        <td><a href="#"><button type="button" class="btn btn-warning">Download</button></a></td>
                     </tr>
-                    <tr>
-                        <td>Vanessa Tucker</td>
-                        <td>Tucker@gmail.com</td>
-                        <td>Harris William</td>
-                        <td>1200</td>
-                        <td class="table-action">
-                            <a href="#"><button type="button" class="btn btn-success">Accept</button></a>
-                            <a href="#"><button type="button" class="btn btn-danger">Delete</button></a>
-                        </td>
-                        <td><a href="#"><button type="button" class="btn btn-warning">Download</button></a></td>
-                    </tr>
-                    <tr>
-                        <td>Vanessa Tucker</td>
-                        <td>Tucker@gmail.com</td>
-                        <td>Harris William</td>
-                        <td>1200</td>
-                        <td class="table-action">
-                            <a href="#"><button type="button" class="btn btn-success">Accept</button></a>
-                            <a href="#"><button type="button" class="btn btn-danger">Delete</button></a>
-                        </td>
-                        <td><a href="#"><button type="button" class="btn btn-warning">Download</button></a></td>
-                    </tr>
-                    <tr>
-                        <td>Vanessa Tucker</td>
-                        <td>Tucker@gmail.com</td>
-                        <td>Harris William</td>
-                        <td>1200</td>
-                        <td class="table-action">
-                            <a href="#"><button type="button" class="btn btn-success">Accept</button></a>
-                            <a href="#"><button type="button" class="btn btn-danger">Delete</button></a>
-                        </td>
-                        <td><a href="#"><button type="button" class="btn btn-warning">Download</button></a></td>
-                    </tr>
+                    @endforeach
+
                 </tbody>
             </table>
         </div>

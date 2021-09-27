@@ -17,12 +17,12 @@ class CreateAdmitpatientsTable extends Migration
             $table->id();
             $table->string('patient_name',80);
             $table->string('patient_age');
-            $table->string('doctor_name');
+            $table->foreignId('doctor_id')->references('id')->on('users');
             $table->string('patient_email')->nullable();
             $table->integer('patient_phone');
             $table->string('patient_address');
             $table->string('bed_type');
-            $table->string('bed_number');
+            $table->foreignId('bed_number')->references('id')->on('beds');
             $table->string('services')->nullable();
             $table->string('admission_date');
             $table->string('release_date')->nullable();

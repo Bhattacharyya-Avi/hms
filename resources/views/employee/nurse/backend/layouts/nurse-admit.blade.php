@@ -97,7 +97,7 @@
                             <select class="form-select flex-grow-1" name="bed_number">
                                 <option>click to select</option>
                                 @foreach($bedsnum as $bednum)
-                                <option>{{$bednum->bed_number}}</option>
+                                <option value="{{$bednum->id}}">{{$bednum->bed_number}}</option>
                                 @endforeach
                             </select>
                         </div>

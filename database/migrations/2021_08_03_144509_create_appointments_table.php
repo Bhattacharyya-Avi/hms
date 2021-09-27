@@ -23,6 +23,7 @@ class CreateAppointmentsTable extends Migration
             $table->string('email');
             $table->string('appointmentfee');
             $table->string('doctor_id');
+            $table->string('report')->nullable();
             $table->string('status')->default('Active');
             $table->string('date');
             $table->string('time');

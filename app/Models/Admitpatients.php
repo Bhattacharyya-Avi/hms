@@ -18,6 +18,13 @@ class Admitpatients extends Model
     }
 
     public function user(){
-        return $this->belongsto(User::class,'doctor_name','id');
+        return $this->belongsto(User::class,'doctor_id','id');
     }
+    public function bed(){
+        return $this->belongsto(Bed::class,'bed_number','id');
+    }
+    public function service()
+{
+    return $this->belongsToMany(Service::class,'admitpatients_service', 'admitpatients_id', 'service_id');
+}
 }

@@ -44,7 +44,7 @@ class NurseController extends Controller
         $admission=Admitpatients::create([
             'patient_name'=>$admit->patient_name,
             'patient_age'=>$admit->patient_age,
-            'doctor_name'=>$admit->doctor_name,
+            'doctor_id'=>$admit->doctor_name,
             'patient_email'=>$admit->patient_email,
             'patient_phone'=>$admit->patient_phone,
             'patient_address'=>$admit->patient_address,

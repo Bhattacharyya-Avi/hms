@@ -32,6 +32,7 @@ Route::group(['prefix'=>'/user','middleware'=>'auth'],function (){
     Route::post('/appointment/book',[CustomController::class,'submitappointment'])->name('user.appointment.submit');
     Route::get('/history',[CustomController::class,'appointmenthistory'])->name('user.appointment_history');
     Route::get('/appointment/delete{id}',[CustomController::class,'appointmentDelete'])->name('user.appointment.delete');
+    Route::get('/appointment/report{id}',[CustomController::class,'appointmentReport'])->name('user.appointment.report');
     Route::get('/profile',[CustomController::class,'profile'])->name('user.profile');
     Route::put('/profile/update/{id}',[CustomController::class,'profileUpdate'])->name('user.profile.update');
     Route::get('/payment',[CustomController::class,'payment'])->name('user.payment');
@@ -50,6 +51,8 @@ Route::group(['middleware'=>'auth'],function (){
         Route::get('/profile/update/{id}',[DoctorController::class,'profileUpdate'])->name('doctor.profile.update');
         Route::get('/Appointmentlist',[DoctorController::class,'appointmentlist'])->name('doctor.appointmentlist');
         Route::get('{id}/appointment/delete',[DoctorController::class,'appointmentCancel'])->name('doctor.appointment.cancel');
+        Route::get('{id}/appointment/report',[DoctorController::class,'appointmentReport'])->name('doctor.appointment.report');
+        Route::post('{id}/appointment/report/post',[DoctorController::class,'appointmentReportPost'])->name('doctor.appointment.report.post');
         Route::get('/otlist',[DoctorController::class,'otlist'])->name('doctor.otlist');
         Route::get('/addot',[DoctorController::class,'addotlist'])->name('doctor.add_ot_list');
         Route::post('/addot/form',[DoctorController::class,'addotlistform'])->name('doctor.add.ot.form');
@@ -75,6 +78,8 @@ Route::group(['middleware'=>'auth'],function (){
         Route::get('/profile',[AccountantController::class,'profile'])->name('accountant.profile');
         Route::get('/paymentlistin',[AccountantController::class,'accept_indor_payment'])->name('accountant.indoorpay');
         Route::get('/paymentlistout',[AccountantController::class,'accept_outdor_payment'])->name('accountant.outdoorpay');
+        Route::get('/paymentlistout/{id}/accept',[AccountantController::class,'accept_outdor_accept'])->name('accountant.outdoorpay.accept');
+        Route::get('/paymentlistout/{id}/bill',[AccountantController::class,'outdor_bill'])->name('accountant.outdoorpay.bill');
     });
 //Admin
     Route::group(['prefix'=>'/admin','middleware'=>['roleadmin']],function (){

@@ -17,7 +17,7 @@
 				<div class="flex-shrink-0">
 					<!-- <img src="https://demo.adminkit.io/img/avatars/avatar-5.jpg" class="avatar img-fluid rounded me-1" alt="User's image" />
 				 -->
-				 <img src="{{url('/images/admin-profile.png')}}" class="avatar img-fluid rounded me-1" alt="User's image" />
+{{--				 <img src="{{url('/images/admin-profile.png')}}" class="avatar img-fluid rounded me-1" alt="User's image" />--}}
 				</div>
 				<div class="flex-grow-1 ps-2">
 					<a class="sidebar-user-title dropdown-toggle" href="#" data-bs-toggle="dropdown">

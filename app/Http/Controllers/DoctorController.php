@@ -32,6 +32,24 @@ class DoctorController extends Controller
         return redirect()->back()->with('message','Appointment updated!!');
     }
 
+    public function appointmentReport($id)
+    {
+        $info=Appointment::find($id);
+
+        return view('employee.doctor.backend.layout.doc-report',compact('info'));
+    }
+
+    public function appointmentReportPost(Request $request,$id)
+    {
+//        dd($request->all());
+       $report=Appointment::find($id);
+       $report->update([
+            'report'=>$request->report
+       ]);
+
+        return redirect()->route('doctor.appointmentlist');
+    }
+
     public function profile(){
         $profile=Auth::user();
 

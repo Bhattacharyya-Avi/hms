@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Payment;
 use App\Models\Slot;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -71,6 +72,7 @@ class CustomController extends Controller
         $doctors=User:: where('role','Doctor')->get(); // for only showing the type of doctor
         $slots=Slot::all();
         $data=Auth::user();
+
         return view('backend.layout.appointment',compact('doctors','slots','data'));
     }
 
@@ -96,6 +98,16 @@ class CustomController extends Controller
             'date'=>$appointmentbook->date,
             'time'=>$appointmentbook->time
         ]);
+
+
+        // payment table
+        Payment::create([
+            'user_name'=>$appointmentbook->full_name,
+            'doctor_name'=>$appointmentbook->doctorname,
+            'appointment_time'=>$appointmentbook->time,
+            'appointment_date'=>$appointmentbook->date,
+            'total_amount'=>$appointmentbook->appointmentfee
+        ]);
         return redirect()->back();
     }
 
@@ -120,6 +132,14 @@ class CustomController extends Controller
         return redirect()->back()->with('message','Appointment updated!!');
     }
 
+    public function appointmentReport($id)
+    {
+//        dd($id);
+        $report=Appointment::find($id);
+//        dd($report);
+        return view('backend.layout.appointment_payment',compact('report'));
+    }
+
     public function profile(){
         $profile=Auth::user();
 //        dd($profile);
@@ -139,6 +159,10 @@ class CustomController extends Controller
     }
 
     public function payment(){
-        return view('backend.layout.payment');
+        $data=Auth::user()->name;
+//        dd($data);
+        $payment=Payment::where('user_name',$data)->get();
+//        dd($payment);
+        return view('backend.layout.payment',compact('payment'));
     }
 }
