@@ -39,9 +39,17 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Patient name</label>
-                            <input type="text" placeholder="Enter Full name" class="form-control" name='Patient_name'>
+                            <label class="form-label">Operation name</label>
+                            <div class="input-group mb-3">
+                                <select class="form-select flex-grow-1" name="Patient_name" required>
+                                    <option>click to select</option>
+                                    @foreach($patients as $patient)
+                                        <option>{{$patient->patient_name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
+
 
                         <div class="mb-3">
                             <label class="form-label">Choose your time</label>

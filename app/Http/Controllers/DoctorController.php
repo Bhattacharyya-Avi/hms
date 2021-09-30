@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admitpatients;
 use App\Models\Appointment;
 use App\Models\Operation;
 use App\Models\User;
@@ -77,7 +78,8 @@ class DoctorController extends Controller
     public function addotlist(){
         $info=Auth::user();
         $operations=Operation::all();
-        return view('employee.doctor.backend.layout.doc-addot',compact('info', 'operations'));
+        $patients=Admitpatients::where('Status','Admitted')->get();
+        return view('employee.doctor.backend.layout.doc-addot',compact('info', 'operations','patients'));
     }
 
     public function addotlistform(Request $addotform){
@@ -118,6 +120,20 @@ class DoctorController extends Controller
             'status'=>$request->ot_status
         ]);
         return redirect()->route('doctor.otlist')->with('message','OT updated successfully.');
+    }
+    public function admit_relese(){
+        $data=Auth::user()->id;
+//        dd($data);
+        $admit=Admitpatients::where('doctor_id',$data)->get();
+        // dd($admit);
+        return view('employee.doctor.backend.layout.doctor-admitedpatient', compact('admit'));
+    }
+
+    public function admit_relese_note($id)
+    {
+//        dd($id);
+        $notes=Admitpatients::find($id);
+        return view('employee.doctor.backend.layout.doctor-release', compact('notes'));
     }
     public function logout(){
         Auth::logout();

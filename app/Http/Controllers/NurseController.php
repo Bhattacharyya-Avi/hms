@@ -65,7 +65,7 @@ class NurseController extends Controller
         }
 
         //update bed status
-        Bed::where('bed_number',$admit->bed_number)->update([
+        Bed::where('id',$admit->bed_number)->update([
             'bed_status'=>'Acquired'
         ]);
         // update bed status end
@@ -75,7 +75,6 @@ class NurseController extends Controller
 
     public function admitedpatient(){
         $details=Admitpatients::with('admitService')->paginate(10);
-
         return view('employee.nurse.backend.layouts.nurse-admitedpatients',compact('details'));
     }
 

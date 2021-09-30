@@ -110,16 +110,16 @@
 
 
 
-                <li class="sidebar-item">
-                    <a href="#ot" data-bs-toggle="collapse" class="sidebar-link collapsed">
-                        <i class="material-icons" style="font-size:18px">attach_money</i> <span class="align-middle">Payment list</span>
-                    </a>
-                    <ul id="ot" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
-                        <li class="sidebar-item"><a class="sidebar-link" href="{{route('admin.indoor')}}">Indoor payments</a></li>
-                        <li class="sidebar-item"><a class="sidebar-link" href="{{route('admin.outdoor')}}">Outdoor payments</a></li>
+{{--                <li class="sidebar-item">--}}
+{{--                    <a href="#ot" data-bs-toggle="collapse" class="sidebar-link collapsed">--}}
+{{--                        <i class="material-icons" style="font-size:18px">attach_money</i> <span class="align-middle">Payment list</span>--}}
+{{--                    </a>--}}
+{{--                    <ul id="ot" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">--}}
+{{--                        <li class="sidebar-item"><a class="sidebar-link" href="{{route('admin.indoor')}}">Indoor payments</a></li>--}}
+{{--                        <li class="sidebar-item"><a class="sidebar-link" href="{{route('admin.outdoor')}}">Outdoor payments</a></li>--}}
 
-                    </ul>
-                </li>
+{{--                    </ul>--}}
+{{--                </li>--}}
             @endif
             @if(auth()->user()->role=='Nurse')
                 <li class="sidebar-item">
@@ -173,6 +173,12 @@
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="{{route('doctor.appointmentlist')}}">
                         <i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Appointment list</span>
+                    </a>
+                </li>
+
+				<li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('doctor.admitrelese.note')}}">
+                        <i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Admited patient list</span>
                     </a>
                 </li>
 

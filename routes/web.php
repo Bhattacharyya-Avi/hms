@@ -59,6 +59,8 @@ Route::group(['middleware'=>'auth'],function (){
         Route::get('/addot/delete/{id}',[DoctorController::class,'OTdelete'])->name('doctor.delete.ot');
         Route::get('/addot/edit/{id}',[DoctorController::class,'OTEdit'])->name('doctor.edit.ot');
         Route::put('/addot/update/{id}',[DoctorController::class,'OTUpdate'])->name('doctor.update.ot');
+        Route::get('/admidtpatient/note',[DoctorController::class,'admit_relese'])->name('doctor.admitrelese.note');
+        Route::get('{id}/admidtedpatient/note',[DoctorController::class,'admit_relese_note'])->name('doctor.admit.relese.note');
     });
 // nurse
     Route::group(['prefix'=>'/nurse','middleware'=>['rolenurse']],function (){

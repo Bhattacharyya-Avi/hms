@@ -27,9 +27,9 @@
             <tbody>
                 @foreach($payment as $pay)
                 <tr>
-                    <td>{{$pay->doctor_name}}</td>
+                    <td>{{$pay->user->name}}</td>
                     <td>{{$pay->appointment_date}}</td>
-                    <td>{{$pay->appointment_time}}</td>
+                    <td>{{$pay->time->slot_name}}</td>
                     <td>{{$pay->total_amount}}</td>
                     <td>{{$pay->payment_status}}</td>
                 </tr>
