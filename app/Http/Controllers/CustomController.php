@@ -77,7 +77,6 @@ class CustomController extends Controller
     }
 
     public function submitappointment(Request $appointmentbook){
-//        dd($appointmentbook-> all());
         $appointmentbook->validate([
             'full_name'=>'required',
             'phone_no'=>'required',
@@ -87,34 +86,44 @@ class CustomController extends Controller
             'date'=>'required',
             'time'=>'required'
         ]);
-        //field name db ||| field name of form
-        Appointment::create([
-            'full_name'=>$appointmentbook->full_name,
-            'phone_no'=>$appointmentbook->phone_no,
-            'email'=>$appointmentbook->email,
-            'user_id'=>Auth::user()->id,
-            'doctor_id'=>$appointmentbook->doctorname,
-            'appointmentfee'=>$appointmentbook->appointmentfee,
-            'date'=>$appointmentbook->date,
-            'time'=>$appointmentbook->time
-        ]);
+    //    dd($appointmentbook-> all());
 
+    $isBooked = Appointment::where([
+        ['date',$appointmentbook->date],
+        ['time',$appointmentbook->time],
+        ['doctor_id',$appointmentbook->doctorname],
+    ])->first();
+        if(!$isBooked )
+       {
+            Appointment::create([
+                'full_name'=>$appointmentbook->full_name,
+                'phone_no'=>$appointmentbook->phone_no,
+                'email'=>$appointmentbook->email,
+                'user_id'=>Auth::user()->id,
+                'doctor_id'=>$appointmentbook->doctorname,
+                'appointmentfee'=>$appointmentbook->appointmentfee,
+                'date'=>$appointmentbook->date,
+                'time'=>$appointmentbook->time
+            ]);
+            Payment::create([
+                'user_name'=>$appointmentbook->full_name,
+                'doctor_name'=>$appointmentbook->doctorname,
+                'appointment_time'=>$appointmentbook->time,
+                'appointment_date'=>$appointmentbook->date,
+                'total_amount'=>$appointmentbook->appointmentfee
+            ]);
+         return redirect()->back()->with('message','Appointment booked successful');
+       }
+       else{
+        return redirect()->back()->with('message','Slot is not available on this date.');
+       }
 
-        // payment table
-        Payment::create([
-            'user_name'=>$appointmentbook->full_name,
-            'doctor_name'=>$appointmentbook->doctorname,
-            'appointment_time'=>$appointmentbook->time,
-            'appointment_date'=>$appointmentbook->date,
-            'total_amount'=>$appointmentbook->appointmentfee
-        ]);
-        return redirect()->back();
     }
 
     public function appointmenthistory(){
         $data=Auth::user()->id;
 //        dd($data);
-        $appointment=Appointment::where('user_id',$data)->get();
+        $appointment=Appointment::where('user_id',$data)->orderBy("date","desc")->get();
 //        dd($appointment);
         return view('backend.layout.history',compact('appointment'));
     }

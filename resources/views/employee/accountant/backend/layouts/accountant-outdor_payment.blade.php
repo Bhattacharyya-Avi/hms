@@ -31,7 +31,7 @@
                     <tr>
                         <td>{{$loop->iteration}}</td>
                         <td>{{$data-> user_name}}</td>
-                        <td>{{$data->user->name}}</td>
+                        <td>{{$data->user->name ?? ''}}</td>
                         <td>{{$data->appointment_time}}</td>
                         <td>{{$data->appointment_date}}</td>
                         <td>{{$data->payment_status}}</td>

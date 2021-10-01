@@ -15,6 +15,11 @@
     <div class="col-12 col-xl-12">
       <div class="card">
         <div class="card-body">
+        @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                @endif
           <form action="{{route('user.appointment.submit')}}" method="post">
             @csrf
             <div class="mb-3">
@@ -50,7 +55,7 @@
               </select>
             </div>
 
-            <div class="mb-3">
+            <!-- <div class="mb-3">
               <div class="form-group ">
                 <label class="form-label">Date</label>
                 <div class="mb-3">
@@ -59,7 +64,13 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
+            <div class="form-group">
+                                    <label for="date" class="form-label">Date</label>
+                                    <input required type="date" value="{{ date('Y-m-d') }}"
+                                        min="{{ date('Y-m-d') }}" class="form-control"
+                                        id="purchase_date" name="date">
+                                </div>
 
               <div class="mb-3">
                   <label class="form-label">Select Time</label>
@@ -100,17 +111,17 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
-  <script>
-    $(document).ready(function(){
-      var date_input=$('input[name="date"]'); //our date input has the name "date"
-      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-      date_input.datepicker({
-        format: 'mm/dd/yyyy',
-        container: container,
-        todayHighlight: true,
-        autoclose: true,
-      })
-    })
-  </script>
+{{--  <script>--}}
+{{--    $(document).ready(function(){--}}
+{{--      var date_input=$('input[name="date"]'); //our date input has the name "date"--}}
+{{--      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";--}}
+{{--      date_input.datepicker({--}}
+{{--        format: 'mm/dd/yyyy',--}}
+{{--        container: container,--}}
+{{--        todayHighlight: true,--}}
+{{--        autoclose: true,--}}
+{{--      })--}}
+{{--    })--}}
+{{--  </script>--}}
 @endsection
 <!-- appointment section ends -->

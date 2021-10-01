@@ -26,7 +26,10 @@ class AdminController extends Controller
     }
 
     public function stafflist(){
-        $employees=User::where('role','!=','user')->paginate(10);
+        $employees=User::where([
+            ['role','!=','user'],
+            ['role','!=','Admin']
+        ])->paginate(10);
         $chambers= Chamber::all();
         return view('employee.admin.backend.layouts.admin-staff_list',compact('employees','chambers'));
     }
@@ -90,7 +93,7 @@ class AdminController extends Controller
     public function appointmentlist(){
 
         // $appointment=Appointment::all();
-        $appointments=Appointment::with('user')->get();
+        $appointments=Appointment::with('user')->orderBy("date","desc")->get();
 //        dd($appointments);
 
         return view('employee.admin.backend.layouts.admin-appointment_list', compact('appointments'));
