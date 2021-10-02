@@ -24,7 +24,7 @@
                         <th>Patient's address</th>
                         <th>Bed</th>
                         <th>Services</th>
-                        <th>Duration</th>
+{{--                        <th>Duration</th>--}}
                         <th class="table-action">Action</th>
                     </tr>
                 </thead>
@@ -45,7 +45,7 @@
 
 
                             </td>
-                            <td>{{$info->admission_date}} - {{$info->release_date}}</td>
+{{--                            <td>{{$info->admission_date}} - {{$info->release_date}}</td>--}}
                             <td class="table-action">
                                 <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
                                 <a href="#"><i class="align-middle" data-feather="trash"></i></a>

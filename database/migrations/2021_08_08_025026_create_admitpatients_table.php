@@ -24,7 +24,7 @@ class CreateAdmitpatientsTable extends Migration
             $table->string('bed_type');
             $table->foreignId('bed_number')->references('id')->on('beds');
             $table->string('services')->nullable();
-            $table->string('admission_date');
+            $table->string('admission_date')->nullable();
             $table->string('release_date')->nullable();
             $table->string('admission_time');
             $table->string('status')->default('Admitted');

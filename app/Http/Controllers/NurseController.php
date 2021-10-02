@@ -25,7 +25,7 @@ class NurseController extends Controller
     }
 
     public function otlist(){
-        $ots=Addot::paginate(10);
+        $ots=Addot::orderBy('date','desc')->paginate(10);
         return view('employee.nurse.backend.layouts.nurse-otlist',compact('ots'));
     }
 
@@ -50,8 +50,6 @@ class NurseController extends Controller
             'patient_address'=>$admit->patient_address,
             'bed_type'=>$admit->bed_type,
             'bed_number'=>$admit->bed_number,
-            'admission_date'=>$admit->admission_date,
-            'release_date'=>$admit->release_date,
             'admission_time'=>$admit->admission_time
         ]);
 

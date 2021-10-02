@@ -13,14 +13,14 @@
     </div>
     <div class="col-12 col-xl-12">
         <div class="card">
-            <div class="card-header">
-                <input type="text" class="form-control form-control-sm bg-light rounded-2 border-0" style="width: 100px;" placeholder="Search..">
-            </div>
+{{--            <div class="card-header">--}}
+{{--                <input type="text" class="form-control form-control-sm bg-light rounded-2 border-0" style="width: 100px;" placeholder="Search..">--}}
+{{--            </div>--}}
 
             <table class="table table-bordered">
                 <thead>
                     <tr>
-
+                        <th>SL</th>
                         <th>Doctor's name</th>
                         <th>Patient's name</th>
                         <th>Patient's age</th>
@@ -35,6 +35,7 @@
                 <tbody>
                     @foreach($details as $info)
                         <tr>
+                            <td>{{$loop->iteration}}</td>
                             <td>{{$info->user->name}}</td>
                             <td>{{$info->patient_name}}</td>
                             <td>{{$info->patient_age}}</td>
@@ -52,8 +53,6 @@
                             </td>
                             <td>{{$info->admission_date}} - {{$info->release_date}}</td>
                             <td class="table-action">
-                                <a href="#"><i class="align-middle" data-feather="edit-2"></i></a>
-                                <a href="#"><i class="align-middle" data-feather="trash"></i></a>
                                 <a href="{{route('admin.admited.release',$info->id)}}"><i class="material-icons" style="font-size:18px">exit_to_app</i></a>
                             </td>
                         </tr>

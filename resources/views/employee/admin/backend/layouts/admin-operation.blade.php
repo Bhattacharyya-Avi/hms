@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{url('/css/table-style.css')}}">
     <div class="row mb-2 mb-xl-3">
         <div class="col-auto d-none d-sm-block">
-            <h4><strong>Admin/</strong> Chamber list</h4>
+            <h4><strong>Admin/</strong> Operation name list</h4>
         </div>
 
         <div class="col-auto ms-auto text-end mt-n1">

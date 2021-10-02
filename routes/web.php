@@ -82,6 +82,8 @@ Route::group(['middleware'=>'auth'],function (){
         Route::get('/paymentlistout',[AccountantController::class,'accept_outdor_payment'])->name('accountant.outdoorpay');
         Route::get('/paymentlistout/{id}/accept',[AccountantController::class,'accept_outdor_accept'])->name('accountant.outdoorpay.accept');
         Route::get('/paymentlistout/{id}/bill',[AccountantController::class,'outdor_bill'])->name('accountant.outdoorpay.bill');
+        Route::get('/payment/indoor/{id}/{bill}',[AccountantController::class,'outdoorBill'])->name('accountant.outdoor.bill');
+        Route::get('/payment/indoor/release/{id}',[AccountantController::class,'indoorRelease'])->name('accountant.indoor.release');
     });
 //Admin
     Route::group(['prefix'=>'/admin','middleware'=>['roleadmin']],function (){

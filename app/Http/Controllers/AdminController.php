@@ -100,7 +100,7 @@ class AdminController extends Controller
     }
 
     public function OTlist(){
-        $otlist = Addot::paginate(10);
+        $otlist = Addot::orderBy('date','desc')->paginate(10);
         // dd($otlist->all());
         return view('employee.admin.backend.layouts.admin-OT_list',compact('otlist'));
     }
@@ -217,7 +217,7 @@ class AdminController extends Controller
     }
 
     public function appointlist($id){
-        $appointment_details=Appointment::where('doctor_id',$id)->get();
+        $appointment_details=Appointment::where('doctor_id',$id)->orderBy('date','desc')->get();
         $doctor_name = User::where('id',$id)->first();
 //dd($appointment_details);
         return view('employee.admin.backend.layouts.admin-appointment-details',compact('appointment_details','doctor_name'));
@@ -309,7 +309,7 @@ class AdminController extends Controller
     }
 
     public function admitedpatient(){
-        $details=Admitpatients::with('admitService')->paginate(10);
+        $details=Admitpatients::with('admitService')->orderBy("created_at","desc")->paginate(10);
         $doctor=Admitpatients::with('user')->get();
 
         return view('employee.admin.backend.layouts.admin-admitedpatient',compact('details','doctor'));

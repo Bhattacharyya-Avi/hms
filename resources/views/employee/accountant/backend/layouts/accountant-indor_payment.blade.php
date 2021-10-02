@@ -15,7 +15,7 @@
                     <th style="width:20%;">Patient's email</th>
                     <th style="width:18%;">Doctor's name</th>
                     <th style="width:12%;">Total bill</th>
-                    <th style="width:20%;">Action</th>
+{{--                    <th style="width:20%;">Action</th>--}}
                     <th style="width:10%;">bill copy</th>
 
                 </tr>
@@ -44,14 +44,16 @@
                     $costing = $costing + $service->service_cost*$totalDays
                     @endphp
                     @endforeach
+                    @php $bill=$costing+$bed_costing;
+                    @endphp
                     <td>
                         {{$costing + $bed_costing}}
                     </td>
-                    <td class="table-action">
-                        <a href="#"><button type="button" class="btn btn-success">Accept</button></a>
-                        <a href="#"><button type="button" class="btn btn-danger">Delete</button></a>
-                    </td>
-                    <td><a href="#"><button type="button" class="btn btn-warning">Download</button></a></td>
+{{--                    <td class="table-action">--}}
+{{--                        <a href="#"><button type="button" class="btn btn-success">Accept</button></a>--}}
+{{--                        <a href="#"><button type="button" class="btn btn-danger">Delete</button></a>--}}
+{{--                    </td>--}}
+                    <td><a href="{{route('accountant.outdoor.bill',['id'=>$patient->id,'bill'=>$bill])}}"><button type="button" class="btn btn-warning">Download</button></a></td>
                 </tr>
                 @endforeach
             </tbody>

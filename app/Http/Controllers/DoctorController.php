@@ -20,7 +20,7 @@ class DoctorController extends Controller
     public function appointmentlist(){
         $data=Auth::user()->id;
 //        dd($data);
-        $appointment=Appointment::where('doctor_id',$data)->get();
+        $appointment=Appointment::where('doctor_id',$data)->orderBy('date','desc')->get();
 //        dd($appointment);
         return view('employee.doctor.backend.layout.doc-appointmentlist',compact('appointment'));
     }
@@ -71,7 +71,7 @@ class DoctorController extends Controller
     }
 
     public function otlist(){
-        $otlists=Addot::paginate(10);
+        $otlists=Addot::orderBy('date','desc')->paginate(10);
         return view('employee.doctor.backend.layout.doc-OTlist',compact('otlists'));
     }
 
@@ -124,7 +124,7 @@ class DoctorController extends Controller
     public function admit_relese(){
         $data=Auth::user()->id;
 //        dd($data);
-        $admit=Admitpatients::where('doctor_id',$data)->get();
+        $admit=Admitpatients::where('doctor_id',$data)->orderBy('created_at','desc')->get();
         // dd($admit);
         return view('employee.doctor.backend.layout.doctor-admitedpatient', compact('admit'));
     }

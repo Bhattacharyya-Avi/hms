@@ -132,29 +132,29 @@
                         </div>
                     </div>
 
-                    <div class="mb-3">
-                        <div class="form-group ">
-                            <label class="form-label">Admission date</label>
-                            <div class="mb-3">
-                                <div class="input-group">
-                                    <input class="form-control" id="date" name="admission_date" placeholder="MM/DD/YYYY"
-                                        type="text" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <div class="mb-3">--}}
+{{--                        <div class="form-group ">--}}
+{{--                            <label class="form-label">Admission date</label>--}}
+{{--                            <div class="mb-3">--}}
+{{--                                <div class="input-group">--}}
+{{--                                    <input class="form-control" id="date" name="admission_date" placeholder="MM/DD/YYYY"--}}
+{{--                                        type="text" />--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
-                    <div class="mb-3">
-                        <div class="form-group ">
-                            <label class="form-label">Release date</label>
-                            <div class="mb-3">
-                                <div class="input-group">
-                                    <input class="form-control" id="date" name="release_date" placeholder="MM/DD/YYYY"
-                                        type="text" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <div class="mb-3">--}}
+{{--                        <div class="form-group ">--}}
+{{--                            <label class="form-label">Release date</label>--}}
+{{--                            <div class="mb-3">--}}
+{{--                                <div class="input-group">--}}
+{{--                                    <input class="form-control" id="date" name="release_date" placeholder="MM/DD/YYYY"--}}
+{{--                                        type="text" />--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
                     <div class="mb-3">
                         <label class="form-label">Admission time</label>

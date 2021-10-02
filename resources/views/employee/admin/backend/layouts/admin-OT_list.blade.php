@@ -12,9 +12,9 @@
     </div>
     <div class="col-12 col-xl-12">
     <div class="card">
-        <div class="card-header">
-            <input type="text" class="form-control form- control-sm bg-light rounded-2 border-0" style="width: 100px;" placeholder="Search..">
-        </div>
+{{--        <div class="card-header">--}}
+{{--            <input type="text" class="form-control form- control-sm bg-light rounded-2 border-0" style="width: 100px;" placeholder="Search..">--}}
+{{--        </div>--}}
         <table class="table table-bordered">
             <thead>
                 <tr>

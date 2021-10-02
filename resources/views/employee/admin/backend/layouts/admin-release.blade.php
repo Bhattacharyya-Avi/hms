@@ -27,11 +27,11 @@
 
                                 <p style="font-family: 'Gill Sans MT'; font-size: 20px; text-align: justify-all;">
                                     This paper certifies that patient <strong>@php echo($notes->patient_name) @endphp</strong> age <strong> @php echo($notes->patient_age) @endphp</strong> address <strong> @php echo($notes->patient_address) @endphp</strong> was admitted to
-                                    <strong>Lifesupport hospital</strong> from <strong>@php echo($notes->admission_date) @endphp </strong>to <strong>@php echo($notes->release_date) @endphp </strong> on @php echo($notes->bed_type) @endphp bed number @php echo($notes->bed_number) @endphp under <strong>doctor @php echo($notes->user->name) @endphp </strong>.
+                                    <strong>Lifesupport hospital</strong> from <strong>@php echo($notes->admission_date) @endphp </strong>to <strong>@php echo($notes->release_date) @endphp </strong> on @php echo($notes->bed_type) @endphp bed number @php echo($notes->bed->bed_number) @endphp under <strong>doctor @php echo($notes->user->name) @endphp </strong>.
                                     <br> <br>
                                     We are releasing <strong>@php echo($notes->patient_name) @endphp</strong> with the advices of doctor. We request @php echo($notes->patient_name) @endphp to follow the advices.
                                     <br> <br>
-                                   <strong>Lifesupport hospital wish His/her longevity and Successful life.</strong>
+                                   <strong>Lifesupport hospital wish his/her longevity and Successful life.</strong>
                                 </p>
                             </div>
                         </div>
