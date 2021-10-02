@@ -133,6 +133,9 @@ class CustomController extends Controller
         Appointment::find($id)->update([
             'status'=>'Cancel by user'
         ]);
+        Payment::find($id)->update([
+            'appointment status'=>'Cancel by user'
+        ]);
 //        $appointment=Appointment::find($id);
 //        if ($appointment){
 //            $appointment->delete();
@@ -170,7 +173,8 @@ class CustomController extends Controller
     public function payment(){
         $data=Auth::user()->name;
 //        dd($data);
-        $payment=Payment::where('user_name',$data)->get();
+        $payment=Payment::where('user_name',$data);
+        $payment=Payment::where('appointment status','Active')->get();
 //        dd($payment);
         return view('backend.layout.payment',compact('payment'));
     }

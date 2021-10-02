@@ -22,7 +22,7 @@ class AccountantController extends Controller
     }
 
     public function accept_outdor_payment(){
-        $payments=Payment::all();
+        $payments=Payment::where('appointment status','Active')->get();
 
         return view('employee.accountant.backend.layouts.accountant-outdor_payment',compact('payments'));
     }

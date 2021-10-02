@@ -27,6 +27,7 @@ class CreatePaymentsTable extends Migration
 //            $table->unsignedBigInteger('appointment_date');
 //            $table->foreign('appointment_date')->references('date')->on('appointments');
             $table->string('payment_status')->default('Due');
+            $table->string('appointment status')->default('Active');
             $table->string('total_amount');
             $table->timestamps();
         });

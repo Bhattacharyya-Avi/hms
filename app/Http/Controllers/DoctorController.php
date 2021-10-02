@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admitpatients;
 use App\Models\Appointment;
 use App\Models\Operation;
+use App\Models\Payment;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Addot;
@@ -29,6 +30,9 @@ class DoctorController extends Controller
 //        dd($id);
         Appointment::find($id)->update([
             'status'=>'Cancel by doctor'
+        ]);
+        Payment::find($id)->update([
+            'appointment status'=>'Cancel by doctor'
         ]);
         return redirect()->back()->with('message','Appointment updated!!');
     }

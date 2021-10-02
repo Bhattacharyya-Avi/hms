@@ -24,17 +24,17 @@
             @csrf
             <div class="mb-3">
               <label class="form-label">Full name</label>
-              <input type="text" placeholder="Enter your name." value="{{$data->name}}" class="form-control" name="full_name" required>
+              <input readonly type="text" placeholder="Enter your name." value="{{$data->name}}" class="form-control" name="full_name" required>
             </div>
 
             <div class="mb-3">
               <label class="form-label">Mobile Number</label>
-              <input type="number" placeholder="Enter your mobile number." value="{{$data->phone_no}}" class="form-control" name="phone_no" required>
+              <input readonly type="number" placeholder="Enter your mobile number." value="{{$data->phone_no}}" class="form-control" name="phone_no" required>
             </div>
 
             <div class="mb-3">
               <label class="form-label">Email address</label>
-              <input type="email" class="form-control" placeholder="Enter your email." value="{{$data->email}}" name="email" required>
+              <input readonly type="email" class="form-control" placeholder="Enter your email." value="{{$data->email}}" name="email" required>
             </div>
 
             <div class="mb-3">
@@ -50,7 +50,6 @@
             <div class="mb-3">
               <label class="form-label">Appointment fee</label>
               <select class="form-select flex-grow-1" name="appointmentfee">
-                <option>click to select</option>
                 <option>300</option>
               </select>
             </div>
