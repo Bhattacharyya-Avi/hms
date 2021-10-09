@@ -9,13 +9,21 @@ use Illuminate\Http\Request;
 use App\Models\Patient;
 use App\Models\Appointment;
 use App\Models\Staff;
+use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
+use function PHPUnit\Framework\isEmpty;
 
 class CustomController extends Controller
 {
     public function index(){
-        return view('index');
+
+        $response = Http::get('https://93c4-182-48-84-100.ngrok.io/api/products');
+        $data=$response->body();
+        $data=json_decode($data)?->data;
+        // dd($data);
+        return view('index',compact('data'));
     }
 
     public function login(){

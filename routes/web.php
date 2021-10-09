@@ -61,6 +61,7 @@ Route::group(['middleware'=>'auth'],function (){
         Route::put('/addot/update/{id}',[DoctorController::class,'OTUpdate'])->name('doctor.update.ot');
         Route::get('/admidtpatient/note',[DoctorController::class,'admit_relese'])->name('doctor.admitrelese.note');
         Route::get('{id}/admidtedpatient/note',[DoctorController::class,'admit_relese_note'])->name('doctor.admit.relese.note');
+        Route::get('/report/test',[DoctorController::class,'reportTest'])->name('doctor.report.test');
     });
 // nurse
     Route::group(['prefix'=>'/nurse','middleware'=>['rolenurse']],function (){

@@ -19,37 +19,41 @@
                         <div class="mb-4" style="position: center !important;">
                             <strong style="font-size: 25px;">Life Support Hospital</strong>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="text-muted">Patient <strong>
-                                        {{$info->doctor->name}}
-                                    </strong> <br>
-                                    Doctor <strong>
-                                        {{$info->user->name}}
-                                    </strong></div>
-                            </div>
-                        </div>
+
 
                         <hr class="my-4" />
 
                         <div class="row mb-4">
-                            <form action="{{route('doctor.appointment.report.post',$info->id)}}" method="post">
+                            <form action="#" method="post">
                                 @csrf
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="text-muted">Patient name <strong>
+                                                ABCD
+                                            </strong> <br>
+                                            Doctor name <strong>
+                                                XYZ
+                                            </strong></div>
+                                    </div>
+                                    <div class="col-md-3" style="float: right!important;">
+                                        <div class="text-muted"> Temp
+                                            <input placeholder="body temp"  type="text"  name="">
+                                        </div>
+                                        <br>
+                                        <div class="text-muted">BP
+                                            <input placeholder="BP"  type="text"  name="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <hr>
                                 <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Report</label>
-                                    <textarea name="report" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$info->report}}</textarea>
+                                    <textarea name="report" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
 
-{{--                            <form action="{{route('doctor.appointment.report.post')}}" method="post">--}}
-{{--                                @csrf--}}
-{{--                                <div class="form-group">--}}
-{{--                                    <label for="exampleFormControlTextarea1">Write report</label>--}}
-{{--                                    <textarea name="report" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>--}}
-{{--                                </div>--}}
-{{--                                <a type="submit" class="btn btn-info">Add</a>--}}
-{{--                            </form>--}}
 
                         </div>
 

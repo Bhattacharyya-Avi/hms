@@ -20,7 +20,6 @@
                         <th>Appointment date</th>
                         <th>Payment Status</th>
                         <th>Total</th>
-                        <th>Due</th>
                         <th>Action</th>
 
                     </tr>
@@ -36,7 +35,6 @@
                         <td>{{$data->appointment_date}}</td>
                         <td>{{$data->payment_status}}</td>
                         <td>{{$data->total_amount}}</td>
-                        <td>0</td>
                         <td class="table-action">
                             <a href="{{route('accountant.outdoorpay.accept',$data->id)}}"><i class="material-icons">check</i></a>
                             <a href="{{route('accountant.outdoorpay.bill',$data->id)}}"><i class="material-icons">file_download</i></a>

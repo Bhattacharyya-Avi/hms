@@ -192,6 +192,13 @@
 
                     </ul>
                 </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('doctor.report.test')}}">
+                        <i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">test report temp</span>
+                    </a>
+                </li>
+
             @endif
             @if(auth()->user()->role=='Accountant')
                 <li class="sidebar-item">

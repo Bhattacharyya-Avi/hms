@@ -16,6 +16,7 @@ class EmployeeloginController extends Controller
     {
 //      dd($request->all());
         $userinput = $request->except('_token');
+//        dd($userinput);
 //        dd(Auth::attempt($userinput));
         if (Auth::attempt($userinput)) {
 //            dd(Auth::attempt($userinput));

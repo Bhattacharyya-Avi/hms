@@ -139,6 +139,11 @@ class DoctorController extends Controller
         $notes=Admitpatients::find($id);
         return view('employee.doctor.backend.layout.doctor-release', compact('notes'));
     }
+
+    public function reportTest()
+    {
+        return view('employee.doctor.backend.layout.doc-report_test');
+    }
     public function logout(){
         Auth::logout();
         return redirect()->route('index');

@@ -39,7 +39,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Operation name</label>
+                            <label class="form-label">Patient name</label>
                             <div class="input-group mb-3">
                                 <select class="form-select flex-grow-1" name="Patient_name" required>
                                     <option>click to select</option>
