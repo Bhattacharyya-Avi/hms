@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\Patient;
 use App\Models\Appointment;
 use App\Models\Staff;
+use Facade\FlareClient\View;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -19,11 +20,12 @@ class CustomController extends Controller
 {
     public function index(){
 
-        $response = Http::get('https://93c4-182-48-84-100.ngrok.io/api/products');
-        $data=$response->body();
-        $data=json_decode($data)?->data;
-        // dd($data);
-        return view('index',compact('data'));
+        // $response = Http::get('https://93c4-182-48-84-100.ngrok.io/api/products');
+        // $data=$response->body();
+        // $data=json_decode($data)?->data;
+        // // dd($data);
+        // return view('index',compact('data'));
+        return view('index');
     }
 
     public function login(){

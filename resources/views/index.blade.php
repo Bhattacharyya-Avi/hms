@@ -117,7 +117,7 @@
 
 <!-- facility section starts  -->
 
-<section class="facility" id="facility">
+{{-- <section class="facility" id="facility">
 
     <div class="container">
 
@@ -143,7 +143,7 @@
 
     </div>
 
-</section>
+</section> --}}
 
 <!-- facility section ends -->
 
